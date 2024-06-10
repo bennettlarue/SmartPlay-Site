@@ -5,7 +5,7 @@ export const Nav = () => {
         <nav className="bg-white">
             <div className="flex justify-between items-center">
                 <div
-                    className="flex-shrink-0 h-full bg-blue-900 py-4 pr-28 px-20"
+                    className="flex-shrink-0 h-full bg-blue-950 py-4 pr-28 px-20"
                     style={{
                         clipPath: "polygon( 0 0, 100% 0, 80% 100%, 0 100%)",
                     }}
