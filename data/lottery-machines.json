@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Viper Lottery Machine",
+        "imageLink": "https://picsum.photos/1000/1000",
+        "gameType": ["Bingo", "Lotto"],
+        "features": ["Continuous Operation", "High Frequency"]
+    },
+    {
+        "name": "Cobra Lottery Machine",
+        "imageLink": "https://picsum.photos/1000/1000",
+        "gameType": ["Keno", "Single Digit"],
+        "features": ["Gravity Mix", "Air Mix"]
+    },
+    {
+        "name": "Python Lottery Machine",
+        "imageLink": "https://picsum.photos/1000/1000",
+        "gameType": ["Bingo", "Single Digit"],
+        "features": ["Continuous Operation", "Gravity Mix"]
+    },
+    {
+        "name": "Mamba Lottery Machine",
+        "imageLink": "https://picsum.photos/1000/1000",
+        "gameType": ["Keno", "Lotto"],
+        "features": ["Air Mix", "High Frequency"]
+    },
+    {
+        "name": "Rattlesnake Lottery Machine",
+        "imageLink": "https://picsum.photos/1000/1000",
+        "gameType": ["Bingo"],
+        "features": ["Continuous Operation", "Air Mix"]
+    },
+    {
+        "name": "Anaconda Lottery Machine",
+        "imageLink": "https://picsum.photos/1000/1000",
+        "gameType": ["Lotto", "Single Digit"],
+        "features": ["Gravity Mix", "High Frequency"]
+    },
+    {
+        "name": "Boa Lottery Machine",
+        "imageLink": "https://picsum.photos/1000/1000",
+        "gameType": ["Bingo", "Keno"],
+        "features": ["Continuous Operation", "Gravity Mix"]
+    },
+    {
+        "name": "Adder Lottery Machine",
+        "imageLink": "https://picsum.photos/1000/1000",
+        "gameType": ["Lotto"],
+        "features": ["Air Mix", "High Frequency"]
+    },
+    {
+        "name": "Asp Lottery Machine",
+        "imageLink": "https://picsum.photos/1000/1000",
+        "gameType": ["Single Digit", "Bingo"],
+        "features": ["Gravity Mix", "Continuous Operation"]
+    },
+    {
+        "name": "ViperX Lottery Machine",
+        "imageLink": "https://picsum.photos/1000/1000",
+        "gameType": ["Keno", "Bingo"],
+        "features": ["Air Mix", "Gravity Mix"]
+    }
+]

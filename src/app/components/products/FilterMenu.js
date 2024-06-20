@@ -15,7 +15,7 @@ export const FilterMenu = ({
 
     return (
         <div>
-            <div className="flex p-5 space-x-2">
+            <div className="flex space-x-2">
                 <motion.div
                     className={`relative transition-all border rounded ${
                         open === 1 ? "bg-gray-200" : ""

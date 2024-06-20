@@ -1,9 +1,33 @@
 "use client";
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { OptionsMenu } from "@/app/components/products/OptionsMenu";
 import { Nav } from "@/app/components/Nav";
 import { FilterMenu } from "@/app/components/products/FilterMenu";
+import { ProductCard } from "@/app/components/products/ProductCard";
+import lotteryMachines from "../../../../data/lottery-machines.json";
+
+const getSelectedItems = (selected) => {
+    if (selected.length === 0) return lotteryMachines;
+    const filteredItems = [];
+
+    for (let i = 0; i < lotteryMachines.length; i++) {
+        let included = true;
+        for (let j = 0; j < selected.length; j++) {
+            if (
+                !(
+                    lotteryMachines[i].features.includes(selected[j]) ||
+                    lotteryMachines[i].gameType.includes(selected[j])
+                )
+            ) {
+                included = false;
+                break;
+            }
+        }
+
+        if (included) filteredItems.push(lotteryMachines[i]);
+    }
+
+    return filteredItems;
+};
 
 export default function App() {
     const gameTypes = ["Bingo", "Keno", "Lotto", "Single Digit"];
@@ -38,6 +62,17 @@ export default function App() {
                 handleSelectType={handleSelectType}
                 handleSelectFeature={handleSelectFeature}
             />
+            <div className="grid grid-cols-3 gap-4">
+                {getSelectedItems(selected).map((lotteryMachine, index) => (
+                    <ProductCard
+                        key={index}
+                        name={lotteryMachine.name}
+                        imageLink={lotteryMachine.imageLink}
+                        gameType={lotteryMachine.gameType}
+                        features={lotteryMachine.features}
+                    />
+                ))}
+            </div>
         </div>
     );
 }
