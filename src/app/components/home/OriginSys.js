@@ -1,5 +1,8 @@
 import React from "react";
 import Image from "next/image";
+import { PopupText } from "../PopupText";
+import { FadeInText } from "../FadeInText";
+import { ArrowButton } from "../ArrowButton";
 
 const OriginSys = () => {
     return (
@@ -13,16 +16,18 @@ const OriginSys = () => {
                 <div className=" grid grid-cols-2 ">
                     <div className="space-y-4">
                         <h2 className="text-white text-6xl font-bold">
-                            Origin System
+                            <PopupText text="Origin System" delay={0} />
                         </h2>
-                        <p className="text-white text-3xl">
-                            The most widely used digital draw system by US
-                            Lotteries
-                        </p>
+                        <div className="text-white text-3xl">
+                            <FadeInText
+                                text={
+                                    "The most widely used digital draw system by US Lotteries"
+                                }
+                                delay={0.6}
+                            />
+                        </div>
                         <div className="space-x-7">
-                            <button className="bg-blue-950 rounded-md shadow-md text-white px-7 py-4 font-bold text-xl ">
-                                <a href="#">Learn More</a>
-                            </button>
+                            <ArrowButton text="Learn More" />
                         </div>
                     </div>
                     <div className="flex items-center justify-center">

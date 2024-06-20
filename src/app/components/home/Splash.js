@@ -5,7 +5,8 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 import { useEffect } from "react";
-import SplashText from "./SplashText";
+import { PopupText } from "../PopupText";
+import { ArrowButton } from "../ArrowButton";
 
 const text = "Lottery Machine Manufacturing".split(" ");
 
@@ -30,14 +31,19 @@ export const Splash = () => {
                             />
                             <h1 className="text-3xl">GLOBAL LEADER IN</h1>
                         </div>
-                        <SplashText
-                            breakWords={true}
-                            text={"Lottery Machine Manufacturing"}
-                        />
+                        <div className="text-8xl">
+                            <PopupText text={"Lottery"} delay={0.4} />
+                            <PopupText text={"Machine"} delay={0.6} />
+                            <PopupText text={"Manufacturing"} delay={0.8} />
+                        </div>
+                        <div className="text-4xl">
+                            <PopupText
+                                text={"And Digital Drawing Systems"}
+                                delay={1}
+                            />
+                        </div>
 
-                        <button className="mt-7 bg-blue-950 shadow-md rounded-md text-white font-semibold px-7 py-4 text-lg ">
-                            <a href="#">View Products</a>
-                        </button>
+                        <ArrowButton text="View Products" />
                     </div>
                     <div className="flex items-center justify-center">
                         <img

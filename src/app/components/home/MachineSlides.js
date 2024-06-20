@@ -1,5 +1,7 @@
 import { Carousel } from "@material-tailwind/react";
 import MachineLink from "./MachineLink";
+import { FadeInText } from "../FadeInText";
+import { Line } from "../Line";
 
 const data = [
     {
@@ -45,17 +47,22 @@ export function MachineSlides() {
         <div>
             <div className=" w-[1000px] text-center mx-auto mt-24">
                 <h2 className="p-3 text-3xl font-bold flex justify-center ">
-                    Hightest Quality Lottery, Bingo & Raffle Number Drawing
-                    Systems
+                    <FadeInText
+                        text="Hightest Quality Lottery, Bingo & Raffle Number Drawing Systems"
+                        delay={0.2}
+                    />
                 </h2>
-                <div className=" w-36 mx-auto border-b-4 border-b-blue-950 my-2 mb-4"></div>
-                <p className="text-xl p-2">
-                    Smartplay International preserves drawing integrity for
-                    lottery and gaming organizations in 126 countries. We design
-                    and manufacture the most advanced traditional and digital
-                    lottery drawing systems available, with more than 5,000
-                    systems deployed worldwide since 1993.
-                </p>
+                <div className="flex items-center justify-center my-2 mb-4">
+                    <Line delay={0.2} />
+                </div>
+                <div className="text-xl p-2 pt-4">
+                    <FadeInText
+                        text={
+                            "Smartplay International preserves drawing integrity for lottery and gaming organizations in 126 countries. We design and manufacture the most advanced traditional and digital lottery drawing systems available, with more than 5,000 systems deployed worldwide since 1993."
+                        }
+                        delay={0.35}
+                    />
+                </div>
             </div>
             <div className="mt-14 p-6 rounded-md max-w-[1100px] mx-auto">
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
