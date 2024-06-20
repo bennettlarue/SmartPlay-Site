@@ -16,7 +16,7 @@ export const Menu = ({ open, items }) => {
 
     return (
         <motion.ul
-            className="border bg-white w-[200px] p-4 rounded space-y-4 shadow"
+            className="border bg-white w-[200px] p-4 rounded space-y-4 shadow font-semibold"
             initial="hidden"
             animate={open ? "show" : "hidden"}
             variants={{
@@ -36,7 +36,7 @@ export const Menu = ({ open, items }) => {
                         open ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }
                     }
                     transition={{ delay: index * 0.05 }}
-                    className="w-full cursor-pointer leading-tight border-b border-b-gray-200 py-1"
+                    className="w-full cursor-pointer leading-tight border-b border-b-gray-200 py-1 hover:text-blue-900"
                 >
                     {item}
                 </motion.li>
