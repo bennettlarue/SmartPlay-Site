@@ -1,6 +1,7 @@
 "use client";
 
 import { FadeInText } from "../components/FadeInText";
+import { Footer } from "../components/Footer";
 import { Nav } from "../components/Nav";
 import { CustomerService } from "../components/about/CustomerService";
 import { InfoCard } from "../components/about/InfoCard";
@@ -10,12 +11,12 @@ import { Carousel } from "@material-tailwind/react";
 
 export default function About() {
     return (
-        <main className="relative mb-96">
+        <main className="relative">
             <div className="fixed top-0 left-0 w-full h-full -z-10">
                 <img
                     src="https://hxl.550.myftpupload.com/wp-content/uploads/2021/09/4032-3024-max-1-scaled.jpg"
                     alt="Customer Service"
-                    className="w-full h-full object-cover translate-y-10"
+                    className="w-full h-screen object-cover translate-y-10"
                 />
                 <div className="absolute top-0 left-0 w-full h-full bg-white opacity-50"></div>{" "}
                 {/* Overlay */}
@@ -91,26 +92,37 @@ export default function About() {
                 <div>
                     <Iso />
                 </div>
-                <div className="bg-gray-200">
-                    <Carousel className="h-[500px] w-[800px] m-auto rounded shadow">
-                        <img
-                            src="https://smartplay.com/wp-content/uploads/2018/11/emerald-lotto-china.jpg"
-                            alt="image 1"
-                            className="h-full w-full object-cover"
-                        />
-                        <img
-                            src="https://smartplay.com/wp-content/uploads/2017/12/zach-lottery-racetrack.jpg"
-                            alt="image 2"
-                            className="h-full w-full object-cover"
-                        />
-                        <img
-                            src="https://smartplay.com/wp-content/uploads/2017/12/russell-lottery-machine-testing.jpg"
-                            alt="image 3"
-                            className="h-full w-full object-cover"
-                        />
-                    </Carousel>
+                <div className="w-[1200px] mx-auto py-16">
+                    <h2 className="text-3xl font-semibold text-blue-950">
+                        Stop by for a Tour!
+                    </h2>
+                    <div className="flex justify-center space-x-12 mt-5">
+                        <div className="w-1/2 space-y-7">
+                            <p className="text-lg">
+                                Smartplay is conveniently based in Burlington
+                                County New Jersey, just outside Philadelphia,
+                                PA. This strategic location offers access to
+                                several of our country’s busiest airports. All
+                                equipment and development takes place in this
+                                25,000-square foot manufacturing facility which
+                                houses technology development, machine
+                                fabrication, and ball printing divisions.
+                            </p>
+                            <img
+                                className="rounded shadow"
+                                src="https://hxl550.n3cdn1.secureserver.net/wp-content/uploads/2022/06/smartplay-building-1000px.gif?time=1717187795"
+                            />
+                        </div>
+                        <div className="w-1/2">
+                            <img
+                                className="rounded shadow"
+                                src="https://hxl550.n3cdn1.secureserver.net/wp-content/uploads/2022/06/smartplay-map.png"
+                            />
+                        </div>
+                    </div>
                 </div>
             </div>
+            <Footer />
         </main>
     );
 }

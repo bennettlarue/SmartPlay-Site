@@ -3,7 +3,7 @@ import { ArrowButton } from "../ArrowButton";
 
 export const Iso = () => {
     return (
-        <div className="bg-gray-200 p-10 mb-12">
+        <div className="bg-gray-200 p-16">
             <div className="flex justify-between w-[1200px] mx-auto items-center">
                 <div className="w-[700px] space-y-5">
                     <h2 className="text-3xl text-blue-950 font-bold">

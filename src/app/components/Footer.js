@@ -3,7 +3,7 @@ import Memberships from "./Memberships";
 
 export const Footer = () => {
     return (
-        <div className="bg-gray-200 mt-12 grid grid-cols-5 px-8 py-5">
+        <div className="bg-gray-200 grid grid-cols-5 px-8 py-5">
             <div className="p-5 flex items-center justify-center">
                 <div>
                     <img
