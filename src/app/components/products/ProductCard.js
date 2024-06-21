@@ -1,31 +1,28 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 export const ProductCard = ({ name, imageLink, gameType, features }) => {
     return (
-        <div className="w-[300px] bg-gray-200 rounded">
+        <div className="bg-gray-200 rounded">
             <img
                 src={imageLink}
                 alt={name}
-                className="w-full bg-cover rounded-t"
+                className="h-[300px] w-full object-cover rounded-t"
             />
             <div className="p-4">
-                <h1 className="font-bold text-xl">{name}</h1>
-
-                <div>
-                    <ul className="flex space-x-2">
-                        <h2>Game Type:</h2>
-
-                        {gameType.map((type) => (
-                            <li>{type}</li>
-                        ))}
-                    </ul>
+                <div className="min-h-[70px] flex items-center">
+                    <h1 className="font-bold text-2xl">{name}</h1>
                 </div>
-                <div>
-                    <ul className="flex space-x-2">
-                        <h2>Features:</h2>
 
-                        {features.map((feature) => (
-                            <li>{feature}</li>
+                <div className="mt-1">
+                    <ul className="flex flex-wrap">
+                        {gameType.concat(features).map((item) => (
+                            <li
+                                className="p-2 mr-3 bg-white w-fit rounded-xl shadow mt-4"
+                                key={item}
+                            >
+                                {item}
+                            </li>
                         ))}
                     </ul>
                 </div>

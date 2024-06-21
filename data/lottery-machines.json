@@ -1,61 +1,61 @@
 [
     {
-        "name": "Viper Lottery Machine",
+        "name": "Frankystein Mark II Lottery Machine",
         "imageLink": "https://picsum.photos/1000/1000",
         "gameType": ["Bingo", "Lotto"],
         "features": ["Continuous Operation", "High Frequency"]
     },
     {
-        "name": "Cobra Lottery Machine",
-        "imageLink": "https://picsum.photos/1000/1000",
+        "name": "Starman Lottery Machine",
+        "imageLink": "https://picsum.photos/1001/1000",
         "gameType": ["Keno", "Single Digit"],
         "features": ["Gravity Mix", "Air Mix"]
     },
     {
-        "name": "Python Lottery Machine",
-        "imageLink": "https://picsum.photos/1000/1000",
+        "name": "Mighty Bear Lottery Machine",
+        "imageLink": "https://picsum.photos/1002/1000",
         "gameType": ["Bingo", "Single Digit"],
         "features": ["Continuous Operation", "Gravity Mix"]
     },
     {
-        "name": "Mamba Lottery Machine",
-        "imageLink": "https://picsum.photos/1000/1000",
+        "name": "Diamond Dog Lottery Machine",
+        "imageLink": "https://picsum.photos/1003/1000",
         "gameType": ["Keno", "Lotto"],
         "features": ["Air Mix", "High Frequency"]
     },
     {
-        "name": "Rattlesnake Lottery Machine",
-        "imageLink": "https://picsum.photos/1000/1000",
+        "name": "Fobby Lottery Machine",
+        "imageLink": "https://picsum.photos/1004/1000",
         "gameType": ["Bingo"],
         "features": ["Continuous Operation", "Air Mix"]
     },
     {
-        "name": "Anaconda Lottery Machine",
-        "imageLink": "https://picsum.photos/1000/1000",
+        "name": "Mondo Mole Lottery Machine",
+        "imageLink": "https://picsum.photos/1005/1000",
         "gameType": ["Lotto", "Single Digit"],
         "features": ["Gravity Mix", "High Frequency"]
     },
     {
-        "name": "Boa Lottery Machine",
-        "imageLink": "https://picsum.photos/1000/1000",
+        "name": "Kraken Lottery Machine",
+        "imageLink": "https://picsum.photos/1006/1000",
         "gameType": ["Bingo", "Keno"],
         "features": ["Continuous Operation", "Gravity Mix"]
     },
     {
-        "name": "Adder Lottery Machine",
-        "imageLink": "https://picsum.photos/1000/1000",
+        "name": "Giygas Lottery Machine",
+        "imageLink": "https://picsum.photos/1007/1000",
         "gameType": ["Lotto"],
         "features": ["Air Mix", "High Frequency"]
     },
     {
-        "name": "Asp Lottery Machine",
-        "imageLink": "https://picsum.photos/1000/1000",
+        "name": "Titanic Ant Lottery Machine",
+        "imageLink": "https://picsum.photos/1008/1000",
         "gameType": ["Single Digit", "Bingo"],
         "features": ["Gravity Mix", "Continuous Operation"]
     },
     {
-        "name": "ViperX Lottery Machine",
-        "imageLink": "https://picsum.photos/1000/1000",
+        "name": "Clumsy Robot Lottery Machine",
+        "imageLink": "https://picsum.photos/1009/1000",
         "gameType": ["Keno", "Bingo"],
         "features": ["Air Mix", "Gravity Mix"]
     }

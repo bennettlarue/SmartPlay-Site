@@ -16,7 +16,7 @@ export const OptionsMenu = ({ open, items, selected, onSelect }) => {
 
     return (
         <motion.ul
-            className="border bg-gray-200 w-full p-4 rounded space-y-3 shadow"
+            className="absolute border bg-white w-[250px] p-4 rounded space-y-3 shadow z-50"
             initial="hidden"
             animate={open ? "show" : "hidden"}
             variants={{
@@ -36,10 +36,10 @@ export const OptionsMenu = ({ open, items, selected, onSelect }) => {
             {items.map((item, index) => (
                 <motion.li
                     key={index}
-                    className="w-fit cursor-pointer flex items-center space-x-5"
+                    className="cursor-pointer flex items-center space-x-5 hover:bg-gray-200 border border-gray-200 rounded p-2 transition-colors"
                     onClick={() => onSelect(item)} // Call the onSelect function with the clicked item
                 >
-                    <span className=" flex justify-center items-center border rounded-full">
+                    <span className=" flex justify-center items-center rounded-full">
                         <div className="w-5 h-5 rounded-full mr-2 transition-all bg-gray-300">
                             {selected.includes(item) && (
                                 <svg

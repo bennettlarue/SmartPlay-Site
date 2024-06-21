@@ -4,6 +4,7 @@ import { Nav } from "@/app/components/Nav";
 import { FilterMenu } from "@/app/components/products/FilterMenu";
 import { ProductCard } from "@/app/components/products/ProductCard";
 import lotteryMachines from "../../../../data/lottery-machines.json";
+import { AnimatePresence, motion } from "framer-motion";
 
 const getSelectedItems = (selected) => {
     if (selected.length === 0) return lotteryMachines;
@@ -54,24 +55,41 @@ export default function App() {
     return (
         <div className="App">
             <Nav />
-            <FilterMenu
-                gameTypes={gameTypes}
-                features={features}
-                selected={selected}
-                setSelected={setSelected}
-                handleSelectType={handleSelectType}
-                handleSelectFeature={handleSelectFeature}
-            />
-            <div className="grid grid-cols-3 gap-4">
-                {getSelectedItems(selected).map((lotteryMachine, index) => (
-                    <ProductCard
-                        key={index}
-                        name={lotteryMachine.name}
-                        imageLink={lotteryMachine.imageLink}
-                        gameType={lotteryMachine.gameType}
-                        features={lotteryMachine.features}
-                    />
-                ))}
+
+            <div className="mx-auto max-w-[1300px] mt-24 p-8 relative">
+                <FilterMenu
+                    gameTypes={gameTypes}
+                    features={features}
+                    selected={selected}
+                    setSelected={setSelected}
+                    handleSelectType={handleSelectType}
+                    handleSelectFeature={handleSelectFeature}
+                />
+                <div className="grid grid-cols-3 gap-14">
+                    <AnimatePresence>
+                        {getSelectedItems(selected).map(
+                            (lotteryMachine, index) => (
+                                <motion.div
+                                    key={lotteryMachine.name}
+                                    layout
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    exit={{ opacity: 0, scale: 0.8 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="relative z-10"
+                                >
+                                    <ProductCard
+                                        key={index}
+                                        name={lotteryMachine.name}
+                                        imageLink={lotteryMachine.imageLink}
+                                        gameType={lotteryMachine.gameType}
+                                        features={lotteryMachine.features}
+                                    />
+                                </motion.div>
+                            )
+                        )}
+                    </AnimatePresence>
+                </div>
             </div>
         </div>
     );

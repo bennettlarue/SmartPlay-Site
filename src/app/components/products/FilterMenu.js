@@ -14,8 +14,9 @@ export const FilterMenu = ({
     const [open, setOpen] = useState(0);
 
     return (
-        <div>
-            <div className="flex space-x-2">
+        <motion.div className="z-50">
+            <div className="flex space-x-2 items-center">
+                <h2 className="font-bold text-xl mr-3">Filter By:</h2>
                 <motion.div
                     className={`relative transition-all border rounded ${
                         open === 1 ? "bg-gray-200" : ""
@@ -92,12 +93,21 @@ export const FilterMenu = ({
                     </div>
                 </motion.div>
             </div>
-            <h2 className="font-bold">Filters:</h2>
-            <div className="flex space-x-4">
+
+            <div className="flex space-x-4 items-center">
+                <h2 className="py-7">
+                    {selected.length === 0 ? (
+                        <div className="text-4xl font-bold">All Products</div>
+                    ) : (
+                        <div className="text-xl font-semibold text-gray-600">
+                            Selected Filters:
+                        </div>
+                    )}
+                </h2>
                 {selected.map((item) => {
                     return (
                         <div
-                            className="p-3 rounded-xl bg-gray-200 hover:bg-gray-300 hover:text-red-500 w-fit flex items-center cursor-pointer transition-all"
+                            className=" h-fit p-2 rounded-xl bg-gray-200 hover:bg-gray-300 hover:text-red-500 w-fit flex items-center cursor-pointer transition-all"
                             onClick={() =>
                                 setSelected((prev) =>
                                     prev.filter((i) => i !== item)
@@ -121,6 +131,6 @@ export const FilterMenu = ({
                     );
                 })}
             </div>
-        </div>
+        </motion.div>
     );
 };
