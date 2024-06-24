@@ -22,8 +22,8 @@ const products = [
 ];
 const productsLinks = [
     "/product-services/lottery-drawing-machines",
-    "#",
-    "#",
+    "/product-services/lottery-drawing-balls",
+    "/product-services/equipment-calibration",
     "#",
     "#",
 ];
