@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
-export const Menu = ({ open, items }) => {
+export const Menu = ({ open, items, links }) => {
     const staggerList = {
         hidden: { opacity: 0, scale: 0.7 },
         show: {
@@ -38,7 +39,7 @@ export const Menu = ({ open, items }) => {
                     transition={{ delay: index * 0.05 }}
                     className="w-full cursor-pointer leading-tight border-b border-b-gray-200 py-1 hover:text-blue-900"
                 >
-                    {item}
+                    <Link href={links[index]}>{item}</Link>
                 </motion.li>
             ))}
         </motion.ul>

@@ -12,12 +12,20 @@ const solutions = [
     "Corporate",
     "Funding",
 ];
+const solutionsLinks = ["#", "#", "#", "#", "#", "#", "#"];
 const products = [
     "Lottery Drawing Machines",
     "Lottery Drawing Balls",
     "Equipment Calibration",
     "Custom Games",
     "Prize Wheels",
+];
+const productsLinks = [
+    "/product-services/lottery-drawing-machines",
+    "#",
+    "#",
+    "#",
+    "#",
 ];
 
 export const Nav = () => {
@@ -89,7 +97,11 @@ export const Nav = () => {
                             </svg>
                         </motion.button>
                         <div className="absolute top-full mt-2">
-                            <Menu open={open === 1} items={solutions} />
+                            <Menu
+                                open={open === 1}
+                                items={solutions}
+                                links={solutionsLinks}
+                            />
                         </div>
                     </div>
 
@@ -118,7 +130,11 @@ export const Nav = () => {
                             </svg>
                         </motion.button>
                         <div className="absolute top-full mt-2">
-                            <Menu open={open === 2} items={products} />
+                            <Menu
+                                open={open === 2}
+                                items={products}
+                                links={productsLinks}
+                            />
                         </div>
                     </div>
                     <div className="relative">
