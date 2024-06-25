@@ -116,7 +116,6 @@ export default function App() {
                         <img
                             src="https://smartplay.com/wp-content/uploads/2017/07/digital-lottery-ball-micrometer1-136x300.jpg"
                             alt="Ball"
-                            className="rounded shadow p-2 bg-white"
                         />
                     </div>
                 </div>
