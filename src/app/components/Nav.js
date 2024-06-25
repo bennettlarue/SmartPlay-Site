@@ -25,7 +25,7 @@ const productsLinks = [
     "/product-services/lottery-drawing-balls",
     "/product-services/equipment-calibration",
     "/product-services/custom-design-fabrication",
-    "#",
+    "/product-services/prize-wheels",
 ];
 
 export const Nav = () => {
