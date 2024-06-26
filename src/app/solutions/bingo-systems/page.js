@@ -50,13 +50,13 @@ export default function App() {
 
             <Title text="Bingo Systems" />
             <div className="bg-white">
-                <div className="mx-auto max-w-[1100px] pt-20 pb-12 text-lg grid">
+                <div className="mx-auto max-w-[1100px] pt-20 pb-12 text-lg px-4 lg:px-0">
                     <div className="space-y-10">
                         <h2 className="text-3xl font-semibold text-blue-950 text-center">
                             Highest quality parts and construction to meet the
                             demands of continuous operation
                         </h2>
-                        <p className="text-lg text-center px-10">
+                        <p className="text-lg text-center">
                             Bingo and keno games are popular throughout the
                             world. Both game styles require all balls to be
                             displayed one after the other. Smartplay has several
@@ -70,7 +70,7 @@ export default function App() {
                 </div>
             </div>
             <div className="bg-gray-200 py-12">
-                <div className="grid grid-cols-2 mx-auto max-w-[1100px] gap-x-6">
+                <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto max-w-[1100px] gap-x-6">
                     <ul className="space-y-6 bg-gray-200 p-4 text-blue-950 font-semibold col-span-1">
                         {checks.map((check, index) => (
                             <li key={index} className="flex space-x-2 text-lg">
@@ -79,22 +79,24 @@ export default function App() {
                             </li>
                         ))}
                     </ul>
-                    <div className="col-span-1 flex justify-center items-center space-x-4 bg-white p-5 rounded shadow">
+                    <div className="col-span-1 flex flex-col lg:flex-row justify-center items-center space-y-4 lg:space-y-0 lg:space-x-4 bg-white p-5 rounded shadow">
                         <img
                             src="https://smartplay.com/wp-content/uploads/2017/07/super-bingo-machine.jpg"
                             alt="Online Lottery"
-                            className="rounded shadow h-[360px]"
+                            className="rounded shadow h-[200px] lg:h-[360px] w-full lg:w-auto"
                         />
                         <div>
-                            <h2 className="text-2xl font-semibold text-blue-950">
+                            <h2 className="text-2xl font-semibold text-blue-950 text-center lg:text-left">
                                 SuperBingo
                             </h2>
-                            <p className="py-5">
+                            <p className="py-5 text-center lg:text-left">
                                 This bingo machine is designed for
                                 high-frequency use, drawing balls every few
                                 minutes.
                             </p>
-                            <ArrowButton text="Learn More" />
+                            <div className="flex justify-center lg:justify-start">
+                                <ArrowButton text="Learn More" />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -103,7 +105,7 @@ export default function App() {
                 <h2 className="text-2xl font-semibold text-blue-950 text-center mb-12">
                     Standard Bingo and Keno Models Used Around the World
                 </h2>
-                <div className="grid grid-cols-3 mx-auto max-w-[1100px] gap-x-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto max-w-[1100px] gap-x-6 gap-y-8">
                     {data.map((item, index) => (
                         <MachineLink
                             key={index}
