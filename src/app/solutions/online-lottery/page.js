@@ -26,14 +26,14 @@ export default function App() {
 
             <Title text="Online Lottery" />
             <div className="bg-white">
-                <div className="mx-auto max-w-[1100px] pt-20 pb-12 text-lg grid">
+                <div className="mx-auto lg:max-w-[1000px] max-w-[700px] pt-20 pb-12 text-lg px-4 lg:px-0">
                     <div className="space-y-10">
                         <h2 className="text-3xl font-semibold text-blue-950 text-center">
                             Successful and hassle-free online lotteries require
                             the highest-quality equipment and the latest
                             technology.
                         </h2>
-                        <p className="text-lg text-center px-10">
+                        <p className="text-lg text-center">
                             Online lotteries that operate continuously require
                             high-quality equipment that can operate flawlessly
                             under frequent use. You also need the proper support
@@ -48,8 +48,8 @@ export default function App() {
                 </div>
             </div>
             <div className="bg-gray-200 py-12">
-                <div className="grid grid-cols-2 mx-auto max-w-[1100px] gap-x-6">
-                    <ul className="space-y-6 bg-gray-200 p-4 text-blue-950 font-semibold col-span-1">
+                <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto max-w-[1000px] gap-x-6 lg:space-y-0 space-y-6 items-center">
+                    <ul className="space-y-6 bg-gray-200 p-4 text-blue-950 font-semibold col-span-1 max-w-[700px] mx-auto">
                         {checks.map((check, index) => (
                             <li key={index} className="flex space-x-2 text-lg">
                                 <p className="text-xl">✓</p>
@@ -61,7 +61,7 @@ export default function App() {
                     <img
                         src="https://smartplay.com/wp-content/uploads/2017/06/betgames1.jpg"
                         alt="Online Lottery"
-                        className="col-span-1 rounded shadow"
+                        className="col-span-1 rounded shadow mx-auto object-cover lg:w-[500px] w-[300px]"
                     />
                 </div>
             </div>

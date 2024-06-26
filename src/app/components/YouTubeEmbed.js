@@ -2,10 +2,9 @@ import React from "react";
 
 const YouTubeEmbed = ({ videoId }) => {
     return (
-        <div className="video-container rounded">
+        <div className="video-container rounded overflow-hidden relative pb-[56.25%] h-0">
             <iframe
-                width="560"
-                height="315"
+                className="absolute top-0 left-0 w-full h-full"
                 src={`https://www.youtube.com/embed/${videoId}`}
                 title="YouTube video player"
                 frameBorder="0"

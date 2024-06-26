@@ -21,13 +21,13 @@ export default function App() {
 
             <Title />
             <div className=" bg-white">
-                <div className="mx-auto max-w-[1200px] py-20 text-lg grid grid-cols-2 items-center gap-x-5">
-                    <div>
-                        <h2 className="text-3xl font-bold text-blue-950 px-4">
+                <div className="mx-auto max-w-[1200px] py-20 text-lg grid grid-cols-1 md:grid-cols-2 items-center gap-x-5 px-4">
+                    <div className="mb-8 md:mb-0">
+                        <h2 className="text-3xl font-bold text-blue-950">
                             Custom table-tennis-style and RFID-enabled Smartball
                             lottery balls.
                         </h2>
-                        <p className="p-4 pt-6">
+                        <p className="pt-6">
                             Our production consists of a 24-step process
                             including stringent quality control inspections. At
                             the time of manufacture, the balls are placed in
@@ -48,8 +48,8 @@ export default function App() {
                 </div>
             </div>
             <div className="bg-gray-200">
-                <div className="mx-auto max-w-[1200px] pt-20 text-lg grid grid-cols-2 gap-x-8">
-                    <div>
+                <div className="mx-auto max-w-[1200px] pt-20 text-lg grid grid-cols-1 md:grid-cols-2 gap-x-8">
+                    <div className="mb-8 md:mb-0">
                         <Carousel
                             className="rounded shadow max-h-[400px]"
                             loop={true}
@@ -78,10 +78,10 @@ export default function App() {
                         </Carousel>
                     </div>
                     <div>
-                        <h2 className="text-3xl font-bold text-blue-950 px-4">
+                        <h2 className="text-3xl font-bold text-blue-950">
                             Foam Lottery Balls & Smartballs
                         </h2>
-                        <p className="p-4 pt-6">
+                        <p className="pt-6">
                             Smartplay’s foam lottery balls and Smartballs are
                             made of a closed cell polymer. These lottery balls
                             are solid, tamper proof and offer the same security
@@ -98,8 +98,8 @@ export default function App() {
                         </p>
                     </div>
                 </div>
-                <div className="mx-auto max-w-[1200px] pb-20 pt-10 text-lg">
-                    <ul className="grid grid-cols-2 gap-6">
+                <div className="mx-auto max-w-[1200px] pb-20 pt-10 text-lg grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
+                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <li className="flex items-center text-lg border rounded shadow p-4">
                             <p>
                                 <span className="font-bold text-blue-950">
@@ -149,12 +149,12 @@ export default function App() {
                 </div>
             </div>
             <div className="bg-white">
-                <div className="mx-auto max-w-[1200px] pt-20 text-lg grid grid-cols-2 gap-x-8">
-                    <div className="my-auto">
-                        <h2 className="text-3xl font-bold text-blue-950 px-4">
+                <div className="mx-auto max-w-[1200px] pt-20 text-lg grid grid-cols-1 md:grid-cols-2 gap-x-8 px-4">
+                    <div>
+                        <h2 className="text-3xl font-bold text-blue-950">
                             Table-Tennis Style Lottery Balls
                         </h2>
-                        <p className="p-4 pt-6">
+                        <p className="pt-6">
                             Smartplay Drawing Balls are the highest quality
                             table tennis balls available. The production
                             consists of a 24-step process including stringent
@@ -163,7 +163,7 @@ export default function App() {
                             with extremely close tolerances of weight and size.
                         </p>
                     </div>
-                    <div>
+                    <div className="mb-8 md:mb-0">
                         <Carousel
                             className="rounded shadow max-h-[400px]"
                             loop={true}
@@ -202,9 +202,9 @@ export default function App() {
                         </Carousel>
                     </div>
                 </div>
-                <div className="mx-auto max-w-[1200px] pb-20 pt-10 text-lg">
-                    <ul className="grid grid-cols-2 gap-6">
-                        <li className="text-lg border rounded shadow p-4 flex items-center">
+                <div className="mx-auto max-w-[1200px] pb-20 pt-10 text-lg grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
+                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <li className="flex items-center text-lg border rounded shadow p-4">
                             <p>
                                 <span className="font-bold text-blue-950">
                                     ✔ Available in 38mm and 40mm sizes{" "}
@@ -228,7 +228,7 @@ export default function App() {
                                 to ensure surface consistency
                             </p>
                         </li>
-                        <li className="text-lg border rounded shadow p-4 flex items-center">
+                        <li className="flex items-center text-lg border rounded shadow p-4">
                             <p>
                                 <span className="font-bold text-blue-950">
                                     ✔ Balls can be digitally printed with your
@@ -240,7 +240,7 @@ export default function App() {
                 </div>
             </div>
             <div className=" bg-gray-200">
-                <div className="mx-auto max-w-[1200px] py-20 text-lg grid grid-cols-2 items-center gap-x-5">
+                <div className="mx-auto max-w-[1200px] py-20 text-lg grid grid-cols-1 md:grid-cols-2 items-center gap-x-5 px-4">
                     <div>
                         <img
                             src="https://smartplay.com/wp-content/uploads/2020/11/lottery-beads-smartplay.jpg"
@@ -248,11 +248,11 @@ export default function App() {
                             className="rounded shadow h-[550px] w-full object-cover"
                         />
                     </div>
-                    <div>
-                        <h2 className="text-3xl font-bold text-blue-950 px-4">
+                    <div className="mb-8 md:mb-0">
+                        <h2 className="text-3xl font-bold text-blue-950">
                             Acrylic Lottery Beads
                         </h2>
-                        <p className="p-4 pt-6">
+                        <p className="pt-6">
                             In many countries lottery bead machines are still in
                             use. Beads are typically engraved with numbers then
                             inked to create more contrast so they number can be

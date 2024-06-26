@@ -29,21 +29,20 @@ export default function App() {
                 <img
                     src="https://hxl.550.myftpupload.com/wp-content/uploads/2022/07/lottery-balls.jpg"
                     alt="Customer Service"
-                    className="w-full h-screen object-cover translate-y-10"
+                    className="w-full h-full object-cover translate-y-10"
                 />
-                <div className="absolute top-0 left-0 w-full h-full bg-white opacity-50"></div>{" "}
-                {/* Overlay */}
+                <div className="absolute top-0 left-0 w-full h-full bg-white opacity-50"></div>
             </div>
             <Title text="Custom Design Fabrication" />
-            <div className=" bg-white">
-                <div className="mx-auto max-w-[1200px] pt-20 text-lg">
+            <div className="bg-white">
+                <div className="mx-auto lg:max-w-[1000px] max-w-[700px] pt-20 pb-12 text-lg px-4 lg:px-0">
                     <h2 className="text-3xl font-semibold text-blue-950 text-center">
                         A unique combination of programmers, engineers,
                         carpenters, and craftsmen to deliver just about anything
                         you can dream up.
                     </h2>
 
-                    <div className="p-4 px-12 pt-12 font-medium text-xl space-y-8">
+                    <div className="py-12 text-xl space-y-8">
                         <p>
                             Have a big idea for your next game, event or
                             promotion? Want to design a game device for your
@@ -51,7 +50,7 @@ export default function App() {
                             concepts and need feedback to discuss practical
                             aspects like transport, lighting or maintenance.
                             Contact Us to set up a call to discuss your project.
-                        </p>{" "}
+                        </p>
                         <p>
                             Regardless, we can talk through considerations with
                             you. With technology, engineering, and fabrication
@@ -66,7 +65,7 @@ export default function App() {
             </div>
 
             <div className="bg-white pb-20">
-                <div className="mx-auto max-w-[1200px] py-5 text-lg grid grid-cols-3 items-center gap-6">
+                <div className="mx-auto lg:max-w-[1000px] max-w-[700px] py-5 text-lg grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 lg:px-0">
                     {images.map((image, index) => (
                         <motion.div
                             key={index}
@@ -81,7 +80,7 @@ export default function App() {
                             <img
                                 src={image}
                                 alt="Customer Service"
-                                className="w-full h-screen object-cover translate-y-10 max-h-[300px] rounded shadow"
+                                className="w-full h-[300px] object-cover rounded shadow"
                             />
                         </motion.div>
                     ))}

@@ -19,17 +19,17 @@ export default function App() {
             <Nav />
             <div className="fixed top-0 left-0 w-full h-full -z-10">
                 <img
-                    src="https://hxl.550.myftpupload.com/wp-content/uploads/2021/10/globe.jpg"
+                    src="https://hxl.550.myftpupload.com/wp-content/uploads/2021/10/cropped-view-of-happy-man-and-woman-holding-hands-while-holding-lottery-tickets.jpg"
                     alt="Customer Service"
-                    className="w-full h-full object-cover -translate-y-10"
+                    className="w-full h-full object-cover translate-y-10"
                 />
                 <div className="absolute top-0 left-0 w-full h-full bg-white opacity-50"></div>
             </div>
 
             <Title text="Raffles" />
             <div className="bg-white">
-                <div className="mx-auto max-w-[1100px] pt-20 pb-12 text-lg px-4 md:px-8 lg:px-0">
-                    <div className="space-y-10">
+                <div className="mx-auto max-w-[1000px] pt-20 pb-12 text-lg px-4 md:px-8 lg:px-0">
+                    <div className="space-y-10 max-[700px]:">
                         <h2 className="text-3xl font-semibold text-blue-950 text-center">
                             Raffles are very popular worldwide for fundraising
                             as well as offering great prizes. Smartplay offers
@@ -50,7 +50,7 @@ export default function App() {
                 </div>
             </div>
             <div className="bg-gray-200 py-12">
-                <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto max-w-[1100px] gap-x-6 items-center px-4 md:px-8 lg:px-0">
+                <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto max-w-[1000px] gap-x-6 items-center px-4 md:px-8 lg:px-0">
                     <div className="space-y-6 p-4">
                         <p>
                             Of course if you want more drama and excitement, you
