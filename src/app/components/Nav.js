@@ -12,7 +12,16 @@ const solutions = [
     "Corporate",
     "Funding",
 ];
-const solutionsLinks = ["#", "#", "#", "#", "#", "#", "#"];
+const solutionsLinks = [
+    "/solutions/traditional-lottery",
+    "/solutions/online-lottery",
+    "/solutions/bingo-systems",
+    "/solutions/raffles",
+    "#",
+    "#",
+    "#",
+];
+
 const products = [
     "Lottery Drawing Machines",
     "Lottery Drawing Balls",
@@ -64,12 +73,12 @@ export const Nav = () => {
                     </div>
                 </Link>
                 <div className="flex space-x-4 mr-8">
-                    <Link className="relative" href="/about">
+                    <Link className="relative" href="/why-smartplay">
                         <motion.button
                             whileTap={{ scale: 0.95 }}
                             className="font-semibold p-2 flex items-center space-x-1 transition-all rounded hover:bg-gray-200"
                         >
-                            <span>About</span>
+                            <span>Why SmartPlay</span>
                         </motion.button>
                     </Link>
                     <div className="relative">
