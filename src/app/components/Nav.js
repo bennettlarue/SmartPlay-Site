@@ -9,8 +9,7 @@ const solutions = [
     "Bingo Systems",
     "Raffles",
     "Casino Gaming",
-    "Corporate",
-    "Funding",
+    "Promotions",
 ];
 const solutionsLinks = [
     "/solutions/traditional-lottery",
@@ -18,8 +17,7 @@ const solutionsLinks = [
     "/solutions/bingo-systems",
     "/solutions/raffles",
     "/solutions/casino",
-    "#",
-    "#",
+    "/solutions/promotions",
 ];
 
 const products = [
