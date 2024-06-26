@@ -17,7 +17,7 @@ const solutionsLinks = [
     "/solutions/online-lottery",
     "/solutions/bingo-systems",
     "/solutions/raffles",
-    "#",
+    "/solutions/casino",
     "#",
     "#",
 ];
