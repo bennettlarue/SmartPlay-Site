@@ -15,7 +15,7 @@ export const FilterMenu = ({
 
     return (
         <motion.div className="z-50">
-            <div className="flex space-x-2 items-center">
+            <div className="lg:flex space-x-2 items-center w-fit lg:space-y-0 space-y-4">
                 <h2 className="font-bold text-xl mr-3">Filter By:</h2>
                 <motion.div
                     className={`relative transition-all border rounded ${
@@ -94,7 +94,7 @@ export const FilterMenu = ({
                 </motion.div>
             </div>
 
-            <div className="flex space-x-4 items-center">
+            <div className="flex space-x-4 items-center w-fit">
                 <h2 className="py-7">
                     {selected.length === 0 ? (
                         <div className="text-4xl font-bold">All Products</div>

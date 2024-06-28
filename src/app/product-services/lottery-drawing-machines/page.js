@@ -7,6 +7,7 @@ import lotteryMachines from "../../../../data/lottery-machines.json";
 import { AnimatePresence, motion } from "framer-motion";
 import { Title } from "@/app/components/products/lottery-machines/Title";
 import { Accordions } from "@/app/components/products/lottery-machines/Accordions";
+import { Footer } from "@/app/components/Footer";
 
 const getSelectedItems = (selected) => {
     if (selected.length === 0) return lotteryMachines;
@@ -69,12 +70,12 @@ export default function App() {
 
             <Title />
             <div className=" bg-white">
-                <div className="mx-auto max-w-[1000px] py-16 text-center text-lg">
-                    <h2 className="text-2xl font-bold text-blue-950">
+                <div className="mx-auto max-w-[1000px] py-12 text-lg px-6 space-y-6">
+                    <h2 className="lg:text-3xl text-xl font-bold text-blue-950 text-center">
                         Consistent, trouble-free lottery equipment delivers
                         greater ROI.
                     </h2>
-                    <div className="p-4 space-y-2">
+                    <div className="space-y-2">
                         <p>
                             Lotteries require consistent and flawless draw
                             results. As many lotteries and other draw games move
@@ -92,9 +93,9 @@ export default function App() {
                     </div>
                 </div>
 
-                <div className="p-9 bg-gray-200 mt-12 shadow rounded">
+                <div className="p-9 bg-gray-200 shadow rounded">
                     <div className="max-w-[1000px] mx-auto">
-                        <h2 className="text-2xl font-bold text-blue-950 mb-8 text-center ">
+                        <h2 className="lg:text-3xl text-xl font-bold text-blue-950 mb-8 text-center ">
                             Why do clients in 127 countries choose Smartplay
                             equipment?
                         </h2>
@@ -102,15 +103,14 @@ export default function App() {
                     </div>
                 </div>
 
-                <div className="bg-white py-12">
-                    <p className="mx-auto max-w-[1000px] text-3xl text-blue-950 text-center font-semibold">
+                <div className="bg-white py-12 lg:px-0 px-6">
+                    <p className="mx-auto max-w-[1000px] lg:text-3xl text-xl text-blue-950 text-center font-semibold">
                         We offer lottery machines to meet any requirement.
-                        <br />
                         Traditional gravity mix, air mix or digital draw systems
                     </p>
                 </div>
 
-                <div className="mx-auto max-w-[1300px] mt-10 p-8 relative">
+                <div className="mx-auto max-w-[1300px] lg:p-8 px-6 relative pb-5">
                     <FilterMenu
                         gameTypes={gameTypes}
                         features={features}
@@ -119,7 +119,7 @@ export default function App() {
                         handleSelectType={handleSelectType}
                         handleSelectFeature={handleSelectFeature}
                     />
-                    <div className="grid grid-cols-3 gap-14">
+                    <div className="grid lg:grid-cols-3 grid-cols-1 gap-14">
                         <AnimatePresence>
                             {getSelectedItems(selected).map(
                                 (lotteryMachine, index) => (
@@ -146,6 +146,8 @@ export default function App() {
                     </div>
                 </div>
             </div>
+
+            <Footer />
         </div>
     );
 }

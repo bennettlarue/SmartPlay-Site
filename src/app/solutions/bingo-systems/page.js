@@ -51,7 +51,7 @@ export default function App() {
             <Title text="Bingo Systems" />
             <div className="bg-white">
                 <div className="mx-auto lg:max-w-[1000px] max-w-[700px] py-12 text-lg px-6 lg:px-0">
-                    <div className="space-y-10">
+                    <div className="space-y-6">
                         <h2 className="lg:text-3xl text-xl font-semibold text-blue-950 text-center">
                             Highest quality parts and construction to meet the
                             demands of continuous operation

@@ -35,7 +35,7 @@ export function Accordions() {
         <>
             <Accordion open={open === 1} icon={<Icon id={1} open={open} />}>
                 <AccordionHeader
-                    className="font-semibold text-2xl border-b-gray-400 border-b-2"
+                    className="font-semibold text-xl border-b-gray-400 border-b-2"
                     onClick={() => handleOpen(1)}
                 >
                     Less Downtime. Less Risk. Higher ROI.
@@ -52,7 +52,7 @@ export function Accordions() {
             </Accordion>
             <Accordion open={open === 2} icon={<Icon id={2} open={open} />}>
                 <AccordionHeader
-                    className="font-semibold text-2xl border-b-gray-400 border-b-2"
+                    className="font-semibold text-xl border-b-gray-400 border-b-2"
                     onClick={() => handleOpen(2)}
                 >
                     Worldwide Customer Support
@@ -69,7 +69,7 @@ export function Accordions() {
             </Accordion>
             <Accordion open={open === 3} icon={<Icon id={3} open={open} />}>
                 <AccordionHeader
-                    className="font-semibold text-2xl border-b-gray-400 border-b-2"
+                    className="font-semibold text-xl border-b-gray-400 border-b-2"
                     onClick={() => handleOpen(3)}
                 >
                     Extended Warranty Packages
@@ -86,7 +86,7 @@ export function Accordions() {
             </Accordion>
             <Accordion open={open === 4} icon={<Icon id={4} open={open} />}>
                 <AccordionHeader
-                    className="font-semibold text-2xl border-b-gray-400 border-b-2"
+                    className="font-semibold text-xl border-b-gray-400 border-b-2"
                     onClick={() => handleOpen(4)}
                 >
                     Endless Customization

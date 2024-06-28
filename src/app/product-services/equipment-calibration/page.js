@@ -32,9 +32,9 @@ export default function App() {
 
             <Title text="Equipment Calibration" />
             <div className="bg-white">
-                <div className="mx-auto max-w-[1100px] py-20 text-lg grid grid-cols-1 md:grid-cols-3 gap-x-5 px-4">
+                <div className="mx-auto max-w-[1100px] py-12 text-lg grid grid-cols-1 md:grid-cols-3 gap-x-5 px-6">
                     <div className="col-span-2">
-                        <h2 className="text-3xl font-bold text-blue-950">
+                        <h2 className="lg:text-3xl text-2xl font-bold text-blue-950">
                             Lottery Ball Scale
                         </h2>
                         <p className="py-5">
@@ -45,7 +45,7 @@ export default function App() {
                             inside and out.
                         </p>
                         <div className="flex items-center">
-                            <ul className="grid grid-cols-2 shadow border rounded p-5 gap-x-5">
+                            <ul className="grid lg:grid-cols-2 grid-cols-1 gap-x-5">
                                 {lotteryScaleAttribs.map((attr, index) => (
                                     <li
                                         key={index}
@@ -60,17 +60,16 @@ export default function App() {
                             </ul>
                         </div>
                     </div>
-                    <div className="mt-8 md:mt-0">
+                    <div className="mt-8 md:mt-0 flex justify-center">
                         <img
                             src="https://smartplay.com/wp-content/uploads/2017/07/lottery-ball-scale-238x300.png"
                             alt="Ball"
-                            className="rounded shadow"
                         />
                     </div>
                 </div>
             </div>
             <div className="bg-gray-200">
-                <div className="mx-auto max-w-[1100px] py-20 text-lg grid grid-cols-1 md:grid-cols-2 items-center gap-x-10 px-4">
+                <div className="mx-auto max-w-[1100px] py-12 text-lg grid grid-cols-1 md:grid-cols-2 items-center gap-x-10 px-6">
                     <div>
                         <img
                             src="https://hxl550.n3cdn1.secureserver.net/wp-content/uploads/2022/07/DBVS-lottery-ball-weight-validation2.jpg"
@@ -79,7 +78,7 @@ export default function App() {
                         />
                     </div>
                     <div className="mt-8 md:mt-0">
-                        <h2 className="text-3xl font-bold text-blue-950">
+                        <h2 className="lg:text-3xl text-2xl font-bold text-blue-950">
                             Drawing Ball Validation System
                         </h2>
                         <p className="py-5">
@@ -102,9 +101,9 @@ export default function App() {
                 </div>
             </div>
             <div className="bg-white">
-                <div className="mx-auto max-w-[900px] py-20 text-lg grid grid-cols-1 md:grid-cols-2 items-center gap-x-10 px-4">
+                <div className="mx-auto max-w-[900px] py-12 text-lg grid grid-cols-1 md:grid-cols-2 items-center gap-x-10 px-6">
                     <div>
-                        <h2 className="text-3xl font-bold text-blue-950">
+                        <h2 className="lg:text-3xl text-2xl font-bold text-blue-950">
                             Lottery Ball Micrometer
                         </h2>
                         <p className="py-5">
@@ -112,17 +111,16 @@ export default function App() {
                             for accurate calibration of Drawing Balls.
                         </p>
                     </div>
-                    <div className="mt-8 md:mt-0">
+                    <div className="mt-8 md:mt-0 flex justify-center">
                         <img
                             src="https://smartplay.com/wp-content/uploads/2017/07/digital-lottery-ball-micrometer1-136x300.jpg"
                             alt="Ball"
-                            className="rounded shadow"
                         />
                     </div>
                 </div>
             </div>
             <div className="bg-gray-200">
-                <div className="mx-auto max-w-[1100px] py-20 text-lg grid grid-cols-1 md:grid-cols-2 items-center gap-x-10 px-4">
+                <div className="mx-auto max-w-[1100px] py-12 text-lg grid grid-cols-1 md:grid-cols-2 items-center gap-x-10 px-6">
                     <div>
                         <img
                             src="https://hxl550.n3cdn1.secureserver.net/wp-content/uploads/2022/07/Pass-thru-small.jpg"
@@ -131,7 +129,7 @@ export default function App() {
                         />
                     </div>
                     <div className="mt-8 md:mt-0">
-                        <h2 className="text-3xl font-bold text-blue-950">
+                        <h2 className="lg:text-3xl text-2xl font-bold text-blue-950">
                             Lottery Ball Pass-through Gauge
                         </h2>
                         <p className="py-5">

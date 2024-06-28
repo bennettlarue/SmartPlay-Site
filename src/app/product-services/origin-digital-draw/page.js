@@ -62,7 +62,7 @@ export default function App() {
 
             <Title text="Origin Digital Draw System" />
             <div className="bg-white">
-                <div className="mx-auto max-w-[1000px] pt-20 pb-12 text-lg px-4 md:px-8 lg:px-0">
+                <div className="mx-auto max-w-[1000px] pt-20 pb-12 text-lg px-6 md:px-8 lg:px-0">
                     <div className="space-y-10 max-[700px]:">
                         <img
                             src="https://smartplay.com/wp-content/uploads/2021/01/Origin-workstation.png"
@@ -70,7 +70,7 @@ export default function App() {
                             className="w-full h-full object-cover max-w-[400px] mx-auto"
                         />
 
-                        <p className="text-lg text-center px-2 md:px-10">
+                        <p className="text-lg md:px-10">
                             The Origin® Digital Lottery Draw System is an
                             alternative to mechanical lottery ball systems. Many
                             lotteries choose to run entirely with a digital
@@ -86,8 +86,8 @@ export default function App() {
                 </div>
             </div>
             <div className="bg-gray-200 py-12">
-                <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto max-w-[1000px] gap-x-6 items-center px-4 md:px-8 lg:px-0 lg:space-y-0 space-y-7">
-                    <div className="space-y-6 bg-gray-200 p-4 text-blue-950 text-lg col-span-1 max-w-[700px] mx-auto">
+                <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto max-w-[1000px] gap-x-6 items-center px-6 md:px-8 lg:px-0 lg:space-y-0 space-y-6">
+                    <div className="space-y-6 bg-gray-200 text-blue-950 text-lg col-span-1 max-w-[700px] mx-auto">
                         <h2 className="font-semibold text-xl">
                             Mimics a traditional draw process
                         </h2>

@@ -35,14 +35,14 @@ export default function App() {
             </div>
             <Title text="Custom Design Fabrication" />
             <div className="bg-white">
-                <div className="mx-auto lg:max-w-[1000px] max-w-[700px] pt-20 pb-12 text-lg px-4 lg:px-0">
-                    <h2 className="text-3xl font-semibold text-blue-950 text-center">
+                <div className="mx-auto lg:max-w-[1000px] max-w-[700px] py-12 text-lg px-6 lg:px-0">
+                    <h2 className="lg:text-3xl text-xl font-semibold text-blue-950 text-center">
                         A unique combination of programmers, engineers,
                         carpenters, and craftsmen to deliver just about anything
                         you can dream up.
                     </h2>
 
-                    <div className="py-12 text-xl space-y-8">
+                    <div className=" pt-10 text-xl space-y-6">
                         <p>
                             Have a big idea for your next game, event or
                             promotion? Want to design a game device for your

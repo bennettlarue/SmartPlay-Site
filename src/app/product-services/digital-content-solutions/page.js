@@ -3,25 +3,8 @@
 import { ArrowButton } from "@/app/components/ArrowButton";
 import { Footer } from "@/app/components/Footer";
 import { Nav } from "@/app/components/Nav";
-import { Carousel } from "@material-tailwind/react";
 import { Title } from "@/app/components/products/Title";
-import { motion } from "framer-motion";
 import YouTubeEmbed from "@/app/components/YouTubeEmbed";
-
-const images = [
-    "/images/casino-promotions-106.jpg",
-    "/images/rocknwheel1.jpg",
-    "https://smartplay.com/wp-content/uploads/2020/02/michigan-lottery.jpg",
-    "https://smartplay.com/wp-content/uploads/2017/07/custom-games-vault-ireland.jpg",
-    "https://smartplay.com/wp-content/uploads/2017/07/custom-drawing-drum.jpg",
-    "https://smartplay.com/wp-content/uploads/2017/07/custom-games-tic-tac-toe1.jpg",
-    "https://smartplay.com/wp-content/uploads/2017/07/custom-games-prize-vault2.jpg",
-    "https://smartplay.com/wp-content/uploads/2017/07/custom-games-ny-lottery-display.jpg",
-    "https://smartplay.com/wp-content/uploads/2017/07/custom-games-ireland.jpg",
-    "https://smartplay.com/wp-content/uploads/2017/07/custom-games-game-cube.jpg",
-    "https://smartplay.com/wp-content/uploads/2017/07/custom-games-deleware-lottery.jpg",
-    "https://smartplay.com/wp-content/uploads/2017/07/custom-games-coffre-fort.jpg",
-];
 
 const checks = [
     "Show intros and title animation",
@@ -50,23 +33,22 @@ export default function App() {
 
             <Title text="Digital Content Solutions" />
             <div className="bg-white">
-                <div className="mx-auto max-w-[1100px] pt-20 pb-12 text-lg px-4 md:px-8 lg:px-0">
-                    <div className="space-y-10 max-[700px]:">
-                        <h2 className="text-3xl font-semibold text-blue-950 text-center">
-                            Make your digital content a reality.
-                            <br />
-                            Take your digital draw to the next level with
-                            life-like computer-generated content.
+                <div className="mx-auto max-w-[1100px] py-12 text-lg px-6 md:px-8 lg:px-0">
+                    <div className="space-y-6">
+                        <h2 className="lg:text-3xl text-xl font-semibold text-blue-950 text-center">
+                            Make your digital content a reality. Take your
+                            digital draw to the next level with life-like
+                            computer-generated content.
                         </h2>
                         <div className="space-y-4">
-                            <p className="text-lg text-center px-2 md:px-10">
+                            <p className="text-lg md:px-10">
                                 Your objective is to bring in more players,
                                 correct? Why not deliver content that attracts
                                 and engages more players? Computer-generated
                                 content can differentiate your draw and provide
                                 new ways to stand out from competitors.
                             </p>
-                            <p className="text-lg text-center px-2 md:px-10">
+                            <p className="text-lg md:px-10">
                                 Of course, with computer animation, the sky’s
                                 the limit on what can be done. Your lottery draw
                                 sequence could be completely realistic,
@@ -95,11 +77,11 @@ export default function App() {
                 </div>
             </div>
             <div className="bg-gray-200 py-12">
-                <div className="mx-auto max-w-[1000px] items-center px-4 md:px-8 lg:px-0 space-y-6">
+                <div className="mx-auto max-w-[1000px] items-center px-6 md:px-8 lg:px-0 space-y-10">
                     <h2 className="text-2xl font-semibold text-blue-950">
                         Call on the Smartplay creative team to deliver:
                     </h2>
-                    <ul className="bg-gray-200 text-blue-950 font-semibold grid grid-cols-1 lg:grid-cols-2 mx-auto gap-6">
+                    <ul className="bg-gray-200 font-medium grid grid-cols-1 lg:grid-cols-2 mx-auto gap-6">
                         {checks.map((check, index) => (
                             <li key={index} className="flex space-x-2 text-xl">
                                 <p className="text-xl">•</p>
@@ -111,7 +93,7 @@ export default function App() {
             </div>
             <div className="bg-blue-950 py-12">
                 <div className="lg:flex lg:space-y-0 space-y-5 mx-auto max-w-[1100px] gap-x-6 items-center px-4 md:px-8 lg:px-0 w-fit">
-                    <div className="text-xl font-semibold text-white max-w-[700px]">
+                    <div className="text-xl font-semibold text-white max-w-[800px]">
                         We can work with your requirements to deliver content in
                         a format that works with any system. Contact Smartplay
                         to discuss your digital animation project.
