@@ -28,15 +28,15 @@ export default function App() {
 
             <Title text="Raffles" />
             <div className="bg-white">
-                <div className="mx-auto max-w-[1000px] pt-20 pb-12 text-lg px-4 md:px-8 lg:px-0">
+                <div className="mx-auto max-w-[1000px] py-12 text-lg px-4 md:px-8 lg:px-0">
                     <div className="space-y-10 max-[700px]:">
-                        <h2 className="text-3xl font-semibold text-blue-950 text-center">
+                        <h2 className="lg:text-3xl text-xl font-semibold text-blue-950 text-center">
                             Raffles are very popular worldwide for fundraising
                             as well as offering great prizes. Smartplay offers
                             several options for selecting raffle winners
                         </h2>
 
-                        <p className="text-lg text-center px-2 md:px-10">
+                        <p className="text-lg px-2 md:px-10">
                             In some countries, raffles can be established to
                             offer prizes such as cars, motorbikes and even
                             houses. In the United States, raffles are frequently
@@ -50,8 +50,8 @@ export default function App() {
                 </div>
             </div>
             <div className="bg-gray-200 py-12">
-                <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto max-w-[1000px] gap-x-6 items-center px-4 md:px-8 lg:px-0">
-                    <div className="space-y-6 p-4">
+                <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto max-w-[1000px] gap-x-6 items-center px-6 md:px-8 lg:px-0">
+                    <div className="space-y-6 pb-10">
                         <p>
                             Of course if you want more drama and excitement, you
                             may consider using a lottery-style ball machine or
@@ -78,13 +78,13 @@ export default function App() {
                 </div>
             </div>
             <div className="bg-white py-12">
-                <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto max-w-[1100px] gap-x-6 items-center px-4 md:px-8 lg:px-0">
+                <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto max-w-[1100px] gap-x-6 items-center px-6 md:px-8 lg:px-0">
                     <img
                         src="https://smartplay.com/wp-content/uploads/2020/11/blizzard-entertainment-lottery-draw.jpg"
                         alt="Online Lottery"
-                        className="rounded shadow mb-4 lg:mb-0"
+                        className="rounded shadow mb-4 lg:mb-0 lg:px-0"
                     />
-                    <div className="space-y-6 p-4">
+                    <div className="space-y-6">
                         <p>
                             A more manageable approach with a traditional ball
                             machine is using a multi-chamber machine whereby
@@ -111,8 +111,8 @@ export default function App() {
 
             <div className="bg-gray-200 py-12">
                 <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto max-w-[1100px] gap-x-6 items-center px-4 md:px-8 lg:px-0">
-                    <div className="space-y-6 p-4">
-                        <h2 className="text-3xl font-semibold text-blue-950">
+                    <div className="space-y-6">
+                        <h2 className="lg:text-3xl text-xl font-semibold text-blue-950">
                             Custom Designed Raffle Machines
                         </h2>
                         <p>
@@ -129,19 +129,8 @@ export default function App() {
                     <img
                         src="https://smartplay.com/wp-content/uploads/2017/06/nj-million-dollar-replay-drawing-drum.jpg"
                         alt="Online Lottery"
-                        className="rounded shadow mb-4 lg:mb-0"
+                        className="rounded shadow mb-4 lg:mb-0 lg:mt-0 mt-5"
                     />
-                </div>
-            </div>
-
-            <div className="bg-white py-12">
-                <div className="mx-auto max-w-[1100px] items-center space-y-5 px-4 md:px-8 lg:px-0">
-                    <h2 className="text-3xl font-semibold text-blue-950 text-center">
-                        Get The Ball Rolling. Contact Us To Discuss Your Raffle
-                    </h2>
-                    <div className="flex justify-center">
-                        <ArrowButton text="Contact Us" />
-                    </div>
                 </div>
             </div>
 

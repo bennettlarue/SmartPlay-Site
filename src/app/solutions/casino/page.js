@@ -43,20 +43,23 @@ export default function App() {
 
             <Title text="Casino Gaming" />
             <div className="bg-white">
-                <div className="mx-auto max-w-[1000px] pt-20 pb-12 text-lg px-4 md:px-8 lg:px-0">
-                    <div className="space-y-10 max-[700px]:">
-                        <h2 className="text-3xl font-semibold text-blue-950 text-center">
+                <div className="mx-auto max-w-[1000px] py-12 text-lg px-6 md:px-8 lg:px-0">
+                    <div className="space-y-6">
+                        <h2 className="lg:text-3xl text-xl font-semibold text-blue-950 text-center">
                             Generate Excitement and Coin-In by Bringing
                             Lottery-Style Promotions to your Casino
                         </h2>
 
-                        <p className="text-lg text-center px-2 md:px-10">
+                        <p className="text-lg md:px-10">
                             Smartplay has also designed dozens of custom games
                             for casinos and lotteries for both promotional and
                             wagering use. Many creative promotions can be run
                             using a single lottery machine. By changing the ball
                             values and colors, you can create a number of
                             different promotions using a single lottery machine.
+                        </p>
+
+                        <p className="text-lg md:px-10">
                             Use a lottery machine as a fresh alternative to
                             traditional game boards. Ball values can be captured
                             automatically via electronic sensor and sent
@@ -72,7 +75,7 @@ export default function App() {
             <div className="bg-gray-200 py-12">
                 <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto max-w-[1000px] gap-x-6 items-center px-4 md:px-8 lg:px-0">
                     <ul className="space-y-6 bg-gray-200 p-4 text-blue-950 font-semibold col-span-1 max-w-[700px] mx-auto">
-                        <li className="text-3xl font-bold">
+                        <li className="lg:text-3xl text-xl font-bold">
                             Casino Services Include:
                         </li>
                         {checks.map((check, index) => (
@@ -83,7 +86,7 @@ export default function App() {
                         ))}
                     </ul>
 
-                    <div className="mb-8 md:mb-0">
+                    <div className="lg:mt-0 mt-6 mb-8 md:mb-0">
                         <Carousel
                             className="rounded shadow max-h-[400px]"
                             loop={true}
@@ -134,18 +137,6 @@ export default function App() {
                             />
                         </motion.div>
                     ))}
-                </div>
-            </div>
-
-            <div className="bg-gray-200 py-12">
-                <div className="mx-auto max-w-[1100px] items-center space-y-5 px-4 md:px-8 lg:px-0">
-                    <h2 className="text-3xl font-semibold text-blue-950 text-center">
-                        Get The Ball Rolling. Contact Us To Discuss Your Casino
-                        Promotion
-                    </h2>
-                    <div className="flex justify-center">
-                        <ArrowButton text="Contact Us" />
-                    </div>
                 </div>
             </div>
 

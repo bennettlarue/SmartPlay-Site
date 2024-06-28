@@ -43,14 +43,14 @@ export default function App() {
 
             <Title text="Promotions" />
             <div className="bg-white">
-                <div className="mx-auto max-w-[1000px] pt-20 pb-12 text-lg px-4 md:px-8 lg:px-0">
-                    <div className="space-y-10 max-[700px]:">
-                        <h2 className="text-3xl font-semibold text-blue-950 text-center">
+                <div className="mx-auto max-w-[1000px] py-12 text-lg px-6 md:px-8 lg:px-0">
+                    <div className="space-y-6">
+                        <h2 className="lg:text-3xl text-xl font-semibold text-blue-950 text-center">
                             Got a big idea for your next promotion, trade show
                             or special event? We can help you bring it to life.
                         </h2>
 
-                        <p className="text-lg text-center px-2 md:px-10">
+                        <p className="text-lg">
                             We have designed game and promotion concepts for
                             clients worldwide. Our capabilities include custom
                             design, electronics, sensors and integration of
@@ -60,8 +60,8 @@ export default function App() {
                 </div>
             </div>
             <div className="bg-gray-200 py-12">
-                <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto max-w-[1000px] gap-x-6 items-center px-4 md:px-8 lg:px-0 lg:space-y-0 space-y-7">
-                    <ul className="space-y-6 bg-gray-200 p-4 text-blue-950 font-semibold col-span-1 max-w-[700px] mx-auto">
+                <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto max-w-[1000px] gap-x-6 items-center px-6 md:px-8 lg:px-0 lg:space-y-0 space-y-7">
+                    <ul className="space-y-6 bg-gray-200 text-blue-950 font-semibold col-span-1 max-w-[700px] mx-auto">
                         {checks.map((check, index) => (
                             <li key={index} className="flex space-x-2 text-xl">
                                 <p className="text-xl">•</p>

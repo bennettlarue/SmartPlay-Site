@@ -24,13 +24,13 @@ export default function About() {
             <Title />
             <div className="bg-white">
                 <div className="max-w-[1000px] mx-auto text-center space-y-8 py-12 px-3 sm:px-6 lg:px-8">
-                    <p className="text-3xl font-semibold text-blue-950">
+                    <p className="lg:text-3xl text-xl font-semibold text-blue-950">
                         With customer trust and your revenue on the line,
                         Smartplay’s high-quality drawing equipment and worldwide
                         support mean less risk and greater return on your
                         investment.
                     </p>
-                    <p className="text-xl">
+                    <p className="lg:text-xl text-lg">
                         Smartplay International, Inc. designs, manufactures, and
                         services{" "}
                         <span className="font-bold">
@@ -46,7 +46,7 @@ export default function About() {
             <CustomerService />
             <div className="bg-white">
                 <div className="max-w-[1200px] mx-auto text-center space-y-8 py-12 px-4 sm:px-6 lg:px-8">
-                    <div className="text-3xl font-semibold text-blue-950">
+                    <div className="lg:text-3xl text-xl font-semibold text-blue-950">
                         <div className="flex justify-center">
                             <FadeInText
                                 text="Millions in winnings and the trust of your customers are on the line."

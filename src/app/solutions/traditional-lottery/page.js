@@ -1,10 +1,7 @@
 "use client";
 
-import { ArrowButton } from "@/app/components/ArrowButton";
 import { Footer } from "@/app/components/Footer";
 import { Nav } from "@/app/components/Nav";
-import VimeoEmbed from "@/app/components/VimeoEmbed";
-import YouTubeEmbed from "@/app/components/YouTubeEmbed";
 import { Title } from "@/app/components/products/Title";
 
 const slides = [
@@ -40,14 +37,14 @@ export default function App() {
 
             <Title text="Traditional Lottery" />
             <div className="bg-white">
-                <div className="mx-auto max-w-[1100px] pt-20 pb-12 text-lg grid">
-                    <div className="space-y-10">
-                        <h2 className="text-3xl font-semibold text-blue-950 text-center">
+                <div className="mx-auto max-w-[1100px] pt-12 pb-12 text-lg grid px-6">
+                    <div className="space-y-10 ">
+                        <h2 className="lg:text-3xl text-xl font-semibold text-blue-950 text-center lg:px-0 ">
                             Since 1993, Smartplay has delivered traditional and
                             digital draw systems to over 400 lotteries in 114
                             countries.
                         </h2>
-                        <p className="text-lg text-center px-10">
+                        <p className="text-lg ">
                             Many of our lottery customers use both mechanical
                             and digital systems for their games. Our focus
                             continues to be delivering the highest quality and
@@ -57,7 +54,7 @@ export default function App() {
                 </div>
             </div>
             <div className="bg-gray-200 py-12">
-                <div className="grid grid-cols-3 mx-auto max-w-[1100px] gap-x-6">
+                <div className="grid lg:grid-cols-3 grid-cols-1 mx-auto max-w-[1100px] gap-x-6 lg:px-0 px-4 lg:space-y-0 space-y-5">
                     {slides.map(({ img, title, desc }, index) => (
                         <div key={index} className=" bg-white rounded shadow">
                             <div className="w-full h-64 overflow-hidden">

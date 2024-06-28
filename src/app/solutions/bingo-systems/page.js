@@ -50,9 +50,9 @@ export default function App() {
 
             <Title text="Bingo Systems" />
             <div className="bg-white">
-                <div className="mx-auto lg:max-w-[1000px] max-w-[700px]  pt-20 pb-12 text-lg px-4 lg:px-0">
+                <div className="mx-auto lg:max-w-[1000px] max-w-[700px] py-12 text-lg px-6 lg:px-0">
                     <div className="space-y-10">
-                        <h2 className="text-3xl font-semibold text-blue-950 text-center">
+                        <h2 className="lg:text-3xl text-xl font-semibold text-blue-950 text-center">
                             Highest quality parts and construction to meet the
                             demands of continuous operation
                         </h2>
@@ -71,7 +71,7 @@ export default function App() {
             </div>
             <div className="bg-gray-200 py-12">
                 <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto max-w-[1000px] gap-x-6 lg:space-y-0 space-y-6">
-                    <ul className="space-y-6 bg-gray-200 p-4 text-blue-950 font-semibold col-span-1 max-w-[700px] mx-auto">
+                    <ul className="space-y-6 bg-gray-200 p-4 px-6 text-blue-950 font-semibold col-span-1 max-w-[700px] mx-auto">
                         {checks.map((check, index) => (
                             <li key={index} className="flex space-x-2 text-lg">
                                 <p className="text-xl">•</p>
@@ -102,7 +102,7 @@ export default function App() {
                 </div>
             </div>
             <div className="bg-white py-12">
-                <h2 className="text-2xl font-semibold text-blue-950 text-center mb-12 px-6">
+                <h2 className="lg:text-2xl text-xl font-semibold text-blue-950 text-center mb-12 px-6">
                     Standard Bingo and Keno Models Used Around the World
                 </h2>
                 <div className="grid grid-cols-1 lg:grid-cols-3 mx-auto w-fit gap-x-6 gap-y-8">

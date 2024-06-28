@@ -26,14 +26,14 @@ export default function App() {
 
             <Title text="Online Lottery" />
             <div className="bg-white">
-                <div className="mx-auto lg:max-w-[1000px] max-w-[700px] pt-20 pb-12 text-lg px-4 lg:px-0">
+                <div className="mx-auto lg:max-w-[1000px] max-w-[700px] py-12 text-lg px-6 lg:px-0">
                     <div className="space-y-10">
-                        <h2 className="text-3xl font-semibold text-blue-950 text-center">
+                        <h2 className="lg:text-3xl text-xl font-semibold text-blue-950 text-center">
                             Successful and hassle-free online lotteries require
                             the highest-quality equipment and the latest
                             technology.
                         </h2>
-                        <p className="text-lg text-center">
+                        <p className="text-lg">
                             Online lotteries that operate continuously require
                             high-quality equipment that can operate flawlessly
                             under frequent use. You also need the proper support
