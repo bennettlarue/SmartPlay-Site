@@ -23,16 +23,26 @@ const solutionsLinks = [
 const products = [
     "Lottery Drawing Machines",
     "Lottery Drawing Balls",
+    "Origin Digital Draws",
     "Equipment Calibration",
     "Custom Games",
     "Prize Wheels",
+    "Digital Content Solutions",
+    "Lottery Studio Solutions",
+    "Lottery Machine Rental",
+    "Lottery Draw Software",
 ];
 const productsLinks = [
     "/product-services/lottery-drawing-machines",
     "/product-services/lottery-drawing-balls",
+    "/product-services/origin-digital-draw",
     "/product-services/equipment-calibration",
     "/product-services/custom-design-fabrication",
     "/product-services/prize-wheels",
+    "#",
+    "#",
+    "#",
+    "#",
 ];
 
 export const Nav = () => {
@@ -70,7 +80,7 @@ export const Nav = () => {
                         />
                     </div>
                 </Link>
-                <div className="hidden md:flex space-x-4">
+                <div className="hidden md:flex space-x-4 mr-5">
                     <Link className="relative" href="/why-smartplay">
                         <motion.button
                             whileTap={{ scale: 0.95 }}

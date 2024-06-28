@@ -21,11 +21,12 @@ const variants = {
 
 export default function Memberships() {
     return (
-        <div>
+        <div className="w-[200px] h-[120px]">
             {images.map((image, i) => (
                 <motion.img
                     key={image}
                     src={image}
+                    width={200}
                     custom={i}
                     variants={variants}
                     initial="hidden"

@@ -17,7 +17,7 @@ export const Menu = ({ open, items, links }) => {
 
     return (
         <motion.ul
-            className="border bg-white w-[200px] p-4 rounded space-y-4 shadow font-semibold"
+            className="border bg-white w-[270px] p-4 rounded space-y-4 shadow font-semibold"
             initial="hidden"
             animate={open ? "show" : "hidden"}
             variants={{

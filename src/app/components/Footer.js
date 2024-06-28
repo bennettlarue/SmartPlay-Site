@@ -3,7 +3,7 @@ import Memberships from "./Memberships";
 
 export const Footer = () => {
     return (
-        <div className="bg-gray-200 px-4 py-5 border-t-[9px] border-t-white">
+        <div className="bg-gray-300 px-4 py-5">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
                 <div className="p-5 flex items-center justify-center">
                     <div>
@@ -66,7 +66,9 @@ export const Footer = () => {
                     <h1 className="text-blue-950 font-bold text-lg mb-3 text-center lg:text-left">
                         Memberships
                     </h1>
-                    <Memberships />
+                    <div className="flex justify-center lg:block">
+                        <Memberships />
+                    </div>
                 </div>
             </div>
         </div>
