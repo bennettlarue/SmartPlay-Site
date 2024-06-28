@@ -80,7 +80,7 @@ export const Nav = () => {
                         />
                     </div>
                 </Link>
-                <div className="hidden md:flex space-x-4 mr-5">
+                <div className="hidden lg:flex space-x-4 mr-5">
                     <Link className="relative" href="/why-smartplay">
                         <motion.button
                             whileTap={{ scale: 0.95 }}
@@ -179,7 +179,7 @@ export const Nav = () => {
                         </motion.button>
                     </Link>
                 </div>
-                <div className="md:hidden">
+                <div className="lg:hidden">
                     <button
                         onClick={() => setSidebarOpen(!sidebarOpen)}
                         className="text-blue-950 pr-3"
@@ -202,7 +202,7 @@ export const Nav = () => {
                 </div>
             </div>
             {sidebarOpen && (
-                <div className="md:hidden bg-white fixed top-0 left-0 w-3/4 h-full z-50 shadow-lg p-4 border-r">
+                <div className="lg:hidden bg-white fixed top-0 left-0 w-3/4 h-full z-50 shadow-lg p-4 border-r">
                     <button
                         onClick={() => setSidebarOpen(false)}
                         className="absolute top-4 right-4 text-gray-800"

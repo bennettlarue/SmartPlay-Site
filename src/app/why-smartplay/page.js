@@ -18,13 +18,12 @@ export default function About() {
                     alt="Customer Service"
                     className="w-full h-screen object-cover translate-y-10"
                 />
-                <div className="absolute top-0 left-0 w-full h-full bg-white opacity-50"></div>{" "}
-                {/* Overlay */}
+                <div className="absolute top-0 left-0 w-full h-full bg-white opacity-50"></div>
             </div>
             <Nav />
             <Title />
             <div className="bg-white">
-                <div className="w-[1100px] mx-auto text-center space-y-8 py-24">
+                <div className="max-w-[1000px] mx-auto text-center space-y-8 py-12 px-3 sm:px-6 lg:px-8">
                     <p className="text-3xl font-semibold text-blue-950">
                         With customer trust and your revenue on the line,
                         Smartplay’s high-quality drawing equipment and worldwide
@@ -37,7 +36,7 @@ export default function About() {
                         <span className="font-bold">
                             mechanical lottery drawing machines and computerized
                             digital lottery (RNG) drawing systems.
-                        </span>
+                        </span>{" "}
                         Founded in 1993, Smartplay has served over 450 customers
                         in 126 countries across lottery, gaming, trade show and
                         media industries.
@@ -46,7 +45,7 @@ export default function About() {
             </div>
             <CustomerService />
             <div className="bg-white">
-                <div className="w-[1100px] mx-auto text-center space-y-8 py-24">
+                <div className="max-w-[1200px] mx-auto text-center space-y-8 py-12 px-4 sm:px-6 lg:px-8">
                     <div className="text-3xl font-semibold text-blue-950">
                         <div className="flex justify-center">
                             <FadeInText
@@ -62,11 +61,11 @@ export default function About() {
                         </div>
                     </div>
                     <p className="text-xl font-semibold">
-                        Here are a few reasons why customers worldwide —<br />
+                        Here are a few reasons why customers worldwide —
                         including over 100 customers in Southeast Asia — work
                         with Smartplay:
                     </p>
-                    <div className=" grid grid-cols-2 gap-8 gap-y-12">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 gap-y-12">
                         <InfoCard
                             direction="r"
                             header="Product Reliability"
@@ -92,33 +91,33 @@ export default function About() {
                 <div>
                     <Iso />
                 </div>
-                <div className="w-[1200px] mx-auto py-16">
+                <div className="max-w-[1200px] mx-auto py-16 lg:px-0 p-5">
                     <h2 className="text-3xl font-semibold text-blue-950">
                         Stop by for a Tour!
                     </h2>
-                    <div className="flex justify-center space-x-12 mt-5">
-                        <div className="w-1/2 space-y-7">
-                            <p className="text-lg">
-                                Smartplay is conveniently based in Burlington
-                                County New Jersey, just outside Philadelphia,
-                                PA. This strategic location offers access to
-                                several of our country’s busiest airports. All
-                                equipment and development takes place in this
-                                25,000-square foot manufacturing facility which
-                                houses technology development, machine
-                                fabrication, and ball printing divisions.
-                            </p>
-                            <img
-                                className="rounded shadow"
-                                src="https://hxl550.n3cdn1.secureserver.net/wp-content/uploads/2022/06/smartplay-building-1000px.gif?time=1717187795"
-                            />
-                        </div>
-                        <div className="w-1/2">
+                    <div className="lg:grid grid-cols-2 grid-rows-2 justify-center items-center gap-x-5 mt-5">
+                        <p className="text-lg">
+                            Smartplay is conveniently based in Burlington County
+                            New Jersey, just outside Philadelphia, PA. This
+                            strategic location offers access to several of our
+                            country’s busiest airports. All equipment and
+                            development takes place in this 25,000-square foot
+                            manufacturing facility which houses technology
+                            development, machine fabrication, and ball printing
+                            divisions.
+                        </p>
+
+                        <div className="lg:mt-0 mt-5 row-span-2 col-span-1">
                             <img
                                 className="rounded shadow"
                                 src="https://hxl550.n3cdn1.secureserver.net/wp-content/uploads/2022/06/smartplay-map.png"
                             />
                         </div>
+
+                        <img
+                            className="rounded shadow lg:mt-0 mt-7"
+                            src="https://hxl550.n3cdn1.secureserver.net/wp-content/uploads/2022/06/smartplay-building-1000px.gif?time=1717187795"
+                        />
                     </div>
                 </div>
             </div>
