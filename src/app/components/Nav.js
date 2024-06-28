@@ -39,10 +39,10 @@ const productsLinks = [
     "/product-services/equipment-calibration",
     "/product-services/custom-design-fabrication",
     "/product-services/prize-wheels",
-    "#",
-    "#",
-    "#",
-    "#",
+    "/product-services/digital-content-solutions",
+    "/product-services/lottery-draw-studio-solutions",
+    "/product-services/lottery-machine-rental",
+    "/product-services/solution-lottery-draw-management",
 ];
 
 export const Nav = () => {
