@@ -50,9 +50,9 @@ export default function App() {
 
             <Title text="Lottery Draw Studio Solutions" />
             <div className="bg-white">
-                <div className="mx-auto max-w-[1100px] pt-20 pb-12 text-lg px-4 md:px-8 lg:px-0">
+                <div className="mx-auto max-w-[1100px] py-12 text-lg px-4 md:px-8 lg:px-0">
                     <div className="space-y-10 max-[700px]:">
-                        <h2 className="text-3xl font-semibold text-blue-950 text-center">
+                        <h2 className="lg:text-3xl text-xl font-semibold text-blue-950 text-center">
                             Let us set up the studio while you continue to focus
                             on your business
                         </h2>
@@ -79,11 +79,11 @@ export default function App() {
                 </div>
             </div>
             <div className="bg-gray-200 py-12">
-                <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto max-w-[1100px] gap-x-6 px-4 md:px-8 lg:px-0 lg:space-y-0 space-y-7">
+                <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto max-w-[1100px] gap-x-6 px-4 md:px-8 lg:px-0 lg:gap-5 lg:space-y-0 space-y-2">
                     {checks.map((check, index) => (
                         <div
                             key={index}
-                            className="flex space-x-2 text-xl p-2 font-medium text-blue-950"
+                            className="flex space-x-2 lg:text-lg p-2 font-medium text-blue-950"
                         >
                             <p className="text-xl">•</p>
                             <p>{check}</p>
@@ -94,7 +94,7 @@ export default function App() {
             <div className="bg-white py-12">
                 <div className="grid grid-cols-1 lg:grid-cols-3 mx-auto max-w-[1000px] gap-x-6 items-center px-4 md:px-8 lg:px-0">
                     <div className="space-y-3 p-4 col-span-2">
-                        <h2 className="text-2xl font-semibold text-blue-950">
+                        <h2 className="text-xl font-semibold text-blue-950">
                             Meet Michael DeCheser
                         </h2>
                         <p className="text-lg">

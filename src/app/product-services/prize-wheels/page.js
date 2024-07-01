@@ -29,13 +29,13 @@ export default function App() {
 
             <Title text="Prize Wheels" />
             <div className="bg-white">
-                <div className="mx-auto max-w-[1100px] pt-20 text-lg">
-                    <div className="space-y-10">
-                        <h2 className="text-3xl font-semibold text-blue-950 text-center">
+                <div className="mx-auto max-w-[1100px] text-lg px-6 py-12">
+                    <div className="space-y-6 ">
+                        <h2 className="lg:text-3xl text-xl font-semibold text-blue-950 text-center">
                             Custom Prize Wheel Design and Fabrication for
                             Lottery, Gaming, and Promotions
                         </h2>
-                        <p className="text-lg text-center px-10">
+                        <p className="text-lg">
                             Smartplay has designed and manufactured custom prize
                             wheels for dozens of clients worldwide. We
                             understand the lottery, gaming and television
@@ -47,9 +47,9 @@ export default function App() {
                         </p>
                     </div>
                 </div>
-                <div className=" bg-gray-200 py-6 mt-12">
-                    <div className="grid grid-cols-2 col-span-2 items-center gap-x-5 mx-auto max-w-[1100px]">
-                        <ul className="space-y-6 bg-gray-200 p-4 text-blue-950 font-semibold">
+                <div className=" bg-gray-200 py-6 mt-12 px-6">
+                    <div className="grid lg:grid-cols-2 grid-cols-1 col-span-2 items-center gap-x-5 mx-auto max-w-[1100px]">
+                        <ul className="space-y-6 bg-gray-200 text-blue-950 font-semibold lg:pb-0 pb-6">
                             {checks.map((check, index) => (
                                 <li
                                     key={index}
@@ -66,8 +66,8 @@ export default function App() {
                     </div>
                 </div>
             </div>
-            <div className="bg-white py-16">
-                <div className="grid grid-cols-2 col-span-2 items-center gap-x-16 mx-auto max-w-[1100px]">
+            <div className="bg-white py-16 px-6">
+                <div className="grid lg:grid-cols-2 grid-cols-1 col-span-2 items-center gap-x-16 mx-auto max-w-[1100px] space-y-10">
                     <YouTubeEmbed videoId="ws9RFXmeCb4" />
                     <VimeoEmbed videoId="227908438" />
                 </div>

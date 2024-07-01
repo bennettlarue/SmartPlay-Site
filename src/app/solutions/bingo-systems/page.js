@@ -56,7 +56,7 @@ export default function App() {
                             Highest quality parts and construction to meet the
                             demands of continuous operation
                         </h2>
-                        <p className="text-lg text-center">
+                        <p className="text-lg">
                             Bingo and keno games are popular throughout the
                             world. Both game styles require all balls to be
                             displayed one after the other. Smartplay has several

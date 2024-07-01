@@ -65,14 +65,14 @@ export default function App() {
 
             <Title text="Solution System - Lottery Draw Software" />
             <div className="bg-white">
-                <div className="mx-auto max-w-[1000px] pt-20 pb-12 text-lg px-4 md:px-8 lg:px-0">
+                <div className="mx-auto max-w-[1000px] pt-20 pb-12 text-lg px-6 md:px-8 lg:px-0">
                     <div className="space-y-10 max-[700px]:">
-                        <h2 className="text-3xl font-semibold text-blue-950 text-center">
+                        <h2 className="lg:text-3xl text-2xl font-semibold text-blue-950 text-center">
                             Real-time winning number identification and remote
                             draw machine control
                         </h2>
 
-                        <p className="text-lg text-center px-2 md:px-10">
+                        <p className="text-lg md:px-10">
                             Get the best of both worlds. Smartplay’s Solution
                             System™ fuses the excitement of the traditional draw
                             with automation and efficiency of a digital draw.
@@ -104,13 +104,15 @@ export default function App() {
             </div>
 
             <div className="bg-white py-12">
-                <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto max-w-[1200px] gap-x-6 items-center px-4 md:px-8 lg:px-0 lg:space-y-0 space-y-7">
+                <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto max-w-[1200px] gap-x-6 items-center px-6 md:px-8 lg:px-0 lg:space-y-0 space-y-7">
                     <div className="mb-8 md:mb-0 flex justify-center">
                         <VimeoEmbed videoId="103863141" />
                     </div>
-                    <ul className="space-y-6 p-4 text-blue-950 font-semibold col-span-1 max-w-[700px] mx-auto">
+                    <ul className="space-y-6 text-blue-950 font-semibold col-span-1 max-w-[700px] mx-auto">
                         <li>
-                            <h2 className="text-2xl">Standard Features</h2>
+                            <h2 className="lg:text-3xl text-xl">
+                                Standard Features
+                            </h2>
                         </li>
                         {standardFeatures.map((check, index) => (
                             <li key={index} className="flex space-x-2 text-lg">
@@ -122,12 +124,12 @@ export default function App() {
                 </div>
             </div>
             <div className="bg-gray-200 py-12">
-                <div className="mx-auto max-w-[1200px] items-center px-4 md:px-8 lg:px-0 lg:space-y-0 space-y-7">
-                    <h2 className="text-3xl font-semibold text-blue-950 p-4">
+                <div className="mx-auto max-w-[1200px] items-center px-6 md:px-8 lg:px-0 lg:space-y-0 space-y-7">
+                    <h2 className="lg:text-3xl text-xl font-semibold text-blue-950 mb-8">
                         {" "}
                         Add Custom Features at Any Time
                     </h2>
-                    <ul className="p-4 text-blue-950 font-semibold col-span-1 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+                    <ul className=" text-blue-950 font-semibold col-span-1 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
                         {customFeatures.map((check, index) => (
                             <li key={index} className="flex space-x-2 text-lg">
                                 <p className="text-xl">•</p>

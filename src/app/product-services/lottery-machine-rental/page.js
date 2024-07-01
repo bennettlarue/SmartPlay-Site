@@ -46,13 +46,31 @@ export default function App() {
 
             <Title text="Lottery Machine Rental" />
             <div className="bg-white">
-                <div className="mx-auto max-w-[1100px] pt-20 pb-12 text-lg px-4 md:px-8 lg:px-0">
+                <div className="mx-auto max-w-[1100px] py-12 text-lg px-6 md:px-8 lg:px-0">
                     <div className="space-y-10 max-w-[700px]:">
-                        <h2 className="text-3xl font-semibold text-blue-950 text-center">
+                        <h2 className="lg:text-3xl text-xl font-semibold text-blue-950 text-center">
                             Add the Thrill of the Draw To Your Next Event!
                         </h2>
 
-                        <div className="lg:flex items-center space-y-5">
+                        <div className="grid lg:grid-cols-2 grid-cols-1 space-y-5 items-center">
+                            <div className=" md:px-10 space-y-3">
+                                <h2 className="text-lg font-semibold text-blue-950">
+                                    Generate more traffic and engage visitors
+                                    with the excitement of a live draw.
+                                </h2>
+                                <p className="text-lg ">
+                                    The lottery is a multi-trillion dollar
+                                    global pastime for a reason.{" "}
+                                    <strong>
+                                        Everyone loves the chance to win big!
+                                    </strong>{" "}
+                                    Generate excitement at your next event by
+                                    renting a lottery or bingo machine. Lottery
+                                    machine rental is available for weekly or
+                                    monthly rental and can be shipped worldwide.
+                                </p>
+                            </div>
+
                             <ul className="min-w-[450px] space-y-4">
                                 <li className="p-4 bg-gray-200 rounded flex">
                                     <p className="font-bold mr-2">✓</p>
@@ -75,23 +93,6 @@ export default function App() {
                                     </p>
                                 </li>
                             </ul>
-                            <div className="px-2 md:px-10 space-y-3">
-                                <h2 className="text-xl font-semibold text-blue-950">
-                                    Generate more traffic and engage visitors
-                                    with the excitement of a live draw.
-                                </h2>
-                                <p className="text-lg ">
-                                    The lottery is a multi-trillion dollar
-                                    global pastime for a reason.{" "}
-                                    <strong>
-                                        Everyone loves the chance to win big!
-                                    </strong>{" "}
-                                    Generate excitement at your next event by
-                                    renting a lottery or bingo machine. Lottery
-                                    machine rental is available for weekly or
-                                    monthly rental and can be shipped worldwide.
-                                </p>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -101,7 +102,7 @@ export default function App() {
                     {checks.map((check, index) => (
                         <div
                             key={index}
-                            className="flex space-x-2 text-xl p-2 font-medium text-blue-950"
+                            className="flex space-x-2 text-xl lg:p-2 font-medium text-blue-950"
                         >
                             <p className="text-xl">•</p>
                             <p>{check}</p>
@@ -111,7 +112,7 @@ export default function App() {
             </div>
             <div className="bg-blue-950 py-12">
                 <div className="lg:flex mx-auto max-w-[1100px] gap-x-6 items-center px-4 md:px-8 lg:px-0 w-fit">
-                    <div className="text-xl font-semibold text-white max-w-[700px]">
+                    <div className="text-xl font-semibold text-white max-w-[700px] lg:mb-0 mb-7">
                         Get big ideas for your next event. Contact us at
                         609-880-1860 or submit a request for current
                         availability.
