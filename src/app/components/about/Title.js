@@ -30,7 +30,7 @@ export const Title = () => {
                 <FadeInText text="Tested & Certified" delay={0.2} />
             </h2>
             <h1 className="text-7xl font-bold flex justify-center">
-                <PopupText text="Why SmartPlay" delay={0.4} />
+                <FadeInText text="Why SmartPlay" delay={0.4} />
             </h1>
         </div>
     );

@@ -2,8 +2,8 @@
 
 import { Nav } from "@/app/components/Nav";
 import { Footer } from "@/app/components/Footer";
-import { Title } from "@/app/components/products/lottery-balls/Title";
 import { Carousel } from "@material-tailwind/react";
+import { Title } from "@/app/components/products/Title";
 
 export default function App() {
     return (
@@ -19,7 +19,7 @@ export default function App() {
                 {/* Overlay */}
             </div>
 
-            <Title />
+            <Title text="Lottery Drawing Balls" />
             <div className=" bg-white">
                 <div className="mx-auto max-w-[1200px] py-12 text-lg grid grid-cols-1 md:grid-cols-2 items-center gap-x-5 px-6">
                     <div className="mb-8 md:mb-0 space-y-6">

@@ -50,15 +50,16 @@ export default function App() {
 
             <Title text="Lottery Draw Studio Solutions" />
             <div className="bg-white">
-                <div className="mx-auto max-w-[1100px] py-12 text-lg px-4 md:px-8 lg:px-0">
+                <div className="mx-auto max-w-[1100px] py-12 text-lg px-4 md:px-8">
                     <div className="space-y-10 max-[700px]:">
                         <h2 className="lg:text-3xl text-xl font-semibold text-blue-950 text-center">
                             Let us set up the studio while you continue to focus
                             on your business
                         </h2>
 
-                        <div className="lg:flex items-center space-y-5">
+                        <div className="grid lg:grid-cols-2 grid-cols-1 items-center space-y-5">
                             <VimeoEmbed videoId="748452692" />
+
                             <div className="px-2 md:px-10 space-y-3">
                                 <h2 className="text-xl font-semibold text-blue-950">
                                     Smartplay Draw Studio Solutions can manage

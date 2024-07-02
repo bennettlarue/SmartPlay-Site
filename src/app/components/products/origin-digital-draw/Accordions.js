@@ -176,7 +176,7 @@ export function Accordions() {
                             </p>
                         </div>
                         <h3 className="font-semibold">Capabilities</h3>
-                        <div className="p-2 flex justify-between">
+                        <div className="p-2 lg:flex justify-between">
                             <div className="max-w-3xl">
                                 <p>
                                     Smartplay’s DMD will select up to ten

@@ -1,23 +1,22 @@
 import React from "react";
-import Image from "next/image";
 import { ArrowButton } from "../ArrowButton";
 
 export const CustomerService = () => {
     return (
-        <div className="relative h-[450px] overflow-hidden flex items-center justify-center">
+        <div className="relative max-h-[450px] min-h-[350px] overflow-hidden flex items-center justify-center">
             <img
                 src="https://hxl.550.myftpupload.com/wp-content/uploads/2021/09/smartplay-service-team2.jpg"
                 alt="Customer Service"
-                className="w-full h-full object-cover lg:translate-y-[15%]"
+                className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-blue-950 bg-opacity-50"></div>{" "}
             {/* Overlay */}
             <div className="absolute inset-0 flex items-center justify-center lg:px-0 px-2">
                 <div className="text-center space-y-5">
-                    <h1 className="text-white text-6xl font-bold">
+                    <h1 className="text-white lg:text-6xl text-3xl font-bold">
                         Customer Service
                     </h1>
-                    <p className="text-white text-4xl font-semibold">
+                    <p className="text-white lg:text-4xl text-2xl font-semibold">
                         Our customer service team travels worldwide to support
                         clients.
                     </p>

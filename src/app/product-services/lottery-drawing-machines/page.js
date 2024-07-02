@@ -5,9 +5,9 @@ import { FilterMenu } from "@/app/components/products/FilterMenu";
 import { ProductCard } from "@/app/components/products/ProductCard";
 import lotteryMachines from "../../../../data/lottery-machines.json";
 import { AnimatePresence, motion } from "framer-motion";
-import { Title } from "@/app/components/products/lottery-machines/Title";
 import { Accordions } from "@/app/components/products/lottery-machines/Accordions";
 import { Footer } from "@/app/components/Footer";
+import { Title } from "@/app/components/products/Title";
 
 const getSelectedItems = (selected) => {
     if (selected.length === 0) return lotteryMachines;
@@ -68,7 +68,7 @@ export default function App() {
                 {/* Overlay */}
             </div>
 
-            <Title />
+            <Title text="Lottery Drawing Machines" />
             <div className=" bg-white">
                 <div className="mx-auto max-w-[1000px] py-12 text-lg px-6 space-y-6">
                     <h2 className="lg:text-3xl text-xl font-bold text-blue-950 text-center">

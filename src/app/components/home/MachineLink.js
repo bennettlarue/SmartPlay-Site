@@ -7,8 +7,6 @@ const MachineLink = ({ index, imageLink, title, desc }) => {
     const [viewed, setViewed] = useState(false);
     const [ref, inView] = useInView();
 
-    console.log(index);
-
     useEffect(() => {
         if (inView) {
             setViewed(true);

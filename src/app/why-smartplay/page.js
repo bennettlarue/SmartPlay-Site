@@ -6,7 +6,7 @@ import { Nav } from "../components/Nav";
 import { CustomerService } from "../components/about/CustomerService";
 import { InfoCard } from "../components/about/InfoCard";
 import { Iso } from "../components/about/Iso";
-import { Title } from "../components/about/Title";
+import { Title } from "../components/products/Title";
 import { Carousel } from "@material-tailwind/react";
 
 export default function About() {
@@ -21,7 +21,7 @@ export default function About() {
                 <div className="absolute top-0 left-0 w-full h-full bg-white opacity-50"></div>
             </div>
             <Nav />
-            <Title />
+            <Title text="Why Smartplay" />
             <div className="bg-white">
                 <div className="max-w-[1000px] mx-auto text-center space-y-8 py-12 px-3 sm:px-6 lg:px-8">
                     <p className="lg:text-3xl text-xl font-semibold text-blue-950">

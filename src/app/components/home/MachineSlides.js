@@ -45,17 +45,17 @@ const data = [
 export function MachineSlides() {
     return (
         <div>
-            <div className=" w-[1000px] text-center mx-auto mt-24">
-                <h2 className="p-3 text-3xl font-bold flex justify-center ">
+            <div className="w-full md:w-[1000px] text-center mx-auto mt-8 md:mt-24 px-6">
+                <h2 className="p-3 text-2xl md:text-3xl font-bold flex justify-center">
                     <FadeInText
-                        text="Hightest Quality Lottery, Bingo & Raffle Number Drawing Systems"
+                        text="Highest Quality Lottery, Bingo & Raffle Number Drawing Systems"
                         delay={0.2}
                     />
                 </h2>
                 <div className="flex items-center justify-center my-2 mb-4">
                     <Line delay={0.2} />
                 </div>
-                <div className="text-xl p-2 pt-4">
+                <div className="text-lg md:text-xl p-2 pt-4">
                     <FadeInText
                         text={
                             "Smartplay International preserves drawing integrity for lottery and gaming organizations in 126 countries. We design and manufacture the most advanced traditional and digital lottery drawing systems available, with more than 5,000 systems deployed worldwide since 1993."
@@ -64,7 +64,7 @@ export function MachineSlides() {
                     />
                 </div>
             </div>
-            <div className="mt-14 p-6 rounded-md max-w-[1100px] mx-auto">
+            <div className="mt-8 md:mt-14 p-4 md:p-6 rounded-md max-w-full md:max-w-[1100px] mx-auto">
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
                     {data.map(({ imageLink, title, desc }, index) => (
                         <MachineLink
