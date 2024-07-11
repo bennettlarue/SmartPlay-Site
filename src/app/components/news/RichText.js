@@ -1,6 +1,22 @@
 import React from "react";
-
 import Image from "next/image";
+import YouTubeEmbed from "../YouTubeEmbed";
+
+function getYouTubeVideoID(url) {
+    try {
+        if (typeof url !== "string") {
+            throw new Error("Input must be a string");
+        }
+
+        const regex =
+            /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+        const match = url.match(regex);
+        return match ? match[1] : null;
+    } catch (error) {
+        console.error("Error extracting YouTube video ID:", error.message);
+        return null;
+    }
+}
 
 export const RichText = ({ content }) => {
     const headingClasses = {
@@ -10,6 +26,47 @@ export const RichText = ({ content }) => {
         h4: "text-xl font-medium mb-2",
         h5: "text-lg font-medium mb-2",
         h6: "text-base font-medium mb-2",
+    };
+
+    const renderChildren = (children) => {
+        return children.map((child, index) => {
+            let element = child.text;
+
+            if (child.bold) {
+                element = <strong key={index}>{element}</strong>;
+            }
+            if (child.italic) {
+                element = <em key={index}>{element}</em>;
+            }
+            if (child.bold && child.italic) {
+                element = (
+                    <strong key={index}>
+                        <em>{child.text}</em>
+                    </strong>
+                );
+            }
+            if (child.type === "link") {
+                element = (
+                    <a
+                        key={index}
+                        href={child.url}
+                        target={child.newTab ? "_blank" : "_self"}
+                        rel={child.newTab ? "noopener noreferrer" : ""}
+                    >
+                        {renderChildren(child.children)}
+                    </a>
+                );
+            }
+            if (getYouTubeVideoID(child.text)) {
+                const videoId = getYouTubeVideoID(child.text);
+                element = (
+                    <div className="mb-12">
+                        <YouTubeEmbed key={index} videoId={videoId} />
+                    </div>
+                );
+            }
+            return element;
+        });
     };
 
     const renderContent = (content) => {
@@ -25,22 +82,28 @@ export const RichText = ({ content }) => {
                     return (
                         <Heading
                             key={index}
-                            className={headingClasses[item.type]}
+                            className={headingClasses[item.type] + " mt-5"}
                         >
-                            {item.children[0].text}
+                            {renderChildren(item.children)}
                         </Heading>
                     );
                 case "upload":
                     return (
-                        <div key={index} className="my-4">
-                            <Image
-                                src={item.value.url}
-                                alt={item.value.alt || ""}
-                                width={item.value.width}
-                                height={item.value.height}
-                            />
+                        <div
+                            key={index}
+                            className={`my-6 w-fit mx-auto max-w-[${item.value.width}px]`}
+                        >
+                            <div className="flex justify-center drop-shadow rounded">
+                                <Image
+                                    className="rounded"
+                                    src={item.value.url}
+                                    alt={item.value.alt || ""}
+                                    width={item.value.width}
+                                    height={item.value.height}
+                                />
+                            </div>
                             {item.value.caption && (
-                                <p className="text-sm text-gray-600 mt-1">
+                                <p className="font-medium text-gray-500 mt-2 border-b border-b-gray-400 pb-1">
                                     {item.value.caption[0].children[0].text}
                                 </p>
                             )}
@@ -49,43 +112,12 @@ export const RichText = ({ content }) => {
                 default:
                     return (
                         <div key={index} className="mb-4">
-                            {item.children.map((child, childIndex) => {
-                                if (child.bold) {
-                                    return (
-                                        <strong key={childIndex}>
-                                            {child.text}
-                                        </strong>
-                                    );
-                                }
-                                if (child.italic) {
-                                    return (
-                                        <em key={childIndex}>{child.text}</em>
-                                    );
-                                }
-                                if (child.code) {
-                                    // Directly inject code
-                                    return (
-                                        <div
-                                            style={{
-                                                position: "relative",
-                                                paddingBottom: "56.25%", // 16:9 aspect ratio (adjust as needed)
-                                                height: 0,
-                                                overflow: "hidden",
-                                                maxWidth: "50%",
-                                            }}
-                                            key={childIndex}
-                                            dangerouslySetInnerHTML={{
-                                                __html: child.text,
-                                            }}
-                                        />
-                                    );
-                                }
-                                return child.text;
-                            })}
+                            {renderChildren(item.children)}
                         </div>
                     );
             }
         });
     };
-    return <div>{renderContent(content)}</div>;
+
+    return <div className="text-[18px]">{renderContent(content)}</div>;
 };

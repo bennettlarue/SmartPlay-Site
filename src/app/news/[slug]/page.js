@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { RichText } from "@/app/components/news/RichText";
+import Link from "next/link";
 
 const formatDate = (isoDate) => {
     const date = new Date(isoDate);
@@ -50,15 +51,23 @@ export default async function Post({ params }) {
                 href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
                 rel="stylesheet"
             />
-            <div className="max-w-[1000px] lg:px-0 px-0 mx-auto mt-12">
+            <div className="max-w-[900px] lg:px-0 px-0 mx-auto mt-2">
                 <div className="p-6">
-                    <h1 className="text-4xl font-semibold text-blue-950 max-w-[700px] ring">
-                        {post.title}
-                    </h1>
-                    <h2 className="text-2xl font-semibold text-blue-950">
-                        {post.createdAt}
-                    </h2>
+                    <div className="border-b border-b-gray-400 pb-2 space-y-2">
+                        <h2 className="text-gray-500 font-semibold">
+                            <Link href="/news" className="hover:underline">
+                                News
+                            </Link>{" "}
+                            /
+                        </h2>
+                        <h1 className="text-4xl font-semibold text-blue-950 max-w-[700px]">
+                            {post.title}
+                        </h1>
 
+                        <h2 className="text-gray-400 font-semibold">
+                            {formatDate(post.publishedAt)}
+                        </h2>
+                    </div>
                     <div className="mt-4">
                         <RichText content={post.content} />
                     </div>
