@@ -1,43 +1,98 @@
 "use client";
-import { Footer } from "../components/Footer";
-import { Nav } from "../components/Nav";
+
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function News() {
-    return <div>news</div>;
+    const [posts, setPosts] = useState(null);
+    const [hoveredIndex, setHoveredIndex] = useState(null);
+
+    useEffect(() => {
+        async function getArticle() {
+            try {
+                const response = await fetch(
+                    "https://smartplay-content.payloadcms.app/api/posts"
+                );
+                if (!response.ok) {
+                    throw new Error(
+                        "Network response was not ok " + response.statusText
+                    );
+                }
+                const data = await response.json();
+                setPosts(data.docs);
+                console.log(data);
+            } catch (error) {
+                console.error("Error fetching article:", error);
+            }
+        }
+        getArticle();
+    }, []);
+
+    return (
+        <main>
+            <link
+                href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+                rel="stylesheet"
+            />
+            <div className="space-y-10 max-w-[1000px] lg:px-0 px-8 mx-auto mt-12">
+                <div className="flex justify-center">
+                    <div className="space-y-10">
+                        {posts
+                            ? posts.map((post, index) => (
+                                  <div
+                                      key={index}
+                                      className={`transition-colors cursor-pointer max-w-[500px] rounded-b shadow ${
+                                          hoveredIndex === index
+                                              ? "bg-gray-200"
+                                              : "bg-gray-100"
+                                      }`}
+                                      onMouseEnter={() => {
+                                          setHoveredIndex(index);
+                                          console.log("hovered");
+                                      }}
+                                      onMouseLeave={() => setHoveredIndex(null)}
+                                  >
+                                      <Link
+                                          href={`/news/${post.slug}`}
+                                          className="w-full"
+                                      >
+                                          <Image
+                                              className="rounded-t"
+                                              src={post.featuredImage.url}
+                                              alt={post.title}
+                                              width={500}
+                                              height={500}
+                                          />
+                                          <div className="p-6 space-y-3">
+                                              <h1 className="text-2xl font-semibold text-blue-950">
+                                                  {post.title}
+                                              </h1>
+                                              <p className="text-gray-700">
+                                                  {post.excerpt}
+                                              </p>
+                                              <button className="text-blue-900 font-semibold flex items-center">
+                                                  <span>Read more</span>
+                                                  <motion.span
+                                                      animate={
+                                                          hoveredIndex === index
+                                                              ? { x: 5 }
+                                                              : { x: 1 }
+                                                      }
+                                                      className="material-symbols-outlined"
+                                                  >
+                                                      chevron_right
+                                                  </motion.span>
+                                              </button>
+                                          </div>
+                                      </Link>
+                                  </div>
+                              ))
+                            : "Loading..."}
+                    </div>
+                </div>
+            </div>
+        </main>
+    );
 }
-
-/*
-import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
-
-// TODO: Replace the following with your app's Firebase project configuration
-// See: https://support.google.com/firebase/answer/7015592
-const firebaseConfig = {
-    apiKey: "AIzaSyAoLERDjxnCQYXN7aXYwVePe5OpJuuRFdE",
-    authDomain: "smartplay-site.firebaseapp.com",
-    projectId: "smartplay-site",
-    storageBucket: "smartplay-site.appspot.com",
-    messagingSenderId: "1034733480632",
-    appId: "1:1034733480632:web:17205300a9f3920343224d",
-    measurementId: "G-8JPLMKMJVC",
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-
-// Initialize Cloud Firestore and get a reference to the service
-
-import { collection, query, where, getDocs } from "firebase/firestore";
-import { useEffect } from "react";
-const db = getFirestore(app);
-
-async function getArticles() {
-    const q = query(collection(db, "articles"));
-
-    const querySnapshot = await getDocs(q);
-    querySnapshot.forEach((doc) => {
-        // doc.data() is never undefined for query doc snapshots
-        console.log(doc.id, " => ", doc.data());
-    });
-}
-    */
