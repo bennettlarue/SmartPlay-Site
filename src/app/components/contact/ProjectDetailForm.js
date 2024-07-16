@@ -13,8 +13,8 @@ const ClientOnlyForm = dynamic(() => import("./ClientOnlyForm"), {
 
 const ProjectDetailForm = () => {
     return (
-        <div className="bg-gray-200 max-w-[1000px] px-6 rounded">
-            <div className="mx-auto max-w-[700px] py-12 text-lg md:px-8 lg:px-0 space-y-10">
+        <div className="max-w-[1000px] rounded">
+            <div className="mx-auto max-w-[700px] py-10 text-lg md:px-8 lg:px-0 space-y-10">
                 <ClientOnlyForm />
             </div>
         </div>

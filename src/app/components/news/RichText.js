@@ -60,8 +60,8 @@ export const RichText = ({ content }) => {
             if (getYouTubeVideoID(child.text)) {
                 const videoId = getYouTubeVideoID(child.text);
                 element = (
-                    <div className="mb-12">
-                        <YouTubeEmbed key={index} videoId={videoId} />
+                    <div className="mb-12" key={index}>
+                        <YouTubeEmbed videoId={videoId} />
                     </div>
                 );
             }
@@ -86,6 +86,16 @@ export const RichText = ({ content }) => {
                         >
                             {renderChildren(item.children)}
                         </Heading>
+                    );
+                case "ul":
+                    return (
+                        <ul key={index} className="list-disc list-inside mb-4">
+                            {item.children.map((li, liIndex) => (
+                                <li key={liIndex} className="mb-2">
+                                    {renderChildren(li.children)}
+                                </li>
+                            ))}
+                        </ul>
                     );
                 case "upload":
                     return (

@@ -1,5 +1,3 @@
-// app/news/[slug]/page.js
-
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { RichText } from "@/app/components/news/RichText";
@@ -76,3 +74,6 @@ export default async function Post({ params }) {
         </main>
     );
 }
+
+// Add revalidate property
+export const revalidate = 60; // Revalidate the page every 60 seconds

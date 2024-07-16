@@ -46,14 +46,9 @@ export default function Contact() {
             </div>
 
             <Title text="Contact Us" />
-            <div className="bg-white grid lg:grid-cols-2 grid-cols-1 lg:space-x-5 gap-y-12 px-10">
-                <div className="px-4 py-6 bg-gray-200 rounded shadow font-semibold max-w-[500px] lg:mx-auto mx-5 text-center text-xl mt-6 col-span-2">
-                    {" "}
-                    Need Support? Visit Our{" "}
-                    <span className="text-orange-500">Support Center</span>
-                </div>
-                <div className="mx-auto max-w-[1000px] text-lg md:px-8 lg:px-0 space-y-10">
-                    <div className="space-y-6 px-6">
+            <div className="bg-white grid lg:grid-cols-3 grid-cols-1 lg:space-x-5 gap-y-12 gap-x-10 lg:px-10 pt-16">
+                <div className="mx-auto max-w-[1000px] text-lg md:px-8 lg:px-0 space-y-10 px-8">
+                    <div className="space-y-6">
                         {contactInfo.map((info) => (
                             <div
                                 className="space-y-2 border-b pb-4 border-b-gray-300"
@@ -63,16 +58,16 @@ export default function Contact() {
                                     <img
                                         src={info.img}
                                         alt={info.header}
-                                        className="w-7 h-7"
+                                        className="w-5 h-5"
                                     />
-                                    <h2 className="text-2xl font-semibold text-blue-950">
+                                    <h2 className="text-xl font-semibold text-blue-950">
                                         {info.header}
                                     </h2>
                                 </div>
-                                <p className="text-xl">{info.body}</p>
+                                <p className="text-lg">{info.body}</p>
                             </div>
                         ))}
-                        <p className="text-xl font-medium">
+                        <p className="text-lg font-medium">
                             Smartplay is located 10 minutes outside Philadelphia
                             and about 90 minutes from Manhattan. We are
                             conveniently located between two major airports –
@@ -94,7 +89,11 @@ export default function Contact() {
                         </div>
                     </div>
                 </div>
-                <ProjectDetailForm />
+                <div className="lg:col-span-2 bg-gray-200">
+                    <div className="px-8">
+                        <ProjectDetailForm />
+                    </div>
+                </div>
             </div>
 
             <Footer />
