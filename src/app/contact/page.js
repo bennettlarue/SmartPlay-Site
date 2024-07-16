@@ -46,52 +46,68 @@ export default function Contact() {
             </div>
 
             <Title text="Contact Us" />
-            <div className="bg-white grid lg:grid-cols-3 grid-cols-1 lg:space-x-5 gap-y-12 gap-x-10 lg:px-10 pt-16">
-                <div className="mx-auto max-w-[1000px] text-lg md:px-8 lg:px-0 space-y-10 px-8">
-                    <div className="space-y-6">
-                        {contactInfo.map((info) => (
-                            <div
-                                className="space-y-2 border-b pb-4 border-b-gray-300"
-                                key={info.header}
-                            >
-                                <div className="flex space-x-4 items-center">
-                                    <img
-                                        src={info.img}
-                                        alt={info.header}
-                                        className="w-5 h-5"
-                                    />
-                                    <h2 className="text-xl font-semibold text-blue-950">
-                                        {info.header}
-                                    </h2>
+            <div className="bg-white">
+                <div className="grid lg:grid-cols-3 grid-cols-1 lg:space-x-5 gap-y-12 gap-x-10 lg:px-10 pt-16 lg:pb-16 mx-auto max-w-[1300px]">
+                    <div className=" text-lg lg:px-0 space-y-10 px-8">
+                        <h2 className="lg:text-3xl text-xl font-semibold text-blue-950">
+                            Need Support? Visit our{" "}
+                            <span className="underline text-blue-900">
+                                Support Center
+                            </span>
+                            .
+                        </h2>
+                        <div className="space-y-6">
+                            {contactInfo.map((info) => (
+                                <div
+                                    className="space-y-2 border-b pb-4 border-b-gray-300"
+                                    key={info.header}
+                                >
+                                    <div className="flex space-x-4 items-center">
+                                        <img
+                                            src={info.img}
+                                            alt={info.header}
+                                            className="w-5 h-5"
+                                        />
+                                        <h2 className="text-xl font-semibold text-blue-950">
+                                            {info.header}
+                                        </h2>
+                                    </div>
+                                    <p className="text-lg">{info.body}</p>
                                 </div>
-                                <p className="text-lg">{info.body}</p>
-                            </div>
-                        ))}
-                        <p className="text-lg font-medium">
-                            Smartplay is located 10 minutes outside Philadelphia
-                            and about 90 minutes from Manhattan. We are
-                            conveniently located between two major airports –
-                            Philadelphia International and Newark Liberty
-                            International.
-                        </p>
+                            ))}
+                            <p className="text-md">
+                                Smartplay is located 10 minutes outside
+                                Philadelphia and about 90 minutes from
+                                Manhattan. We are conveniently located between
+                                two major airports – Philadelphia International
+                                and Newark Liberty International.
+                            </p>
 
-                        <div style={{ width: "100%", height: "400px" }}>
-                            <iframe
-                                src={mapSrc}
-                                width="100%"
-                                height="100%"
-                                style={{ border: 0 }}
-                                allowFullScreen=""
-                                loading="lazy"
-                                referrerPolicy="no-referrer-when-downgrade"
-                                title="Google Map"
-                            ></iframe>
+                            <div style={{ width: "100%", height: "400px" }}>
+                                <iframe
+                                    src={mapSrc}
+                                    width="100%"
+                                    height="100%"
+                                    style={{ border: 0 }}
+                                    allowFullScreen=""
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                    title="Google Map"
+                                ></iframe>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className="lg:col-span-2 bg-gray-200">
-                    <div className="px-8">
-                        <ProjectDetailForm />
+                    <div className="lg:col-span-2 bg-gray-100 py-10">
+                        <div className="px-8">
+                            <h2 className="text-xl font-semibold text-center mb-10">
+                                If you need pricing and details, please provide
+                                your information below.{" "}
+                                <span className="text-orange-500">
+                                    Thank you for contacting Smartplay.
+                                </span>
+                            </h2>
+                            <ProjectDetailForm />
+                        </div>
                     </div>
                 </div>
             </div>
