@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useId } from "react";
 import countries from "/data/countries.json";
+import emailjs from "@emailjs/browser";
 
 // Constants for text sizes and styles
 const SECTION_TITLE_SIZE =
@@ -8,9 +9,14 @@ const HEADER_TEXT_SIZE = "text-[16px] font-medium";
 const PLACEHOLDER_TEXT_SIZE = "text-sm";
 const REQUIRED_FIELD_STYLE = "text-red-500";
 
+const serviceID = "service_cj36z9q";
+const templateID = "template_s1rjmdg";
+const userID = "0i-nrgDo-0A58LNMx";
+
 const ClientOnlyForm = () => {
     const [isOtherChecked, setIsOtherChecked] = useState(false);
     const [isClient, setIsClient] = useState(false);
+    const [privacyPolicyChecked, setPrivacyPolicyChecked] = useState(false);
     const otherInputId = useId();
 
     const [formData, setFormData] = useState({
@@ -35,6 +41,34 @@ const ClientOnlyForm = () => {
         setIsOtherChecked(event.target.checked);
     };
 
+    const handlePrivacyPolicyCheck = (event) => {
+        setPrivacyPolicyChecked(event.target.checked);
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if (!privacyPolicyChecked) {
+            alert("Please accept the privacy policy before submitting.");
+            return;
+        }
+        console.log(JSON.stringify(formData, null, 2));
+        const templateParams = {
+            user_name: "test",
+            user_email: "test",
+            user_message: "test",
+        };
+        emailjs.send(serviceID, templateID, formData, userID).then(
+            (response) => {
+                console.log("SUCCESS!", response.status, response.text);
+                alert("Your mail is sent!");
+            },
+            (error) => {
+                console.log("FAILED...", error);
+                alert("Oops... " + JSON.stringify(error));
+            }
+        );
+    };
+
     const handleChange = (event) => {
         const { name, value, type, checked } = event.target;
         if (type === "checkbox") {
@@ -57,11 +91,6 @@ const ClientOnlyForm = () => {
                 [name]: value,
             }));
         }
-    };
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log(JSON.stringify(formData, null, 2));
     };
 
     return (
@@ -337,13 +366,41 @@ const ClientOnlyForm = () => {
                         />
                     </div>
                 </div>
+                <div className="space-y-4 mt-6">
+                    <label className="flex items-center space-x-2">
+                        <input
+                            type="checkbox"
+                            id="privacyPolicy"
+                            name="privacyPolicy"
+                            className="form-checkbox h-5 w-5 text-blue-500 rounded"
+                            checked={privacyPolicyChecked}
+                            onChange={handlePrivacyPolicyCheck}
+                            required
+                        />
+                        <span className={PLACEHOLDER_TEXT_SIZE}>
+                            I have read and agree to the{" "}
+                            <a
+                                href="/privacy-policy"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-blue-600 hover:underline"
+                            >
+                                Privacy Policy
+                            </a>
+                            <span className={REQUIRED_FIELD_STYLE}> *</span>
+                        </span>
+                    </label>
+                </div>
             </div>
-            <button
-                type="submit"
-                className="px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
-            >
-                Submit
-            </button>
+            <div className="flex justify-center">
+                <button
+                    type="submit"
+                    className="px-6 py-2 bg-blue-950 text-white font bold rounded-md hover:bg-blue-900 transition-colors disabled:bg-blue-300"
+                    disabled={!privacyPolicyChecked}
+                >
+                    Submit
+                </button>
+            </div>
         </form>
     );
 };
