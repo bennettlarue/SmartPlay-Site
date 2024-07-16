@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useId } from "react";
 import countries from "/data/countries.json";
 import emailjs from "@emailjs/browser";
+import { useRouter } from "next/navigation";
 
 // Constants for text sizes and styles
 const SECTION_TITLE_SIZE =
@@ -14,6 +15,7 @@ const templateID = "template_s1rjmdg";
 const userID = "0i-nrgDo-0A58LNMx";
 
 const ClientOnlyForm = () => {
+    const router = useRouter();
     const [isOtherChecked, setIsOtherChecked] = useState(false);
     const [isClient, setIsClient] = useState(false);
     const [privacyPolicyChecked, setPrivacyPolicyChecked] = useState(false);
@@ -52,15 +54,10 @@ const ClientOnlyForm = () => {
             return;
         }
         console.log(JSON.stringify(formData, null, 2));
-        const templateParams = {
-            user_name: "test",
-            user_email: "test",
-            user_message: "test",
-        };
         emailjs.send(serviceID, templateID, formData, userID).then(
             (response) => {
                 console.log("SUCCESS!", response.status, response.text);
-                alert("Your mail is sent!");
+                router.push("/thank-you");
             },
             (error) => {
                 console.log("FAILED...", error);

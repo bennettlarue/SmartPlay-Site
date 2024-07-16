@@ -1,11 +1,10 @@
 "use client";
 
-import { ArrowButton } from "@/app/components/ArrowButton";
 import { Footer } from "@/app/components/Footer";
 import { Nav } from "@/app/components/Nav";
-import MachineLink from "@/app/components/home/MachineLink";
 import { Title } from "@/app/components/products/Title";
 import ProjectDetailForm from "../components/contact/ProjectDetailForm";
+import Link from "next/link";
 
 export default function Contact() {
     const mapSrc =
@@ -51,9 +50,12 @@ export default function Contact() {
                     <div className=" text-lg lg:px-0 space-y-10 px-8">
                         <h2 className="lg:text-3xl text-xl font-semibold text-blue-950">
                             Need Support? Visit our{" "}
-                            <span className="underline text-blue-900">
-                                Support Center
-                            </span>
+                            <Link
+                                href="/support"
+                                className="underline text-blue-900"
+                            >
+                                Support Page
+                            </Link>
                             .
                         </h2>
                         <div className="space-y-6">

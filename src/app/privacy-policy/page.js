@@ -9,7 +9,7 @@ const headingStyle = "text-xl font-bold mb-2";
 const paragraphStyle = "mb-2";
 const listStyle = "list-disc list-inside ml-4 mb-2";
 
-export default function Contact() {
+export default function PrivacyPolicy() {
     return (
         <div className="App">
             <Nav />
