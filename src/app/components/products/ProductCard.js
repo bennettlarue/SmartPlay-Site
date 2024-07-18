@@ -1,9 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-export const ProductCard = ({ name, imageLink, gameType, features }) => {
+export const ProductCard = ({ name, imageLink, categories }) => {
     return (
-        <div className="bg-gray-200 rounded">
+        <div className="bg-gray-200 rounded h-full">
             <img
                 src={imageLink}
                 alt={name}
@@ -16,12 +16,12 @@ export const ProductCard = ({ name, imageLink, gameType, features }) => {
 
                 <div className="mt-1">
                     <ul className="flex flex-wrap">
-                        {gameType.concat(features).map((item) => (
+                        {categories.map((item) => (
                             <li
                                 className="p-2 mr-3 bg-white w-fit rounded-xl shadow mt-4"
-                                key={item}
+                                key={item.title}
                             >
-                                {item}
+                                {item.title}
                             </li>
                         ))}
                     </ul>

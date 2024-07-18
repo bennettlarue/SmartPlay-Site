@@ -1,15 +1,16 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Nav } from "@/app/components/Nav";
 import { FilterMenu } from "@/app/components/products/FilterMenu";
 import { ProductCard } from "@/app/components/products/ProductCard";
-import lotteryMachines from "../../../../data/lottery-machines.json";
+//import lotteryMachines from "../../../../data/lottery-machines.json";
 import { AnimatePresence, motion } from "framer-motion";
 import { Accordions } from "@/app/components/products/lottery-machines/Accordions";
 import { Footer } from "@/app/components/Footer";
 import { Title } from "@/app/components/products/Title";
+import axios from "axios";
 
-const getSelectedItems = (selected) => {
+const getSelectedItems = (selected, lotteryMachines) => {
     if (selected.length === 0) return lotteryMachines;
     const filteredItems = [];
 
@@ -17,10 +18,9 @@ const getSelectedItems = (selected) => {
         let included = true;
         for (let j = 0; j < selected.length; j++) {
             if (
-                !(
-                    lotteryMachines[i].features.includes(selected[j]) ||
-                    lotteryMachines[i].gameType.includes(selected[j])
-                )
+                !lotteryMachines[i].machineCategories
+                    .map((item) => item.title)
+                    .includes(selected[j])
             ) {
                 included = false;
                 break;
@@ -33,26 +33,68 @@ const getSelectedItems = (selected) => {
     return filteredItems;
 };
 
-export default function App() {
-    const gameTypes = ["Bingo", "Keno", "Lotto", "Single Digit"];
-    const features = [
-        "Gravity Mix",
-        "Air Mix",
-        "Continuous Operation",
-        "High Frequency",
-    ];
+export default function LotteryDrawingMachines() {
+    const [machines, setMachines] = useState([]);
+    // const [categories, setCategories] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [gameTypes, setGameTypes] = useState([]);
+    // const gameTypes = ["Bingo", "Keno", "Lotto", "Single Digit"];
+    const [features, setFeatures] = useState([]);
+    // const features = ["Gravity Mix", "Air Mix", "Continuous Operation", "High Frequency",];
 
     const [selected, setSelected] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const [machinesResponse, categoriesResponse] =
+                    await Promise.all([
+                        axios.get(
+                            "https://smartplay-content.payloadcms.app/api/machines"
+                        ),
+                        axios.get(
+                            "https://smartplay-content.payloadcms.app/api/machineCategories"
+                        ),
+                    ]);
+
+                setMachines(machinesResponse.data.docs);
+                console.log(machinesResponse.data.docs);
+                //setCategories(categoriesResponse.data.docs);
+                const newGameTypes = categoriesResponse.data.docs
+                    .filter((item) => {
+                        return item.categoryType === "gameType";
+                    })
+                    .map((item) => item.title);
+                setGameTypes(newGameTypes);
+
+                const newFeatures = categoriesResponse.data.docs
+                    .filter((item) => {
+                        return item.categoryType === "machineFeature";
+                    })
+                    .map((item) => item.title);
+                setFeatures(newFeatures);
+
+                setLoading(false);
+            } catch (err) {
+                console.log(err);
+                setLoading(false);
+            }
+        };
+
+        fetchData();
+    }, []);
 
     // Callback to handle item selection
     const handleSelectType = (item) => {
         if (!selected.includes(item)) setSelected((prev) => [...prev, item]);
         else setSelected((prev) => prev.filter((i) => i !== item));
+        console.log(selected);
     };
 
     const handleSelectFeature = (item) => {
         if (!selected.includes(item)) setSelected((prev) => [...prev, item]);
         else setSelected((prev) => prev.filter((i) => i !== item));
+        console.log(selected);
     };
 
     return (
@@ -121,27 +163,36 @@ export default function App() {
                     />
                     <div className="grid lg:grid-cols-3 grid-cols-1 gap-14">
                         <AnimatePresence>
-                            {getSelectedItems(selected).map(
-                                (lotteryMachine, index) => (
-                                    <motion.div
-                                        key={lotteryMachine.name}
-                                        layout
-                                        initial={{ opacity: 0, scale: 0.8 }}
-                                        animate={{ opacity: 1, scale: 1 }}
-                                        exit={{ opacity: 0, scale: 0.8 }}
-                                        transition={{ duration: 0.3 }}
-                                        className="relative z-10"
-                                    >
-                                        <ProductCard
-                                            key={index}
-                                            name={lotteryMachine.name}
-                                            imageLink={lotteryMachine.imageLink}
-                                            gameType={lotteryMachine.gameType}
-                                            features={lotteryMachine.features}
-                                        />
-                                    </motion.div>
-                                )
-                            )}
+                            {machines
+                                ? getSelectedItems(selected, machines).map(
+                                      (lotteryMachine, index) => (
+                                          <motion.div
+                                              key={index}
+                                              layout
+                                              initial={{
+                                                  opacity: 0,
+                                                  scale: 0.8,
+                                              }}
+                                              animate={{ opacity: 1, scale: 1 }}
+                                              exit={{ opacity: 0, scale: 0.8 }}
+                                              transition={{ duration: 0.3 }}
+                                              className="relative z-10"
+                                          >
+                                              <ProductCard
+                                                  key={lotteryMachine.id}
+                                                  name={lotteryMachine.name}
+                                                  imageLink={
+                                                      lotteryMachine
+                                                          .featuredImage.url
+                                                  }
+                                                  categories={
+                                                      lotteryMachine.machineCategories
+                                                  }
+                                              />
+                                          </motion.div>
+                                      )
+                                  )
+                                : "loading"}
                         </AnimatePresence>
                     </div>
                 </div>

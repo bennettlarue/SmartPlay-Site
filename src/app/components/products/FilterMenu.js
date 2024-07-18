@@ -107,6 +107,7 @@ export const FilterMenu = ({
                 {selected.map((item) => {
                     return (
                         <div
+                            key={item}
                             className=" h-fit p-2 rounded-xl bg-gray-200 hover:bg-gray-300 hover:text-red-500 w-fit flex items-center cursor-pointer transition-all"
                             onClick={() =>
                                 setSelected((prev) =>
