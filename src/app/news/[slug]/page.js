@@ -67,7 +67,11 @@ export default async function Post({ params }) {
                         </h2>
                     </div>
                     <div className="mt-4">
-                        <RichText content={post.content} />
+                        {post.content ? (
+                            <RichText content={post.content} />
+                        ) : (
+                            <p>No content available.</p>
+                        )}
                     </div>
                 </div>
             </div>

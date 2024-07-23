@@ -9,6 +9,7 @@ import { Accordions } from "@/app/components/products/lottery-machines/Accordion
 import { Footer } from "@/app/components/Footer";
 import { Title } from "@/app/components/products/Title";
 import axios from "axios";
+import Link from "next/link";
 
 const getSelectedItems = (selected, lotteryMachines) => {
     if (selected.length === 0) return lotteryMachines;
@@ -178,17 +179,21 @@ export default function LotteryDrawingMachines() {
                                               transition={{ duration: 0.3 }}
                                               className="relative z-10"
                                           >
-                                              <ProductCard
-                                                  key={lotteryMachine.id}
-                                                  name={lotteryMachine.name}
-                                                  imageLink={
-                                                      lotteryMachine
-                                                          .featuredImage.url
-                                                  }
-                                                  categories={
-                                                      lotteryMachine.machineCategories
-                                                  }
-                                              />
+                                              <Link
+                                                  href={`/lottery-products/${lotteryMachine.slug}`}
+                                              >
+                                                  <ProductCard
+                                                      key={lotteryMachine.id}
+                                                      name={lotteryMachine.name}
+                                                      imageLink={
+                                                          lotteryMachine
+                                                              .featuredImage.url
+                                                      }
+                                                      categories={
+                                                          lotteryMachine.machineCategories
+                                                      }
+                                                  />
+                                              </Link>
                                           </motion.div>
                                       )
                                   )
