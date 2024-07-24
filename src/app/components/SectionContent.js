@@ -7,7 +7,7 @@ export const SectionContent = ({ content }) => {
             initial={{ opacity: 0, y: 5 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, ease: "easeInOut", delay: 0.3 }}
+            transition={{ duration: 0.5, ease: "easeInOut", delay: 0.1 }}
             className="lg:text-xl text-lg"
         >
             {content}

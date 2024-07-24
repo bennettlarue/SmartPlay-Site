@@ -1,6 +1,6 @@
+import Link from "next/link";
 import React from "react";
-
-import { useState } from "react";
+import { motion } from "framer-motion";
 
 const ArrowIcon = () => (
     <svg
@@ -21,25 +21,28 @@ const ArrowIcon = () => (
 
 export const ArrowButton = ({
     text,
-    color = "blue-900",
-    hoverColor = "blue-950",
+    href = "/",
+    bg_color = "bg-blue-950",
+    bg_hover = "bg-blue-900",
 }) => {
-    const [hovered, setHovered] = useState(false);
-
     return (
-        <div className="w-[210px]">
-            <div
-                className={`${
-                    hovered ? `w-[210px]` : `w-[200px]`
-                }  text-white bg-blue-950 hover:bg-blue-900 font-semibold text-xl p-3 rounded transition-all flex items-center justify-between cursor-pointer shadow-lg`}
-                onMouseEnter={() => setHovered(true)}
-                onMouseLeave={() => setHovered(false)}
-            >
-                <p>{text}</p>
-                <div>
-                    <ArrowIcon />
+        <motion.div
+            initial={{ opacity: 0, y: 5 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ ease: "easeInOut", delay: 0.2 }}
+            className="w-fit"
+        >
+            <Link href={href}>
+                <div
+                    className={`space-x-3 text-white font-medium text-lg p-2 rounded flex items-center justify-between cursor-pointer shadow-lg ${bg_color} hover:${bg_hover}`}
+                >
+                    <p>{text}</p>
+                    <div>
+                        <ArrowIcon />
+                    </div>
                 </div>
-            </div>
-        </div>
+            </Link>
+        </motion.div>
     );
 };

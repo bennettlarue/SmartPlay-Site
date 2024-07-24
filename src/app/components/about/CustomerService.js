@@ -5,9 +5,9 @@ export const CustomerService = () => {
     return (
         <div className="relative max-h-[450px] min-h-[350px] overflow-hidden flex items-center justify-center">
             <img
-                src="https://hxl.550.myftpupload.com/wp-content/uploads/2021/09/smartplay-service-team2.jpg"
+                src="/images/backgrounds/team.png"
                 alt="Customer Service"
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover "
             />
             <div className="absolute inset-0 bg-blue-950 bg-opacity-50"></div>{" "}
             {/* Overlay */}

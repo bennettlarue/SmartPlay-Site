@@ -8,18 +8,13 @@ import { Iso } from "../components/about/Iso";
 import { Title } from "../components/products/Title";
 import { SectionHeader } from "../components/SectionHeader";
 import { SectionContent } from "../components/SectionContent";
+import { PageBackground } from "../components/PageBackground";
+import { SectionImage } from "../components/SectionImage";
 
 export default function About() {
     return (
-        <main className="relative">
-            <div className="fixed top-0 left-0 w-full h-full -z-10">
-                <img
-                    src="https://hxl.550.myftpupload.com/wp-content/uploads/2021/09/4032-3024-max-1-scaled.jpg"
-                    alt="Customer Service"
-                    className="w-full h-screen object-cover translate-y-10"
-                />
-                <div className="absolute top-0 left-0 w-full h-full bg-white opacity-50"></div>
-            </div>
+        <main>
+            <PageBackground image="/images/backgrounds/why-smartplay.jpg" />
             <Nav />
             <Title text="Why Smartplay" />
             <div className="bg-white">
@@ -89,16 +84,18 @@ export default function About() {
                         />
 
                         <div className="lg:mt-0 mt-5 row-span-2 col-span-1">
-                            <img
-                                className="rounded shadow"
-                                src="https://hxl550.n3cdn1.secureserver.net/wp-content/uploads/2022/06/smartplay-map.png"
+                            <SectionImage
+                                src="/images/why-smartplay/smartplay-map.png"
+                                alt="Smartplay Map"
                             />
                         </div>
                     </div>
-                    <img
-                        className="rounded shadow lg:mt-0 pt-7 max-w-[700px] mx-auto"
-                        src="https://hxl550.n3cdn1.secureserver.net/wp-content/uploads/2022/06/smartplay-building-1000px.gif?time=1717187795"
-                    />
+                    <div className="max-w-[700px] mx-auto">
+                        <SectionImage
+                            src="/images/why-smartplay/smartplay-building.gif"
+                            alt="Smartplay Map"
+                        />
+                    </div>
                 </div>
             </div>
             <Footer />
