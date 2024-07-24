@@ -16,19 +16,7 @@ export const Menu = ({ open, items, links }) => {
     };
 
     return (
-        <motion.ul
-            className="border bg-white w-[270px] p-4 rounded space-y-4 shadow font-semibold"
-            initial="hidden"
-            animate={open ? "show" : "hidden"}
-            variants={{
-                hidden: { scale: 0, opacity: 0 },
-                show: {
-                    scale: "100%",
-                    opacity: 1,
-                    transition: { type: "spring", bounce: 0, duration: 0.4 },
-                },
-            }}
-        >
+        <motion.ul className="border bg-white w-[270px] p-4 rounded space-y-4 shadow font-semibold">
             {items.map((item, index) => (
                 <motion.li
                     key={index}

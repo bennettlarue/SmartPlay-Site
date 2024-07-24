@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Menu } from "./Menu";
 
 const solutions = [
-    "Trading Lottery",
+    "Traditional Lottery",
     "Bingo Systems",
     "Raffles",
     "Casino Gaming",
@@ -48,7 +48,7 @@ const digitalLinks = [
     "/product-services/origin-digital-draw",
     "/product-services/digital-content-solutions",
     "/product-services/solution-lottery-draw-management",
-    "/product-services/online-lottery",
+    "/solutions/online-lottery",
 ];
 
 export const Nav = () => {
@@ -119,13 +119,22 @@ export const Nav = () => {
                                 />
                             </svg>
                         </motion.button>
-                        <div className="absolute top-full mt-2">
-                            <Menu
-                                open={open === 1}
-                                items={solutions}
-                                links={solutionsLinks}
-                            />
-                        </div>
+                        <AnimatePresence>
+                            {open === 1 && (
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                    className="absolute top-full mt-2"
+                                >
+                                    <Menu
+                                        open={open === 1}
+                                        items={solutions}
+                                        links={solutionsLinks}
+                                    />
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
                     </div>
 
                     <div className="relative">
@@ -152,13 +161,22 @@ export const Nav = () => {
                                 />
                             </svg>
                         </motion.button>
-                        <div className="absolute top-full mt-2">
-                            <Menu
-                                open={open === 2}
-                                items={products}
-                                links={productsLinks}
-                            />
-                        </div>
+                        <AnimatePresence>
+                            {open === 2 && (
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                    className="absolute top-full mt-2"
+                                >
+                                    <Menu
+                                        open={open === 2}
+                                        items={products}
+                                        links={productsLinks}
+                                    />
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
                     </div>
                     <div className="relative">
                         <motion.button
@@ -184,13 +202,22 @@ export const Nav = () => {
                                 />
                             </svg>
                         </motion.button>
-                        <div className="absolute top-full mt-2">
-                            <Menu
-                                open={open === 3}
-                                items={digital}
-                                links={digitalLinks}
-                            />
-                        </div>
+                        <AnimatePresence>
+                            {open === 3 && (
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                    className="absolute top-full mt-2"
+                                >
+                                    <Menu
+                                        open={open === 3}
+                                        items={digital}
+                                        links={digitalLinks}
+                                    />
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
                     </div>
                     <Link className="relative" href="/news">
                         <motion.button
