@@ -2,6 +2,7 @@
 
 import { ArrowButton } from "@/app/components/ArrowButton";
 import { Footer } from "@/app/components/Footer";
+import { ImageCard } from "@/app/components/ImageCard";
 import { Nav } from "@/app/components/Nav";
 import { PageBackground } from "@/app/components/PageBackground";
 import { Title } from "@/app/components/products/Title";
@@ -58,16 +59,12 @@ export default function App() {
                     key={index}
                 >
                     <div className="contentSection">
-                        <div className="grid lg:grid-cols-2 grid-cols-1 items-center gap-10">
-                            <div className="w-full h-64 overflow-hidden">
-                                <SectionImage src={img} alt={title} />
-                            </div>
-                            <div className="space-y-4">
-                                <SectionHeader content={title} />
-                                <SectionContent content={desc} />
-                                <ArrowButton text="Learn More" href={href} />
-                            </div>
-                        </div>
+                        <ImageCard
+                            img={img}
+                            title={title}
+                            desc={desc}
+                            href={href}
+                        />
                     </div>
                 </div>
             ))}

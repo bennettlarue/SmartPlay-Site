@@ -5,6 +5,11 @@ import { Footer } from "@/app/components/Footer";
 import { Nav } from "@/app/components/Nav";
 import MachineLink from "@/app/components/home/MachineLink";
 import { Title } from "@/app/components/products/Title";
+import { PageBackground } from "@/app/components/PageBackground";
+import { SectionHeader } from "@/app/components/SectionHeader";
+import { SectionContent } from "@/app/components/SectionContent";
+import { BulletList } from "@/app/components/BulletList";
+import { ImageCard } from "@/app/components/ImageCard";
 
 const checks = [
     "Standard bingo/keno models are Galaxy, SuperBingo and Phoenix II Bingo",
@@ -39,81 +44,47 @@ export default function App() {
     return (
         <div className="App">
             <Nav />
-            <div className="fixed top-0 left-0 w-full h-full -z-10">
-                <img
-                    src="https://hxl.550.myftpupload.com/wp-content/uploads/2021/10/globe.jpg"
-                    alt="Customer Service"
-                    className="w-full h-full object-cover -translate-y-10"
-                />
-                <div className="absolute top-0 left-0 w-full h-full bg-white opacity-50"></div>
-            </div>
+            <PageBackground image="/images/backgrounds/globe.jpg" />
 
             <Title text="Bingo Systems" />
             <div className="bg-white">
-                <div className="mx-auto lg:max-w-[1000px] max-w-[700px] py-12 text-lg px-6 lg:px-0">
-                    <div className="space-y-6">
-                        <h2 className="lg:text-3xl text-xl font-semibold text-blue-950 text-center">
-                            Highest quality parts and construction to meet the
-                            demands of continuous operation
-                        </h2>
-                        <p className="text-lg">
-                            Bingo and keno games are popular throughout the
-                            world. Both game styles require all balls to be
-                            displayed one after the other. Smartplay has several
-                            machines designed specifically for bingo and keno.
-                            Some of our traditional lotto-style machines have
-                            been adapted to bingo and keno as well. Machines can
-                            accommodate standard 75 and 90-ball bingo and we can
-                            create custom machines to meet your requirements.
-                        </p>
-                    </div>
+                <div className="contentSection">
+                    <SectionHeader
+                        content="Highest quality parts and construction to meet the
+                        demands of continuous operation."
+                    />
+                    <SectionContent
+                        content="Bingo and keno games are popular throughout the world.
+                        Both game styles require all balls to be displayed one
+                        after the other. Smartplay has several machines designed
+                        specifically for bingo and keno. Some of our traditional
+                        lotto-style machines have been adapted to bingo and keno
+                        as well. Machines can accommodate standard 75 and
+                        90-ball bingo and we can create custom machines to meet
+                        your requirements."
+                    />
                 </div>
             </div>
-            <div className="bg-gray-200 py-12">
-                <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto max-w-[1000px] gap-x-6 lg:space-y-0 space-y-6">
-                    <ul className="space-y-6 bg-gray-200 p-4 px-6 text-blue-950 font-semibold col-span-1 max-w-[700px] mx-auto">
-                        {checks.map((check, index) => (
-                            <li key={index} className="flex space-x-2 text-lg">
-                                <p className="text-xl">•</p>
-                                <p>{check}</p>
-                            </li>
-                        ))}
-                    </ul>
-                    <div className="col-span-1 flex flex-col lg:flex-row justify-center items-center space-y-4 lg:space-y-0 lg:space-x-4 max-w-[700px] mx-auto px-3">
-                        <img
-                            src="https://smartplay.com/wp-content/uploads/2017/07/super-bingo-machine.jpg"
-                            alt="Online Lottery"
-                            className="rounded shadow h-[400px] lg:h-[360px] w-[400px] lg:w-auto object-cover"
-                        />
-                        <div>
-                            <h2 className="text-2xl font-semibold text-blue-950 text-center lg:text-left">
-                                SuperBingo
-                            </h2>
-                            <p className="py-5 text-center lg:text-left">
-                                This bingo machine is designed for
-                                high-frequency use, drawing balls every few
-                                minutes.
-                            </p>
-                            <div className="flex justify-center lg:justify-start">
-                                <ArrowButton text="Learn More" />
+            <div className="bg-gray-200">
+                <div className="contentSection">
+                    <BulletList bullets={checks} />
+                </div>
+            </div>
+            <div className="bg-white">
+                <div className="contentSection">
+                    <SectionHeader content="Standard Bingo and Keno Models Used Around the World" />
+                    <div className="space-y-10">
+                        {data.map(({ title, desc, imageLink }, index) => (
+                            <div className="shadow rounded p-4 bg-gray-200">
+                                <ImageCard
+                                    title={title}
+                                    desc={desc}
+                                    img={imageLink}
+                                    href={"/"}
+                                />
                             </div>
-                        </div>
+                        ))}
                     </div>
-                </div>
-            </div>
-            <div className="bg-white py-12">
-                <h2 className="lg:text-2xl text-xl font-semibold text-blue-950 text-center mb-12 px-6">
-                    Standard Bingo and Keno Models Used Around the World
-                </h2>
-                <div className="grid grid-cols-1 lg:grid-cols-3 mx-auto w-fit gap-x-6 gap-y-8">
-                    {data.map((item, index) => (
-                        <MachineLink
-                            key={index}
-                            title={item.title}
-                            desc={item.desc}
-                            imageLink={item.imageLink}
-                        />
-                    ))}
                 </div>
             </div>
 
