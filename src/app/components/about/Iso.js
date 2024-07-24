@@ -1,7 +1,7 @@
 import React from "react";
 import { ArrowButton } from "../ArrowButton";
-import { SectionHeader } from "../content/sectionHeader";
-import { SectionContent } from "../content/SectionContent";
+import { SectionHeader } from "../SectionHeader";
+import { SectionContent } from "../SectionContent";
 
 export const Iso = () => {
     return (

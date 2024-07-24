@@ -6,8 +6,8 @@ import { CustomerService } from "../components/about/CustomerService";
 import { InfoCard } from "../components/about/InfoCard";
 import { Iso } from "../components/about/Iso";
 import { Title } from "../components/products/Title";
-import { SectionHeader } from "../components/content/sectionHeader";
-import { SectionContent } from "../components/content/SectionContent";
+import { SectionHeader } from "../components/SectionHeader";
+import { SectionContent } from "../components/SectionContent";
 
 export default function About() {
     return (
