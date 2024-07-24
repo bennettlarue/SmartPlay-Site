@@ -49,7 +49,7 @@ export default async function Post({ params }) {
                 href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
                 rel="stylesheet"
             />
-            <div className="max-w-[900px] lg:px-0 px-0 mx-auto mt-2">
+            <div className="max-w-[900px] lg:px-0 px-0 mx-auto lg:mt-8 mt-2">
                 <div className="p-6">
                     <div className="border-b border-b-gray-400 pb-2 space-y-2">
                         <h2 className="text-gray-500 font-semibold">

@@ -11,7 +11,8 @@ const ZoomImage = ({ src, alt, onClick }) => (
         <Image
             src={src}
             alt={alt}
-            fill
+            fill="true"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-cover transition-transform duration-300 rounded shadow"
         />
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded">
@@ -91,7 +92,8 @@ const FullscreenImage = ({ images, currentIndex, onClose, onPrev, onNext }) => (
             <Image
                 src={images[currentIndex].image.url}
                 alt={`fullscreen-image-${currentIndex}`}
-                fill
+                fill="true"
+                sizes="100vw"
                 className="object-contain"
             />
         </div>
@@ -132,7 +134,7 @@ const Gallery = ({ images }) => {
 
     return (
         <>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {images.map((image, index) => (
                     <ZoomImage
                         key={index}

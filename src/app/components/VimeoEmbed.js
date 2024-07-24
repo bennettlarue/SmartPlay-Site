@@ -2,7 +2,7 @@ import React from "react";
 
 const VimeoEmbed = ({ videoId }) => {
     return (
-        <div className="video-container relative pb-[50.25%] h-0 overflow-hidden max-w-[650px] min-w-[300px] w-full mx-auto">
+        <div className="video-container relative lg:pb-[40.25%] lg:mb-0 mb-10 pb-[50.25%] h-0 overflow-hidden max-w-[650px] min-w-[300px] w-full mx-auto">
             <iframe
                 src={`https://player.vimeo.com/video/${videoId}`}
                 className="absolute top-0 left-0 w-full h-full max-w-[650px] max-h-[360px]"
