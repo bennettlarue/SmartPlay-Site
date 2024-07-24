@@ -75,7 +75,7 @@ export default function App() {
                     <SectionHeader content="Standard Bingo and Keno Models Used Around the World" />
                     <div className="space-y-10">
                         {data.map(({ title, desc, imageLink }, index) => (
-                            <div className="shadow rounded p-4 bg-gray-200">
+                            <div className="border-b border-b-gray-400 pb-8">
                                 <ImageCard
                                     title={title}
                                     desc={desc}

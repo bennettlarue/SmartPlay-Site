@@ -6,7 +6,7 @@ import { ArrowButton } from "./ArrowButton";
 
 export const ImageCard = ({ img, title, desc, href }) => {
     return (
-        <div className="grid lg:grid-cols-2 grid-cols-1 items-center gap-10">
+        <div className="grid md:grid-cols-2 grid-cols-1 items-center gap-10">
             <div className="w-full h-64 overflow-hidden">
                 <SectionImage src={img} alt={title} />
             </div>
