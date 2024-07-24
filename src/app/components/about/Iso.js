@@ -1,24 +1,24 @@
 import React from "react";
 import { ArrowButton } from "../ArrowButton";
+import { SectionHeader } from "../content/sectionHeader";
+import { SectionContent } from "../content/SectionContent";
 
 export const Iso = () => {
     return (
-        <div className="bg-gray-200 lg:p-16 p-6">
-            <div className="lg:flex justify-between max-w-[1200px] mx-auto items-center lg:space-y-0 space-y-7">
-                <div className="max-w-[700px] space-y-5">
-                    <h2 className="text-3xl text-blue-950 font-bold">
-                        Smartplay Quality Policy <br /> (ISO 9001:2015)
-                    </h2>
-                    <p className="text-lg">
-                        Smartplay International is committed to achieving
+        <div className="bg-gray-200">
+            <div className="grid lg:grid-cols-3 grid-cols-1 gap-x-3 justify-between items-center contentSection">
+                <div className="col-span-2 space-y-6">
+                    <SectionHeader content="Smartplay Quality Policy (ISO 9001:2015)" />
+                    <SectionContent
+                        content="Smartplay International is committed to achieving
                         customer satisfaction by providing quality, durable,
                         consistent lottery drawing equipment and services which
                         consistently meet or exceed customer expectations. This
                         level of quality is achieved by continuously improving
                         the effectiveness of the Quality Management System.
                         Quality Objectives: Reduce Warranty Claims and Strive
-                        for On-Time Delivery.
-                    </p>
+                        for On-Time Delivery."
+                    />
                     <ArrowButton text="View ISO" />
                 </div>
                 <div>

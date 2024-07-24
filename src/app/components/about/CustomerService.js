@@ -12,15 +12,15 @@ export const CustomerService = () => {
             <div className="absolute inset-0 bg-blue-950 bg-opacity-50"></div>{" "}
             {/* Overlay */}
             <div className="absolute inset-0 flex items-center justify-center lg:px-0 px-2">
-                <div className="text-center space-y-5">
-                    <h1 className="text-white lg:text-6xl text-3xl font-bold">
+                <div className="contentSection w-full space-y-2">
+                    <h1 className="text-white lg:text-4xl text-3xl font-bold">
                         Customer Service
                     </h1>
-                    <p className="text-white lg:text-4xl text-2xl font-semibold">
+                    <p className="text-white lg:text-2xl text-2xl">
                         Our customer service team travels worldwide to support
                         clients.
                     </p>
-                    <div className="flex items-center justify-center">
+                    <div>
                         <ArrowButton text="Our Products" />
                     </div>
                 </div>

@@ -162,44 +162,47 @@ export default function LotteryDrawingMachines() {
                         handleSelectType={handleSelectType}
                         handleSelectFeature={handleSelectFeature}
                     />
-                    <div className="grid lg:grid-cols-3 grid-cols-1 gap-14">
-                        <AnimatePresence>
-                            {machines
-                                ? getSelectedItems(selected, machines).map(
-                                      (lotteryMachine, index) => (
-                                          <motion.div
-                                              key={index}
-                                              layout
-                                              initial={{
-                                                  opacity: 0,
-                                                  scale: 0.8,
-                                              }}
-                                              animate={{ opacity: 1, scale: 1 }}
-                                              exit={{ opacity: 0, scale: 0.8 }}
-                                              transition={{ duration: 0.3 }}
-                                              className="relative z-10"
-                                          >
-                                              <Link
-                                                  href={`/lottery-products/${lotteryMachine.slug}`}
-                                              >
-                                                  <ProductCard
-                                                      key={lotteryMachine.id}
-                                                      name={lotteryMachine.name}
-                                                      imageLink={
-                                                          lotteryMachine
-                                                              .featuredImage.url
-                                                      }
-                                                      categories={
-                                                          lotteryMachine.machineCategories
-                                                      }
-                                                  />
-                                              </Link>
-                                          </motion.div>
-                                      )
-                                  )
-                                : "loading"}
-                        </AnimatePresence>
-                    </div>
+                    {getSelectedItems(selected, machines).length > 0 ? (
+                        <div className="grid lg:grid-cols-3 grid-cols-1 gap-14">
+                            <AnimatePresence>
+                                {getSelectedItems(selected, machines).map(
+                                    (lotteryMachine, index) => (
+                                        <motion.div
+                                            key={index}
+                                            layout
+                                            initial={{ opacity: 0, scale: 0.8 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            exit={{ opacity: 0, scale: 0.8 }}
+                                            transition={{ duration: 0.3 }}
+                                            className="relative z-10"
+                                        >
+                                            <Link
+                                                href={`/lottery-products/${lotteryMachine.slug}`}
+                                            >
+                                                <ProductCard
+                                                    key={lotteryMachine.id}
+                                                    name={lotteryMachine.name}
+                                                    imageLink={
+                                                        lotteryMachine
+                                                            .featuredImage.url
+                                                    }
+                                                    categories={
+                                                        lotteryMachine.machineCategories
+                                                    }
+                                                />
+                                            </Link>
+                                        </motion.div>
+                                    )
+                                )}
+                            </AnimatePresence>
+                        </div>
+                    ) : (
+                        <div className="text-center py-8">
+                            <p className="text-xl text-gray-600">
+                                No machines found.
+                            </p>
+                        </div>
+                    )}
                 </div>
             </div>
 

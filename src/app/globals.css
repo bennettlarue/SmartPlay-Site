@@ -6,6 +6,33 @@ html {
   background-color: white;
 }
 
+.contentSection {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3rem 1rem;
+}
+
+.contentSection > * + * {
+  margin-top: 2rem;
+}
+
+@media (min-width: 640px) {
+  .contentSection {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contentSection {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
 .article-content img {
   display: block;
   margin-left: auto;
@@ -78,7 +105,6 @@ html {
   }
 
 }
-
 
 .m-t-24 {
   margin-top: 24px;
