@@ -101,22 +101,32 @@ export const RichText = ({ content }) => {
                     return (
                         <div
                             key={index}
-                            className={`my-6 w-fit mx-auto max-w-[${item.value.width}px]`}
+                            className={`my-6 w-fit mx-auto ${
+                                item.value && item.value.width
+                                    ? `max-w-[${item.value.width}px]`
+                                    : "max-w-full"
+                            }`}
                         >
-                            <div className="flex justify-center drop-shadow rounded">
-                                <Image
-                                    className="rounded"
-                                    src={item.value.url}
-                                    alt={item.value.alt || ""}
-                                    width={item.value.width}
-                                    height={item.value.height}
-                                />
-                            </div>
-                            {item.value.caption && (
-                                <p className="font-medium text-gray-500 mt-2 border-b border-b-gray-400 pb-1">
-                                    {item.value.caption[0].children[0].text}
-                                </p>
+                            {item.value && item.value.url && (
+                                <div className="flex justify-center drop-shadow rounded">
+                                    <Image
+                                        className="rounded"
+                                        src={item.value.url}
+                                        alt={item.value.alt || ""}
+                                        width={item.value.width || 300} // Provide a default width
+                                        height={item.value.height || 200} // Provide a default height
+                                    />
+                                </div>
                             )}
+                            {item.value &&
+                                item.value.caption &&
+                                item.value.caption[0] &&
+                                item.value.caption[0].children &&
+                                item.value.caption[0].children[0] && (
+                                    <p className="font-medium text-gray-500 mt-2 border-b border-b-gray-400 pb-1">
+                                        {item.value.caption[0].children[0].text}
+                                    </p>
+                                )}
                         </div>
                     );
                 default:

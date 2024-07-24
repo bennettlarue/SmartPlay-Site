@@ -9,10 +9,6 @@ const formatDate = (isoDate) => {
     return date.toLocaleDateString("en-US", options);
 };
 
-// Example usage
-const formattedDate = formatDate("2024-11-12T12:00:00.000Z");
-console.log(formattedDate); // Output: "November 12"
-
 export async function generateStaticParams() {
     const response = await fetch(
         "https://smartplay-content.payloadcms.app/api/posts"
