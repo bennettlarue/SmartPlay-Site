@@ -3,9 +3,14 @@
 import { ArrowButton } from "@/app/components/ArrowButton";
 import { Footer } from "@/app/components/Footer";
 import { Nav } from "@/app/components/Nav";
-import { Carousel } from "@material-tailwind/react";
 import { Title } from "@/app/components/products/Title";
 import { motion } from "framer-motion";
+import { PageBackground } from "@/app/components/PageBackground";
+import { SectionContent } from "@/app/components/SectionContent";
+import { SectionHeader } from "@/app/components/SectionHeader";
+import { ImageCard } from "@/app/components/ImageCard";
+import { BulletList } from "@/app/components/BulletList";
+import FetchImageGallery from "@/app/components/FetchImageGallery";
 
 const images = [
     "/images/casino-promotions-106.jpg",
@@ -28,90 +33,58 @@ const checks = [
     "Delivery logistics worldwide",
 ];
 
-export default function App() {
+export default function Promotions() {
     return (
         <div className="App">
             <Nav />
-            <div className="fixed top-0 left-0 w-full h-full -z-10">
-                <img
-                    src="https://hxl.550.myftpupload.com/wp-content/uploads/2021/10/cropped-view-of-happy-man-and-woman-holding-hands-while-holding-lottery-tickets.jpg"
-                    alt="Custom Promotions and Events"
-                    className="w-full h-full object-cover translate-y-10"
-                />
-                <div className="absolute top-0 left-0 w-full h-full bg-white opacity-50"></div>
-            </div>
+            <PageBackground image="/images/backgrounds/lottery-tickets.jpg" />
 
             <Title text="Promotions" />
             <div className="bg-white">
-                <div className="mx-auto max-w-[1000px] py-12 text-lg px-6 md:px-8 lg:px-0">
-                    <div className="space-y-6">
-                        <h2 className="lg:text-3xl text-xl font-semibold text-blue-950 text-center">
-                            Got a big idea for your next promotion, trade show
-                            or special event? We can help you bring it to life.
-                        </h2>
+                <div className="contentSection">
+                    <SectionHeader
+                        content="Got a big idea for your next promotion, trade show or
+                        special event? We can help you bring it to life."
+                    />
 
-                        <p className="text-lg">
-                            We have designed game and promotion concepts for
-                            clients worldwide. Our capabilities include custom
-                            design, electronics, sensors and integration of
-                            electronics with wood, metal and other materials.
-                        </p>
-                    </div>
+                    <SectionContent
+                        content="We have designed game and promotion concepts for clients
+                        worldwide. Our capabilities include custom design,
+                        electronics, sensors and integration of electronics with
+                        wood, metal and other materials."
+                    />
                 </div>
             </div>
-            <div className="bg-gray-200 py-12">
-                <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto max-w-[1000px] gap-x-6 items-center px-6 md:px-8 lg:px-0 lg:space-y-0 space-y-7">
-                    <ul className="space-y-6 bg-gray-200 text-blue-950 font-semibold col-span-1 max-w-[700px] mx-auto">
-                        {checks.map((check, index) => (
-                            <li key={index} className="flex space-x-2 text-xl">
-                                <p className="text-xl">•</p>
-                                <p>{check}</p>
-                            </li>
-                        ))}
-                    </ul>
-
-                    <div className="mb-8 md:mb-0">
-                        <img
-                            src="https://smartplay.com/wp-content/uploads/2017/06/nj-million-dollar-replay-drawing-drum.jpg"
-                            alt="Customer Service"
-                            className="w-full h-[300px] object-cover rounded shadow"
-                        />
-                    </div>
+            <div className="bg-gray-200">
+                <div className="contentSection">
+                    <ImageCard img="/images/solutions/nj-replay.jpg">
+                        <BulletList bullets={checks} />
+                    </ImageCard>
                 </div>
             </div>
 
-            <div className="bg-white pb-20">
-                <div className="mx-auto lg:max-w-[1000px] max-w-[700px] py-5 text-lg grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 lg:px-0 pt-12">
-                    {images.map((image, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{
-                                duration: 0.5,
-                                delay: 0.3 + (index % 3) * 0.1,
-                            }}
-                        >
-                            <img
-                                src={image}
-                                alt="Customer Service"
-                                className="w-full h-[300px] object-cover rounded shadow"
-                            />
-                        </motion.div>
-                    ))}
+            <div className="bg-white">
+                <div className="contentSection">
+                    <FetchImageGallery
+                        url={
+                            "https://smartplay-content.payloadcms.app/api/image-galleries/66a1ab5b2c073597d83a906c?locale=undefined&draft=false&depth=1"
+                        }
+                    />
                 </div>
             </div>
 
-            <div className="bg-gray-200 py-12">
-                <div className="mx-auto max-w-[1100px] items-center space-y-5 px-4 md:px-8 lg:px-0">
-                    <h2 className="text-3xl font-semibold text-blue-950 text-center">
-                        Get The Ball Rolling. Contact Us To Discuss Your Next
-                        Promotion
-                    </h2>
-                    <div className="flex justify-center">
-                        <ArrowButton text="Contact Us" />
-                    </div>
+            <div className="bg-gray-200">
+                <div className="contentSection">
+                    <SectionHeader
+                        content="Get The Ball Rolling. Contact Us To Discuss Your Next
+                        Promotion"
+                    />
+                    <ArrowButton
+                        text="Contact Us"
+                        href="/contact"
+                        bg_color="bg-orange-500"
+                        bg_hover="bg-orange-600"
+                    />
                 </div>
             </div>
 

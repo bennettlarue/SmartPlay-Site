@@ -5,7 +5,14 @@ import { SectionContent } from "./SectionContent";
 import { ArrowButton } from "./ArrowButton";
 import { motion } from "framer-motion";
 
-export const ImageCard = ({ img, title, desc, href, animate = true }) => {
+export const ImageCard = ({
+    img,
+    title,
+    desc,
+    href,
+    animate = true,
+    children,
+}) => {
     return (
         <motion.div
             initial={animate ? { opacity: 0, y: 10 } : {}}
@@ -31,6 +38,7 @@ export const ImageCard = ({ img, title, desc, href, animate = true }) => {
                         animate={false}
                     />
                 ) : null}
+                {children}
             </div>
         </motion.div>
     );

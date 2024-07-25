@@ -3,24 +3,17 @@
 import { Footer } from "@/app/components/Footer";
 import { ImageCard } from "@/app/components/ImageCard";
 import { Nav } from "@/app/components/Nav";
+import { PageBackground } from "@/app/components/PageBackground";
 import { SectionContent } from "@/app/components/SectionContent";
 import { SectionHeader } from "@/app/components/SectionHeader";
 import { VideoCard } from "@/app/components/VideoCard";
-import YouTubeEmbed from "@/app/components/YouTubeEmbed";
 import { Title } from "@/app/components/products/Title";
 
 export default function Raffles() {
     return (
         <div className="App">
             <Nav />
-            <div className="fixed top-0 left-0 w-full h-full -z-10">
-                <img
-                    src="https://hxl.550.myftpupload.com/wp-content/uploads/2021/10/cropped-view-of-happy-man-and-woman-holding-hands-while-holding-lottery-tickets.jpg"
-                    alt="Customer Service"
-                    className="w-full h-full object-cover translate-y-10"
-                />
-                <div className="absolute top-0 left-0 w-full h-full bg-white opacity-50"></div>
-            </div>
+            <PageBackground image="/images/backgrounds/lottery-tickets.jpg" />
 
             <Title text="Raffles" />
             <div className="bg-white">
