@@ -40,7 +40,7 @@ const data = [
     },
 ];
 
-export default function App() {
+export default function BingoSystems() {
     return (
         <div className="App">
             <Nav />

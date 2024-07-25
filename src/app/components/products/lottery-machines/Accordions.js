@@ -4,6 +4,7 @@ import {
     AccordionHeader,
     AccordionBody,
 } from "@material-tailwind/react";
+import { SectionContent } from "../../SectionContent";
 
 function Icon({ id, open }) {
     return (
@@ -41,13 +42,13 @@ export function Accordions() {
                     Less Downtime. Less Risk. Higher ROI.
                 </AccordionHeader>
                 <AccordionBody className="text-lg text-black font-normal border rounded rounded-t-none">
-                    <p className="p-2 text-left font-medium">
-                        Our clients experience less downtime, longer equipment
+                    <SectionContent
+                        content="Our clients experience less downtime, longer equipment
                         life and lower repair and maintenance costs. After 1
                         million draw events and 3,000 machines manufactured, we
                         have had only 79 emergency visits outside of regularly
-                        scheduled maintenance.
-                    </p>
+                        scheduled maintenance."
+                    />
                 </AccordionBody>
             </Accordion>
             <Accordion open={open === 2} icon={<Icon id={2} open={open} />}>
@@ -58,13 +59,7 @@ export function Accordions() {
                     Worldwide Customer Support
                 </AccordionHeader>
                 <AccordionBody className="text-lg text-black font-normal">
-                    <p className="p-2 text-left font-medium">
-                        Our clients experience less downtime, longer equipment
-                        life and lower repair and maintenance costs. After 1
-                        million draw events and 3,000 machines manufactured, we
-                        have had only 79 emergency visits outside of regularly
-                        scheduled maintenance.
-                    </p>
+                    <SectionContent content="Smartplay technicians regularly travel worldwide, performing scheduled maintenance on client equipment. Many of our clients schedule maintenance visits upon purchase of their equipment to assure optimal performance. " />
                 </AccordionBody>
             </Accordion>
             <Accordion open={open === 3} icon={<Icon id={3} open={open} />}>
@@ -75,13 +70,7 @@ export function Accordions() {
                     Extended Warranty Packages
                 </AccordionHeader>
                 <AccordionBody className="text-lg text-black font-normal">
-                    <p className="p-2 text-left font-medium">
-                        Our clients experience less downtime, longer equipment
-                        life and lower repair and maintenance costs. After 1
-                        million draw events and 3,000 machines manufactured, we
-                        have had only 79 emergency visits outside of regularly
-                        scheduled maintenance.
-                    </p>
+                    <SectionContent content="We offer extended support and maintenance packages which include phone support, regularly scheduled on-site maintenance, and free or discounted replacement parts." />
                 </AccordionBody>
             </Accordion>
             <Accordion open={open === 4} icon={<Icon id={4} open={open} />}>
@@ -92,13 +81,7 @@ export function Accordions() {
                     Endless Customization
                 </AccordionHeader>
                 <AccordionBody className="text-lg text-black font-normal border">
-                    <p className="p-2 text-left font-medium">
-                        Our clients experience less downtime, longer equipment
-                        life and lower repair and maintenance costs. After 1
-                        million draw events and 3,000 machines manufactured, we
-                        have had only 79 emergency visits outside of regularly
-                        scheduled maintenance.
-                    </p>
+                    <SectionContent content="Customize any lottery system to fit your objectives. This includes the base design, colors, automation software, cameras, lighting and more." />
                 </AccordionBody>
             </Accordion>
         </>
