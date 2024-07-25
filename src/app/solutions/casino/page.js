@@ -1,11 +1,13 @@
 "use client";
 
-import { ArrowButton } from "@/app/components/ArrowButton";
 import { Footer } from "@/app/components/Footer";
 import { Nav } from "@/app/components/Nav";
 import { Carousel } from "@material-tailwind/react";
 import { Title } from "@/app/components/products/Title";
-import { motion } from "framer-motion";
+import { SectionHeader } from "@/app/components/SectionHeader";
+import { SectionContent } from "@/app/components/SectionContent";
+import { BulletList } from "@/app/components/BulletList";
+import FetchImageGallery from "@/app/components/FetchImageGallery";
 
 const images = [
     "/images/casino-promotions-106.jpg",
@@ -28,7 +30,7 @@ const checks = [
     "Promotional concept development and creative theme design",
 ];
 
-export default function App() {
+export default function Casino() {
     return (
         <div className="App">
             <Nav />
@@ -43,100 +45,77 @@ export default function App() {
 
             <Title text="Casino Gaming" />
             <div className="bg-white">
-                <div className="mx-auto max-w-[1000px] py-12 text-lg px-6 md:px-8 lg:px-0">
-                    <div className="space-y-6">
-                        <h2 className="lg:text-3xl text-xl font-semibold text-blue-950 text-center">
-                            Generate Excitement and Coin-In by Bringing
-                            Lottery-Style Promotions to your Casino
-                        </h2>
-
-                        <p className="text-lg md:px-10">
-                            Smartplay has also designed dozens of custom games
+                <div className="contentSection">
+                    <SectionHeader
+                        content="Generate Excitement and Coin-In by Bringing
+                            Lottery-Style Promotions to your Casino"
+                    />
+                    <SectionContent
+                        content="Smartplay has also designed dozens of custom games
                             for casinos and lotteries for both promotional and
                             wagering use. Many creative promotions can be run
                             using a single lottery machine. By changing the ball
                             values and colors, you can create a number of
-                            different promotions using a single lottery machine.
-                        </p>
-
-                        <p className="text-lg md:px-10">
-                            Use a lottery machine as a fresh alternative to
+                            different promotions using a single lottery machine."
+                    />
+                    <SectionContent
+                        content="Use a lottery machine as a fresh alternative to
                             traditional game boards. Ball values can be captured
                             automatically via electronic sensor and sent
                             directly to your player tracking system or content
                             delivery network. Smartplay has a number of lottery
                             machines available for rental or sale. We can also
                             customize a machine to meet your specific
-                            objectives.
-                        </p>
-                    </div>
+                            objectives."
+                    />
                 </div>
             </div>
-            <div className="bg-gray-200 py-12">
-                <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto max-w-[1000px] gap-x-6 items-center px-4 md:px-8 lg:px-0">
-                    <ul className="space-y-6 bg-gray-200 p-4 text-blue-950 font-semibold col-span-1 max-w-[700px] mx-auto">
-                        <li className="lg:text-3xl text-xl font-bold">
-                            Casino Services Include:
-                        </li>
-                        {checks.map((check, index) => (
-                            <li key={index} className="flex space-x-2 text-lg">
-                                <p className="text-xl">•</p>
-                                <p>{check}</p>
-                            </li>
-                        ))}
-                    </ul>
-
-                    <div className="lg:mt-0 mt-6 mb-8 md:mb-0">
-                        <Carousel
-                            className="rounded shadow max-h-[400px]"
-                            loop={true}
-                            autoplay={true}
-                        >
-                            <img
-                                src="https://smartplay.com/wp-content/uploads/2018/07/casino-promotions-105.jpg"
-                                alt="image 1"
-                                className="h-full w-full object-cover"
-                            />
-                            <img
-                                src="https://smartplay.com/wp-content/uploads/2018/07/casino-promotions-101.jpg"
-                                alt="image 2"
-                                className="h-full w-full object-cover"
-                            />
-                            <img
-                                src="https://smartplay.com/wp-content/uploads/2018/07/casino-promotions-104.jpg"
-                                alt="image 3"
-                                className="h-full w-full object-cover"
-                            />
-                            <img
-                                src="https://smartplay.com/wp-content/uploads/2018/07/casino-promotions-102.jpg"
-                                alt="image 4"
-                                className="h-full w-full object-cover"
-                            />
-                        </Carousel>
+            <div className="bg-gray-200">
+                <div className="contentSection">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                        <div className="space-y-6">
+                            <SectionHeader content="Casino Services Include:" />
+                            <BulletList bullets={checks} />
+                        </div>
+                        <div className="lg:mt-0 mt-6 mb-8 md:mb-0">
+                            <Carousel
+                                className="rounded shadow max-h-[400px]"
+                                loop={true}
+                                autoplay={true}
+                            >
+                                <img
+                                    src="https://smartplay.com/wp-content/uploads/2018/07/casino-promotions-105.jpg"
+                                    alt="image 1"
+                                    className="h-full w-full object-cover"
+                                />
+                                <img
+                                    src="https://smartplay.com/wp-content/uploads/2018/07/casino-promotions-101.jpg"
+                                    alt="image 2"
+                                    className="h-full w-full object-cover"
+                                />
+                                <img
+                                    src="https://smartplay.com/wp-content/uploads/2018/07/casino-promotions-104.jpg"
+                                    alt="image 3"
+                                    className="h-full w-full object-cover"
+                                />
+                                <img
+                                    src="https://smartplay.com/wp-content/uploads/2018/07/casino-promotions-102.jpg"
+                                    alt="image 4"
+                                    className="h-full w-full object-cover"
+                                />
+                            </Carousel>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div className="bg-white pb-20">
-                <div className="mx-auto lg:max-w-[1000px] max-w-[700px] py-5 text-lg grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 lg:px-0 pt-12">
-                    {images.map((image, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{
-                                duration: 0.5,
-                                delay: 0.3 + (index % 3) * 0.1,
-                            }}
-                        >
-                            <img
-                                src={image}
-                                alt="Customer Service"
-                                className="w-full h-[300px] object-cover rounded shadow"
-                            />
-                        </motion.div>
-                    ))}
+            <div className="bg-white">
+                <div className="contentSection">
+                    <FetchImageGallery
+                        url={
+                            "https://smartplay-content.payloadcms.app/api/image-galleries/66a1ab5b2c073597d83a906c?locale=undefined&draft=false&depth=1"
+                        }
+                    />
                 </div>
             </div>
 

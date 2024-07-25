@@ -2,9 +2,17 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { AnimatePresence, motion } from "framer-motion";
 
 const ZoomImage = ({ src, alt, onClick }) => (
-    <div
+    <motion.div
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        transition={{ duration: 0.2 }}
+        style={{ cursor: "zoom-in" }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
         className="relative group cursor-pointer aspect-square"
         onClick={onClick}
     >
@@ -31,11 +39,15 @@ const ZoomImage = ({ src, alt, onClick }) => (
                 />
             </svg>
         </div>
-    </div>
+    </motion.div>
 );
 
 const FullscreenImage = ({ images, currentIndex, onClose, onPrev, onNext }) => (
-    <div
+    <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.2 }}
         className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50"
         onClick={onClose}
     >
@@ -119,7 +131,7 @@ const FullscreenImage = ({ images, currentIndex, onClose, onPrev, onNext }) => (
                 />
             </svg>
         </button>
-    </div>
+    </motion.div>
 );
 
 const Gallery = ({ images }) => {
@@ -144,15 +156,17 @@ const Gallery = ({ images }) => {
                     />
                 ))}
             </div>
-            {fullscreenIndex !== null && (
-                <FullscreenImage
-                    images={images}
-                    currentIndex={fullscreenIndex}
-                    onClose={closeFullscreen}
-                    onPrev={showPrevImage}
-                    onNext={showNextImage}
-                />
-            )}
+            <AnimatePresence>
+                {fullscreenIndex !== null && (
+                    <FullscreenImage
+                        images={images}
+                        currentIndex={fullscreenIndex}
+                        onClose={closeFullscreen}
+                        onPrev={showPrevImage}
+                        onNext={showNextImage}
+                    />
+                )}
+            </AnimatePresence>
         </>
     );
 };
