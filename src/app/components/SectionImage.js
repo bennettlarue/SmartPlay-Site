@@ -1,10 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-export const SectionImage = ({ src, alt }) => {
+export const SectionImage = ({ src, alt, animate = true }) => {
     return (
         <motion.img
-            initial={{ opacity: 0 }}
+            initial={animate ? { opacity: 0 } : {}}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             src={src}

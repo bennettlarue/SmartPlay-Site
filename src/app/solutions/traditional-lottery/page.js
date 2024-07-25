@@ -31,7 +31,7 @@ const slides = [
     },
 ];
 
-export default function App() {
+export default function TraditionalLottery() {
     return (
         <div>
             <Nav />

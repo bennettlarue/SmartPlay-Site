@@ -24,10 +24,11 @@ export const ArrowButton = ({
     href = "/",
     bg_color = "bg-blue-950",
     bg_hover = "bg-blue-900",
+    animate = true,
 }) => {
     return (
         <motion.div
-            initial={{ opacity: 0, y: 5 }}
+            initial={animate ? { opacity: 0, y: 5 } : {}}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ ease: "easeInOut", delay: 0.2 }}

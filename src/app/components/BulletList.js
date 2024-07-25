@@ -6,7 +6,7 @@ export const BulletList = ({ bullets }) => {
         <ul className="space-y-6">
             {bullets.map((bullet, index) => (
                 <motion.li
-                    initial={{ opacity: 0, y: -5 }}
+                    initial={{ opacity: 0, y: 5 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}

@@ -4,8 +4,9 @@ import { SectionHeader } from "./SectionHeader";
 import { SectionContent } from "./SectionContent";
 import { ArrowButton } from "./ArrowButton";
 import { motion } from "framer-motion";
+import { VideoEmbed } from "./VideoEmbed";
 
-export const ImageCard = ({ img, title, desc, href, animate = true }) => {
+export const VideoCard = ({ video, title, desc, href, animate = true }) => {
     return (
         <motion.div
             initial={animate ? { opacity: 0, y: 10 } : {}}
@@ -14,9 +15,8 @@ export const ImageCard = ({ img, title, desc, href, animate = true }) => {
             viewport={{ once: true }}
             className="grid md:grid-cols-2 grid-cols-1 items-center gap-10"
         >
-            <div className="w-full h-64 overflow-hidden">
-                <SectionImage src={img} alt={title} animate={false} />
-            </div>
+            <VideoEmbed url={video} />
+
             <div className="space-y-4">
                 {title ? (
                     <SectionHeader content={title} animate={false} />
