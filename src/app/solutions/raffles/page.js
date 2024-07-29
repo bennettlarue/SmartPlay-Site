@@ -16,7 +16,7 @@ export default function Raffles() {
             <PageBackground image="/images/backgrounds/lottery-tickets.jpg" />
 
             <Title text="Raffles" />
-            <div className="bg-white">
+            <div className="firstSection">
                 <div className="contentSection">
                     <SectionHeader
                         content="Raffles are very popular worldwide for fundraising
@@ -27,7 +27,7 @@ export default function Raffles() {
                     <SectionContent content="In some countries, raffles can be established to offer prizes such as cars, motorbikes and even houses. In the United States, raffles are frequently used to as an add on activity to raise funds at charity events. Raffles work well for fundraising because they are easy to implement. Picking winners could be as easy as picking selecting a ticket out of a giant bin!" />
                 </div>
             </div>
-            <div className="bg-gray-200">
+            <div className="secondarySection">
                 <div className="contentSection">
                     <VideoCard
                         video="https://www.youtube.com/embed/3nsDdwWmLqg"
@@ -55,7 +55,7 @@ export default function Raffles() {
                     />
                 </div>
             </div>
-            <div className="bg-white">
+            <div className="primarySection">
                 <div className="contentSection">
                     <ImageCard
                         img="/images/solutions/blizzard.jpg"
@@ -83,7 +83,7 @@ export default function Raffles() {
                 </div>
             </div>
 
-            <div className="bg-gray-200">
+            <div className="secondarySection bottomSection">
                 <div className="contentSection">
                     <ImageCard
                         img="/images/solutions/nj-replay.jpg"
@@ -91,7 +91,10 @@ export default function Raffles() {
                         desc=" If your budget allows, you might consider a
                             custom-designed raffle machine — one that can
                             display balls, then automatically drop them in the
-                            raffle bin. We’ve designed and build hundreds of
+                            raffle bin."
+                    />
+                    <SectionContent
+                        content="We’ve designed and build hundreds of
                             custom machines. Here’s one example of a custom
                             raffle bin used to select the lucky winners for the
                             New Jersey lottery’s annual event to recognize some

@@ -3,29 +3,12 @@
 import { Footer } from "@/app/components/Footer";
 import { Nav } from "@/app/components/Nav";
 import { Title } from "@/app/components/products/Title";
-import { motion } from "framer-motion";
 import { ArrowButton } from "@/app/components/ArrowButton";
 import { PageBackground } from "@/app/components/PageBackground";
 import { SectionContent } from "@/app/components/SectionContent";
 import { SectionHeader } from "@/app/components/SectionHeader";
-import { ImageCard } from "@/app/components/ImageCard";
 import { BulletList } from "@/app/components/BulletList";
 import FetchImageGallery from "@/app/components/FetchImageGallery";
-
-const images = [
-    "/images/casino-promotions-106.jpg",
-    "/images/rocknwheel1.jpg",
-    "https://smartplay.com/wp-content/uploads/2020/02/michigan-lottery.jpg",
-    "https://smartplay.com/wp-content/uploads/2017/07/custom-games-vault-ireland.jpg",
-    "https://smartplay.com/wp-content/uploads/2017/07/custom-drawing-drum.jpg",
-    "https://smartplay.com/wp-content/uploads/2017/07/custom-games-tic-tac-toe1.jpg",
-    "https://smartplay.com/wp-content/uploads/2017/07/custom-games-prize-vault2.jpg",
-    "https://smartplay.com/wp-content/uploads/2017/07/custom-games-ny-lottery-display.jpg",
-    "https://smartplay.com/wp-content/uploads/2017/07/custom-games-ireland.jpg",
-    "https://smartplay.com/wp-content/uploads/2017/07/custom-games-game-cube.jpg",
-    "https://smartplay.com/wp-content/uploads/2017/07/custom-games-deleware-lottery.jpg",
-    "https://smartplay.com/wp-content/uploads/2017/07/custom-games-coffre-fort.jpg",
-];
 
 const checks = [
     "Casino Promotions and Events",

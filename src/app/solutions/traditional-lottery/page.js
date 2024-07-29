@@ -38,7 +38,7 @@ export default function TraditionalLottery() {
             <PageBackground image="/images/backgrounds/globe.jpg" />
 
             <Title text="Traditional Lottery" />
-            <div className="bg-white">
+            <div className="firstSection">
                 <div className="contentSection">
                     <SectionHeader
                         content="Since 1993, Smartplay has delivered traditional and
@@ -55,7 +55,12 @@ export default function TraditionalLottery() {
             </div>
             {slides.map(({ img, title, desc, href }, index) => (
                 <div
-                    className={index % 2 === 0 ? "bg-gray-200" : "bg-white"}
+                    className={
+                        (index % 2 === 0
+                            ? "secondarySection"
+                            : "primarySection") +
+                        (index === slides.length - 1 ? " bottomSection" : "")
+                    }
                     key={index}
                 >
                     <div className="contentSection">

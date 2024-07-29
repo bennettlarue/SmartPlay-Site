@@ -5,7 +5,7 @@ import { SectionContent } from "../SectionContent";
 
 export const Iso = () => {
     return (
-        <div className="bg-gray-200">
+        <div className="primarySection">
             <div className="grid lg:grid-cols-3 grid-cols-1 gap-x-3 justify-between items-center contentSection">
                 <div className="col-span-2 space-y-6">
                     <SectionHeader content="Smartplay Quality Policy (ISO 9001:2015)" />

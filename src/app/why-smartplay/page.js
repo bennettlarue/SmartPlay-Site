@@ -10,6 +10,8 @@ import { SectionHeader } from "../components/SectionHeader";
 import { SectionContent } from "../components/SectionContent";
 import { PageBackground } from "../components/PageBackground";
 import { SectionImage } from "../components/SectionImage";
+import { ArrowButton } from "../components/ArrowButton";
+import { ImageCard } from "../components/ImageCard";
 
 export default function About() {
     return (
@@ -17,7 +19,7 @@ export default function About() {
             <PageBackground image="/images/backgrounds/why-smartplay.jpg" />
             <Nav />
             <Title text="Why Smartplay" />
-            <div className="bg-white">
+            <div className="firstSection">
                 <div className="contentSection">
                     <SectionHeader
                         content="
@@ -34,8 +36,7 @@ export default function About() {
                     />
                 </div>
             </div>
-            <CustomerService />
-            <div className="bg-white">
+            <div className="secondarySection">
                 <div className="contentSection">
                     <SectionHeader content="Millions in winnings and the trust of your customers are on the line. As your partner, we take this responsibility seriously." />
                     <SectionContent
@@ -66,12 +67,25 @@ export default function About() {
                         />
                     </div>
                 </div>
-                <div>
-                    <Iso />
+            </div>
+            <div className="primarySection">
+                <div className="contentSection">
+                    <SectionHeader content="Smartplay Quality Policy (ISO 9001:2015)" />
+                    <ImageCard img="https://hxl550.n3cdn1.secureserver.net/wp-content/uploads/2022/06/iso-2015-logo-REVERESED-500PX.png">
+                        <SectionContent
+                            content="Smartplay International is committed to achieving
+                        customer satisfaction by providing quality, durable,
+                        consistent lottery drawing equipment and services which
+                        consistently meet or exceed customer expectations. "
+                        />
+                        <ArrowButton text="View ISO" />
+                    </ImageCard>
                 </div>
+            </div>
+            <div className="secondarySection bottomSection">
                 <div className="contentSection">
                     <SectionHeader content="Stop by for a Tour!" />
-                    <div className="grid lg:grid-cols-2 grid-cols-1 justify-center items-center gap-x-5 mt-5">
+                    <ImageCard img="/images/why-smartplay/smartplay-map.png">
                         <SectionContent
                             content="Smartplay is conveniently based in Burlington County
                             New Jersey, just outside Philadelphia, PA. This
@@ -82,15 +96,9 @@ export default function About() {
                             development, machine fabrication, and ball printing
                             divisions."
                         />
+                    </ImageCard>
 
-                        <div className="lg:mt-0 mt-5 row-span-2 col-span-1">
-                            <SectionImage
-                                src="/images/why-smartplay/smartplay-map.png"
-                                alt="Smartplay Map"
-                            />
-                        </div>
-                    </div>
-                    <div className="max-w-[700px] mx-auto">
+                    <div>
                         <SectionImage
                             src="/images/why-smartplay/smartplay-building.gif"
                             alt="Smartplay Map"

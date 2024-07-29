@@ -12,7 +12,7 @@ export const InfoCard = ({ direction, header, text }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className={` bg-gray-200 p-6 rounded shadow text-left`}
+            className={` bg-white p-6 rounded shadow text-left`}
         >
             <div>
                 <h2 className="text-2xl text-blue-950 font-semibold">

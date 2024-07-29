@@ -47,7 +47,7 @@ export default function BingoSystems() {
             <PageBackground image="/images/backgrounds/globe.jpg" />
 
             <Title text="Bingo Systems" />
-            <div className="bg-white">
+            <div className="firstSection">
                 <div className="contentSection">
                     <SectionHeader
                         content="Highest quality parts and construction to meet the
@@ -65,18 +65,19 @@ export default function BingoSystems() {
                     />
                 </div>
             </div>
-            <div className="bg-gray-200">
+            <div className="secondarySection">
                 <div className="contentSection">
                     <BulletList bullets={checks} />
                 </div>
             </div>
-            <div className="bg-white">
+            <div className="primarySection bottomSection">
                 <div className="contentSection">
                     <SectionHeader content="Standard Bingo and Keno Models Used Around the World" />
                     <div className="space-y-10">
                         {data.map(({ title, desc, imageLink }, index) => (
                             <div className="border-b border-b-gray-400 pb-8">
                                 <ImageCard
+                                    px={60}
                                     title={title}
                                     desc={desc}
                                     img={imageLink}

@@ -44,7 +44,7 @@ export default function Casino() {
             </div>
 
             <Title text="Casino Gaming" />
-            <div className="bg-white">
+            <div className="firstSection">
                 <div className="contentSection">
                     <SectionHeader
                         content="Generate Excitement and Coin-In by Bringing
@@ -70,7 +70,7 @@ export default function Casino() {
                     />
                 </div>
             </div>
-            <div className="bg-gray-200">
+            <div className="secondarySection">
                 <div className="contentSection">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                         <div className="space-y-6">
@@ -109,7 +109,7 @@ export default function Casino() {
                 </div>
             </div>
 
-            <div className="bg-white">
+            <div className="primarySection bottomSection">
                 <div className="contentSection">
                     <FetchImageGallery
                         url={
