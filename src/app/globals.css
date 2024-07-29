@@ -33,6 +33,71 @@ html {
   }
 }
 
+.firstSection {
+  position: relative;
+  background-color: white;
+  padding-top: 0px; /* Adjust as needed to accommodate the skew */
+}
+
+.firstSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  transform: skew(0deg, 0deg); /* Changed from -2deg to 2deg */
+  transform-origin: top right; /* Changed from top left to top right */
+  border-top: rgb(156 163 175) solid 3px;
+}
+
+.primarySection {
+  background-color: white;
+}
+
+.secondarySection {
+  position: relative;
+  background-color: rgb(229 231 235);
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  padding: 50px 0; /* Adjust as needed */
+  overflow: hidden;
+}
+
+.secondarySection::before,
+.secondarySection::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50px; /* Adjust for steeper or shallower angle */
+  background-color: white; /* Or any color that matches your design */
+}
+
+.secondarySection::before {
+  top: 0;
+  transform: skew(0deg, -1.1deg);
+  transform-origin: top left;
+}
+
+.secondarySection::after {
+  bottom: 0;
+  transform: skew(0deg, 1.1deg);
+  transform-origin: bottom left;
+}
+
+.bottomSection {
+  padding: 50px 0; /* Adjust as needed */
+  border-bottom: rgb(107 114 128) solid 3px;
+}
+
+.bottomSection::after {  
+  bottom: 0;
+  height: 0;
+  transform: skew(0deg, 0deg);
+  transform-origin: bottom left;
+}
+
 .article-content img {
   display: block;
   margin-left: auto;
