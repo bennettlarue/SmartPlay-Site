@@ -22,8 +22,6 @@ export const VideoCard = ({
             viewport={{ once: true }}
             className="grid md:grid-cols-2 grid-cols-1 items-center gap-10"
         >
-            <VideoEmbed url={video} />
-
             <div className="space-y-4">
                 {title ? (
                     <SectionHeader content={title} animate={false} />
@@ -40,6 +38,7 @@ export const VideoCard = ({
                 ) : null}
                 {children}
             </div>
+            <VideoEmbed url={video} />
         </motion.div>
     );
 };

@@ -46,7 +46,13 @@ export const BulletList = ({
     };
 
     return (
-        <ul className={cols === 1 ? "space-y-6" : "grid grid-cols-2 gap-6"}>
+        <ul
+            className={
+                cols === 1
+                    ? "space-y-6"
+                    : "grid lg:grid-cols-2 grid-cols-1 gap-6"
+            }
+        >
             {bullets.map((bullet, index) => (
                 <motion.li
                     initial={{ opacity: 0, y: 5 }}

@@ -100,7 +100,7 @@ export default function LotteryDrawingMachines() {
             <PageBackground image="/images/backgrounds/globe.jpg" />
 
             <Title text="Lottery Drawing Machines" />
-            <div className=" bg-white">
+            <div className="firstSection">
                 <div className="contentSection">
                     <SectionHeader
                         content="Consistent, trouble-free lottery equipment delivers
@@ -122,7 +122,7 @@ export default function LotteryDrawingMachines() {
                     />
                 </div>
 
-                <div className="bg-gray-200">
+                <div className="secondarySection">
                     <div className="contentSection">
                         <SectionHeader
                             content="Why do clients in 127 countries choose Smartplay
@@ -132,7 +132,7 @@ export default function LotteryDrawingMachines() {
                     </div>
                 </div>
 
-                <div className="bg-white">
+                <div className="primarySection bottomSection">
                     <div className="contentSection">
                         <SectionHeader
                             content="We offer lottery machines to meet any requirement.

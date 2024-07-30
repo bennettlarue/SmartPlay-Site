@@ -1,9 +1,12 @@
 import React from "react";
-import { motion, useInView } from "framer-motion";
+import { color, motion, useInView } from "framer-motion";
+import { SectionHeader } from "../SectionHeader";
+import { SectionContent } from "../SectionContent";
 
-export const InfoCard = ({ direction, header, text }) => {
+export const InfoCard = ({ header, text, index, bg_color = "bg-white" }) => {
     const ref = React.useRef(null);
-    const inView = useInView(ref, { once: true });
+    const defaultStyle =
+        " p-6 py-14 text-left border-b border-x border-gray-500";
 
     return (
         <motion.div
@@ -12,13 +15,15 @@ export const InfoCard = ({ direction, header, text }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className={` bg-white p-6 rounded shadow text-left`}
+            className={
+                index === 0
+                    ? defaultStyle + " border-t " + bg_color
+                    : defaultStyle + " " + bg_color
+            }
         >
-            <div>
-                <h2 className="text-2xl text-blue-950 font-semibold">
-                    {header}
-                </h2>
-                <p className="text-lg py-4 my-auto">{text}</p>
+            <div className="space-y-4 ">
+                <SectionHeader content={header} />
+                <SectionContent content={text} />
             </div>
         </motion.div>
     );

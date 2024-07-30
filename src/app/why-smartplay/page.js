@@ -44,24 +44,24 @@ export default function About() {
                         including over 100 customers in Southeast Asia — work
                         with Smartplay:"
                     />
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 gap-y-12">
+                    <div className="">
                         <InfoCard
-                            direction="r"
+                            index={0}
                             header="Product Reliability"
                             text="Many of our lottery systems have been in use continuously for 25 years. This is only possible by using the highest quality materials and incorporating manufacturing innovations that simplify operation and lower risk. Our drawing systems have been tested and certified by leading certification companies including GLI, KPMG, Eclipse, Delahanty Consulting, and BMM."
                         />
                         <InfoCard
-                            direction="l"
+                            index={1}
                             header="Industry Involvement"
                             text="Smartplay is a member of the World Lottery Association (WLA), Asia-Pacific Lottery Association (APLA) and the North American Association of State and Provincial Lotteries (NASPL). Smartplay has also received ISO 9001:2015 certification."
                         />
                         <InfoCard
-                            direction="r"
+                            index={2}
                             header="Written Warranty"
                             text="New machines are warranted for one-year from the date of delivery or 10,000 draw cycles, whichever comes first. We also offer extended warranties and service agreements."
                         />
                         <InfoCard
-                            direction="l"
+                            index={3}
                             header="Worldwide Customer Support"
                             text="Service technicians are located in both the United States and Asia and we employee no outside contractors. Our team travels thousands of miles each month providing routine maintenance to customers worldwide."
                         />

@@ -12,6 +12,7 @@ export const ImageCard = ({
     href,
     animate = true,
     px = 0,
+    py = 0,
     children,
 }) => {
     return (
@@ -22,14 +23,6 @@ export const ImageCard = ({
             viewport={{ once: true }}
             className="grid md:grid-cols-2 grid-cols-1 items-center gap-10"
         >
-            <div
-                style={{
-                    padding: `0 ${px}px`,
-                }}
-                className="w-full h-64 overflow-hidden"
-            >
-                <SectionImage src={img} alt={title} animate={false} />
-            </div>
             <div className="space-y-4">
                 {title ? (
                     <SectionHeader content={title} animate={false} />
@@ -45,6 +38,14 @@ export const ImageCard = ({
                     />
                 ) : null}
                 {children}
+            </div>
+            <div
+                style={{
+                    padding: `${py}px ${px}px`,
+                }}
+                className="w-full h-64 overflow-hidden"
+            >
+                <SectionImage src={img} alt={title} animate={false} />
             </div>
         </motion.div>
     );

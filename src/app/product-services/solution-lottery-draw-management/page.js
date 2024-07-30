@@ -1,27 +1,17 @@
 "use client";
 
-import { ArrowButton } from "@/app/components/ArrowButton";
+import { BigLineBreak } from "@/app/components/BigLineBreak";
+import { BulletList } from "@/app/components/BulletList";
 import { Footer } from "@/app/components/Footer";
+import { ImageCard } from "@/app/components/ImageCard";
+import { LineBreak } from "@/app/components/LineBreak";
 import { Nav } from "@/app/components/Nav";
-import { Carousel } from "@material-tailwind/react";
+import { PageBackground } from "@/app/components/PageBackground";
 import { Title } from "@/app/components/products/Title";
-import { motion } from "framer-motion";
+import { SectionContent } from "@/app/components/SectionContent";
+import { SectionHeader } from "@/app/components/SectionHeader";
+import { VideoEmbed } from "@/app/components/VideoEmbed";
 import VimeoEmbed from "@/app/components/VimeoEmbed";
-
-const images = [
-    "/images/casino-promotions-106.jpg",
-    "/images/rocknwheel1.jpg",
-    "https://smartplay.com/wp-content/uploads/2020/02/michigan-lottery.jpg",
-    "https://smartplay.com/wp-content/uploads/2017/07/custom-games-vault-ireland.jpg",
-    "https://smartplay.com/wp-content/uploads/2017/07/custom-drawing-drum.jpg",
-    "https://smartplay.com/wp-content/uploads/2017/07/custom-games-tic-tac-toe1.jpg",
-    "https://smartplay.com/wp-content/uploads/2017/07/custom-games-prize-vault2.jpg",
-    "https://smartplay.com/wp-content/uploads/2017/07/custom-games-ny-lottery-display.jpg",
-    "https://smartplay.com/wp-content/uploads/2017/07/custom-games-ireland.jpg",
-    "https://smartplay.com/wp-content/uploads/2017/07/custom-games-game-cube.jpg",
-    "https://smartplay.com/wp-content/uploads/2017/07/custom-games-deleware-lottery.jpg",
-    "https://smartplay.com/wp-content/uploads/2017/07/custom-games-coffre-fort.jpg",
-];
 
 const checks = [
     "Connect multiple machines to one Solution System™ appliance",
@@ -50,93 +40,49 @@ const customFeatures = [
     "Configurable password protection for every part of the solution software at all times",
 ];
 
-export default function App() {
+export default function SolutionSystem() {
     return (
-        <div className="App">
+        <div>
             <Nav />
-            <div className="fixed top-0 left-0 w-full h-full -z-10">
-                <img
-                    src="https://hxl.550.myftpupload.com/wp-content/uploads/2021/10/cropped-view-of-happy-man-and-woman-holding-hands-while-holding-lottery-tickets.jpg"
-                    alt="Custom Promotions and Events"
-                    className="w-full h-full object-cover translate-y-10"
-                />
-                <div className="absolute top-0 left-0 w-full h-full bg-white opacity-50"></div>
-            </div>
+            <PageBackground image="https://hxl.550.myftpupload.com/wp-content/uploads/2021/10/cropped-view-of-happy-man-and-woman-holding-hands-while-holding-lottery-tickets.jpg" />
 
-            <Title text="Solution System - Lottery Draw Software" />
-            <div className="bg-white">
-                <div className="mx-auto max-w-[1000px] pt-20 pb-12 text-lg px-6 md:px-8 lg:px-0">
-                    <div className="space-y-10 max-[700px]:">
-                        <h2 className="lg:text-3xl text-2xl font-semibold text-blue-950 text-center">
-                            Real-time winning number identification and remote
-                            draw machine control
-                        </h2>
-
-                        <p className="text-lg md:px-10">
-                            Get the best of both worlds. Smartplay’s Solution
+            <Title text="Lottery Draw Software" />
+            <div className="firstSection">
+                <div className="contentSection">
+                    <SectionHeader
+                        content="Real-time winning number identification and remote
+                            draw machine control"
+                    />
+                    <ImageCard
+                        img="https://smartplay.com/wp-content/uploads/2017/06/solution-system.jpg"
+                        px={100}
+                    >
+                        <SectionContent
+                            content="Get the best of both worlds. Smartplay’s Solution
                             System™ fuses the excitement of the traditional draw
                             with automation and efficiency of a digital draw.
                             Solution System is a secure software appliance that
-                            integrates with any Smartplay lottery machine.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div className="bg-gray-200 py-12">
-                <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto max-w-[1100px] gap-x-6 items-center px-4 md:px-8 lg:px-0 lg:space-y-0 space-y-7">
-                    <ul className="space-y-6 bg-gray-200 p-4 text-blue-950 font-semibold col-span-1 max-w-[700px] mx-auto">
-                        {checks.map((check, index) => (
-                            <li key={index} className="flex space-x-2 text-lg">
-                                <p className="text-xl">•</p>
-                                <p>{check}</p>
-                            </li>
-                        ))}
-                    </ul>
-
-                    <div className="mb-8 md:mb-0 flex justify-center">
-                        <img
-                            src="https://smartplay.com/wp-content/uploads/2017/06/solution-system.jpg"
-                            alt="Customer Service"
-                            className="h-[450px]  rounded shadow"
+                            integrates with any Smartplay lottery machine."
                         />
-                    </div>
+                    </ImageCard>
+                </div>
+            </div>
+            <div className="secondarySection">
+                <div className="contentSection">
+                    <SectionHeader content="Our Solution System™ features:" />
+                    <BulletList bullets={checks} />
                 </div>
             </div>
 
-            <div className="bg-white py-12">
-                <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto max-w-[1200px] gap-x-6 items-center px-6 md:px-8 lg:px-0 lg:space-y-0 space-y-7">
-                    <div className="mb-8 md:mb-0 flex justify-center">
-                        <VimeoEmbed videoId="103863141" />
-                    </div>
-                    <ul className="space-y-6 text-blue-950 font-semibold col-span-1 max-w-[700px] mx-auto">
-                        <li>
-                            <h2 className="lg:text-3xl text-xl">
-                                Standard Features
-                            </h2>
-                        </li>
-                        {standardFeatures.map((check, index) => (
-                            <li key={index} className="flex space-x-2 text-lg">
-                                <p className="text-xl">•</p>
-                                <p>{check}</p>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </div>
-            <div className="bg-gray-200 py-12">
-                <div className="mx-auto max-w-[1200px] items-center px-6 md:px-8 lg:px-0 lg:space-y-0 space-y-7">
-                    <h2 className="lg:text-3xl text-xl font-semibold text-blue-950 mb-8">
-                        {" "}
-                        Add Custom Features at Any Time
-                    </h2>
-                    <ul className=" text-blue-950 font-semibold col-span-1 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
-                        {customFeatures.map((check, index) => (
-                            <li key={index} className="flex space-x-2 text-lg">
-                                <p className="text-xl">•</p>
-                                <p>{check}</p>
-                            </li>
-                        ))}
-                    </ul>
+            <div className="primarySection bottomSection">
+                <div className="contentSection">
+                    <SectionHeader content="Standard Features" />
+                    <BulletList bullets={standardFeatures} />
+                    <BigLineBreak />
+                    <VideoEmbed url="https://vimeo.com/226805338" />
+                    <BigLineBreak />
+                    <SectionHeader content="Add Custom Features at Any Time" />
+                    <BulletList bullets={customFeatures} />
                 </div>
             </div>
 
