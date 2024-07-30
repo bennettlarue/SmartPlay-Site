@@ -1,5 +1,6 @@
 import React from "react";
 import Counter from "./Counter";
+import { SectionHeader } from "../SectionHeader";
 
 const Numbers = () => {
     return (
@@ -16,9 +17,7 @@ const Numbers = () => {
                         <Counter number={5} />
                         K+
                     </div>
-                    <p className="max-w-full md:max-w-[210px] text-center md:text-left">
-                        Drawing Systems Produced
-                    </p>
+                    <SectionHeader text="Drawing Systems Produced" />
                 </li>
                 <li className="flex flex-col md:flex-row items-center space-x-0 md:space-x-3 space-y-3 md:space-y-0">
                     <h1 className="text-4xl md:text-6xl text-gray-400">

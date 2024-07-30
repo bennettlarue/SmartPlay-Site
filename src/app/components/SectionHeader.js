@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 
-export const SectionHeader = ({ content, animate = true }) => {
+export const SectionHeader = ({ content, animate = true, children }) => {
     return (
         <React.Fragment>
             <link rel="preconnect" href="https://fonts.googleapis.com"></link>
@@ -20,9 +20,10 @@ export const SectionHeader = ({ content, animate = true }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
-                className="lg:text-2xl text-xl font-semibold text-blue-950"
+                className="lg:text-3xl text-xl font-semibold text-blue-950"
             >
                 {content}
+                {children}
             </motion.h3>
         </React.Fragment>
     );

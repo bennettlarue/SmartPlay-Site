@@ -8,7 +8,7 @@ export const Splash = () => {
         <div className="relative">
             <img
                 className="w-full max-h-[640px] min-h-[450px] object-cover"
-                src="https://www.hiowaa.org/wp-content/uploads/2015/08/Lottery-Balls-014.jpg"
+                src="https://media.istockphoto.com/id/1314972402/vector/multicolored-lottery-balls-vector-background.jpg?s=2048x2048&w=is&k=20&c=f6TPkeUWd7E7zid09NkUZLfwidvj9wumvM-D0-jdCKI="
                 alt="Splash"
             />
             <div className="absolute inset-0 flex flex-col justify-center  bg-gray-900 bg-opacity-60 p-4 md:p-11">
