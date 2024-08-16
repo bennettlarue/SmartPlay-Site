@@ -24,32 +24,23 @@ const MachineLink = ({ index, imageLink, title, desc }) => {
     };
 
     const mainVariants = {
-        visible: { opacity: 1, y: 0 },
-        hidden: { opacity: 0, y: 10 },
+        visible: { opacity: 1 },
+        hidden: { opacity: 0 },
     };
 
     return (
-        <motion.div
+        <div
             key={index}
-            ref={ref}
-            variants={mainVariants}
-            initial="hidden"
-            animate={viewed ? "visible" : "hidden"}
-            transition={{
-                duration: 1.3,
-                delay: 0.15 + (index % 3) / 10,
-                ease: [0, 0.71, 0.2, 1.01],
-            }}
-            className="relative shadow-xl h-[320px] w-[320px]"
+            className="relative shadow h-[300px] w-[300px] cursor-pointer rounded-lg"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
         >
             <img
-                className="h-[320px] w-[320px] max-w-full rounded-lg object-cover object-center"
+                className="h-[300px] w-[300px] max-w-full rounded-lg object-cover object-center"
                 src={imageLink}
                 alt="gallery-photo"
             />
-            <div className="h-[320px] w-[320px] absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 hover:bg-opacity-65 rounded-lg transition-colors">
+            <div className="h-[300px] w-[300px] absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 hover:bg-opacity-65 rounded-lg transition-colors">
                 <div className="text-center">
                     <motion.div
                         className="text-center"
@@ -58,7 +49,7 @@ const MachineLink = ({ index, imageLink, title, desc }) => {
                         variants={titleVariants}
                     >
                         {" "}
-                        <h1 className="text-white text-2xl font-bold">
+                        <h1 className="specialFont text-white text-2xl font-bold">
                             {title}
                         </h1>
                     </motion.div>
@@ -84,7 +75,7 @@ const MachineLink = ({ index, imageLink, title, desc }) => {
                     </motion.div>
                 </div>
             </div>
-        </motion.div>
+        </div>
     );
 };
 

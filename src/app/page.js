@@ -2,12 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Nav } from "./components/Nav";
-import { Splash } from "./components/home/Splash";
-import Numbers from "./components/home/Numbers";
-import { MachineSlides } from "./components/home/MachineSlides";
-import OriginSys from "./components/home/OriginSys";
-import Clients from "./components/home/Clients";
-import { WhySmartPlay } from "./components/home/WhySmartPlay";
 import { Footer } from "./components/Footer";
 import { PopupText } from "./components/PopupText";
 import { FadeInText } from "./components/FadeInText";
@@ -16,8 +10,59 @@ import { SectionHeader } from "./components/SectionHeader";
 import { SectionContent } from "./components/SectionContent";
 import Counter from "./components/home/Counter";
 import { LineBreak } from "./components/LineBreak";
+import { SmallerHeader } from "./components/SmallerHeader";
+import MachineCarousel from "./components/home/MachineCarosel";
 
 export default function Home() {
+    const clientLogos = [
+        "https://images.ctfassets.net/j16ev64qyf6l/528kLUDrUcGK0SvvdYcCok/c69716735876492850cf97776a4abb77/TNL_Master_Logo_2019_RGB_Horizontal_Heritage_Blue_Text.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Powerball_logo.svg/2560px-Powerball_logo.svg.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/MassLottoLogo.svg/2560px-MassLottoLogo.svg.png",
+        "https://milotteryconnect.com/wp-content/uploads/2012/10/milottery-horz-logo2.png",
+        "/images/logos/lotoQuebec.png",
+        "/images/logos/sportowy.png",
+        "/images/logos/caLottery.png",
+    ];
+
+    const machineData = [
+        {
+            title: "Roulette",
+            desc: "Roulette is the most popular lottery system in the world.",
+            imageLink:
+                "https://hxl550.n3cdn1.secureserver.net/wp-content/uploads/2021/09/casino-pick-roulette1-1.jpg",
+        },
+        {
+            title: "Keno",
+            desc: "Keno is the most popular lottery system in the world.",
+            imageLink:
+                "https://hxl550.n3cdn1.secureserver.net/wp-content/uploads/2021/09/500-800-max.jpg",
+        },
+        {
+            title: "Bingo",
+            desc: "Bingo is the most popular lottery system in the world.",
+            imageLink:
+                "https://hxl550.n3cdn1.secureserver.net/wp-content/uploads/2021/09/Galaxy-bingo-machine-747x1536.jpg",
+        },
+        {
+            title: "Lotto",
+            desc: "Lotto is the most popular lottery system in the world.",
+            imageLink:
+                "https://hxl550.n3cdn1.secureserver.net/wp-content/uploads/2021/09/jupiter-keno-front-lighting-Copy-Copy.jpg",
+        },
+        {
+            title: "Gems",
+            desc: "Gems is the most popular lottery system in the world.",
+            imageLink:
+                "https://hxl550.n3cdn1.secureserver.net/wp-content/uploads/2021/10/gem.jpg",
+        },
+        {
+            title: "Multi Digit",
+            desc: "Multi Digit is the most popular lottery system in the world.",
+            imageLink:
+                "https://hxl550.n3cdn1.secureserver.net/wp-content/uploads/2021/10/multi-digit-gem-lottery-georgia.jpg",
+        },
+    ];
+
     return (
         <main>
             <Nav />
@@ -70,36 +115,71 @@ export default function Home() {
             </motion.div>
             <div className="firstSection">
                 <div className="contentSection">
-                    <SectionHeader content="Highest Quality Lottery, Bingo & Raffle Number Drawing Systems" />
-                    <SectionContent content="Smartplay International preserves drawing integrity for lottery and gaming organizations in 126 countries. We design and manufacture the most advanced traditional and digital lottery drawing systems available, with more than 5,000 systems deployed worldwide since 1993." />
+                    <div className="flex justify-center text-center">
+                        <SectionHeader content="The Global Leader In Lottery Machine Manufacturing & Digital Lottery Drawing Systems" />
+                    </div>
+                    <SectionContent content="Smartplay International preserves drawing integrity for lottery and gaming organizations in 127 countries. In-house design and manufacture of the most advanced traditional and digital lottery drawing systems available, with more than 3,000 lottery systems deployed worldwide since 1993. We serve traditional lotteries, igaming, and casinos as well as organizations running lottery-style promotions and fundraising events." />
+                    <LineBreak />
+                    <ul className="grid grid-cols-3 gap-12">
+                        <li className="space-y-3">
+                            <div className="text-3xl md:text-5xl text-orange-500 font-bold">
+                                <Counter number={5} />
+                                K+
+                            </div>
+                            <div className="max-w-[300px]">
+                                <SmallerHeader>
+                                    Drawing Systems
+                                    <br />
+                                    Produced
+                                </SmallerHeader>
+                            </div>
+                        </li>
+                        <li className="space-y-3">
+                            <div className="text-3xl md:text-5xl text-orange-500 font-bold">
+                                <Counter number={600} />+
+                            </div>
+                            <SmallerHeader content="Clients" />
+                        </li>
+                        <li className="space-y-3">
+                            <div className="text-3xl md:text-5xl text-orange-500 font-bold w-[105px]">
+                                <Counter number={127} />
+                            </div>
+                            <SmallerHeader content="Countries" />
+                        </li>
+                    </ul>
                 </div>
             </div>
             <div className="secondarySection">
-                <ul className="contentSection">
-                    <li className="flex flex-col md:flex-row items-center space-x-0 md:space-x-8 space-y-3 md:space-y-0">
-                        <div className="text-3xl md:text-6xl text-orange-500 rounded-full font-bold w-[150px]">
-                            <Counter number={5} />
-                            K+
-                        </div>
-                        <SectionHeader>Drawing Systems Produced</SectionHeader>
-                    </li>
+                <div className="contentSection">
+                    <div className="flex justify-center text-center">
+                        <SectionHeader content="Here Are Some Clients That Rely On Smartplay" />
+                    </div>
                     <LineBreak />
-                    <li className="flex flex-col md:flex-row items-center space-x-0 md:space-x-8 space-y-3 md:space-y-0">
-                        <div className="text-3xl md:text-6xl text-orange-500 rounded-full font-bold w-[150px]">
-                            <Counter number={600} />+
-                        </div>
-                        <SectionHeader>Clients</SectionHeader>
-                    </li>
-                    <LineBreak />
-
-                    <li className="flex flex-col md:flex-row items-center space-x-0 md:space-x-8 space-y-3 md:space-y-0">
-                        <div className="text-3xl md:text-6xl text-orange-500 rounded-full font-bold w-[150px]">
-                            <Counter number={127} />+
-                        </div>
-                        <SectionHeader>Countries</SectionHeader>
-                    </li>
-                </ul>
+                    <div className="grid grid-cols-3 lg:gap-12 gap-4">
+                        {clientLogos.map((logo) => (
+                            <img
+                                key={logo}
+                                src={logo}
+                                alt="Client Logo"
+                                className="w-[300px] h-24 object-contain"
+                            />
+                        ))}
+                    </div>
+                </div>
             </div>
+            <div className="primarySection">
+                <div className="contentSection">
+                    <div className="flex justify-center text-center">
+                        <SectionHeader content="Highest Quality Lottery, Bingo & Raffle Number Drawing Systems" />
+                    </div>
+                    <LineBreak />
+                    <MachineCarousel data={machineData} />
+                </div>
+            </div>
+            <div className="secondarySection">
+                <div className="contentSection"></div>
+            </div>
+            <Footer />
         </main>
     );
 }

@@ -148,7 +148,7 @@ export default function News() {
                                 </div>
                             ))}
                     </div>
-                    <div className="justify-center grid grid-cols-2 gap-10">
+                    <div className="justify-center grid lg:grid-cols-2 grid-cols-1 gap-10">
                         <AnimatePresence>
                             {posts ? (
                                 posts.map((post, index) => (

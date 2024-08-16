@@ -6,6 +6,20 @@ html {
   background-color: white;
 }
 
+.specialFont {
+  font-family: "Poppins", sans-serif;
+}
+
+.slick-prev {
+  left: 3% !important;
+  z-index: 1;
+}
+.slick-next {
+  right: 3% !important;
+  z-index: 1;
+}
+
+
 .contentSection {
   max-width: 1000px;
   margin-left: auto;
