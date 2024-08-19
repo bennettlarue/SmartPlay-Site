@@ -19,6 +19,14 @@ html {
   z-index: 1;
 }
 
+.slick-slide {
+  padding: 0 10px;
+}
+
+.slick-list {
+  margin: 0 -10px;
+}
+
 
 .contentSection {
   max-width: 1000px;

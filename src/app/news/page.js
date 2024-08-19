@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
+import { PostCard } from "../components/news/PostCard";
+import { PostSkeleton } from "../components/news/PostSkeleton";
 
 export default function News() {
     const [posts, setPosts] = useState(null);
@@ -13,12 +15,6 @@ export default function News() {
     const [currentPage, setCurrentPage] = useState(1); // Track current page
     const [totalPages, setTotalPages] = useState(1); // Track total pages
     const [hoveredIndex, setHoveredIndex] = useState(null);
-
-    const formatDate = (isoDate) => {
-        const date = new Date(isoDate);
-        const options = { month: "long", day: "numeric" };
-        return date.toLocaleDateString("en-US", options);
-    };
 
     useEffect(() => {
         async function fetchPosts() {
@@ -152,112 +148,17 @@ export default function News() {
                         <AnimatePresence>
                             {posts ? (
                                 posts.map((post, index) => (
-                                    <motion.div
-                                        key={post.slug}
-                                        layout
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        exit={{ opacity: 0 }}
-                                        transition={{ duration: 0.3 }}
-                                        className={`transition-colors cursor-pointer max-w-[500px] rounded-b shadow border ${
-                                            hoveredIndex === index
-                                                ? "bg-gray-200"
-                                                : "bg-gray-100"
-                                        }`}
-                                        onMouseEnter={() => {
-                                            setHoveredIndex(index);
-                                        }}
-                                        onMouseLeave={() =>
-                                            setHoveredIndex(null)
-                                        }
-                                    >
-                                        <Link
-                                            href={`/news/${post.slug}`}
-                                            className="w-full"
-                                        >
-                                            <div className="relative h-64 w-full">
-                                                {post.featuredImage &&
-                                                post.featuredImage.url ? (
-                                                    <Image
-                                                        className="rounded-t"
-                                                        src={
-                                                            post.featuredImage
-                                                                .url
-                                                        }
-                                                        alt={post.title}
-                                                        layout="fill"
-                                                        style={{
-                                                            objectFit: "cover",
-                                                        }} // Replace objectFit prop with style
-                                                    />
-                                                ) : (
-                                                    <div className="h-full w-full flex items-center justify-center bg-gray-300 rounded-t">
-                                                        <span>
-                                                            No Image Available
-                                                        </span>
-                                                    </div>
-                                                )}
-                                            </div>
-                                            <div className="p-6 space-y-3">
-                                                <p className="text-gray-700">
-                                                    {formatDate(
-                                                        post.publishedAt
-                                                    )}
-                                                </p>
-                                                <h1 className="text-2xl font-semibold text-blue-950">
-                                                    {post.title}
-                                                </h1>
-
-                                                <p className="text-gray-700">
-                                                    {post.excerpt}
-                                                </p>
-
-                                                <button className="text-blue-900 font-semibold flex items-center">
-                                                    <span>Read more</span>
-                                                    <motion.span
-                                                        animate={
-                                                            hoveredIndex ===
-                                                            index
-                                                                ? { x: 5 }
-                                                                : { x: 1 }
-                                                        }
-                                                        className="material-symbols-outlined"
-                                                    >
-                                                        chevron_right
-                                                    </motion.span>
-                                                </button>
-                                            </div>
-                                        </Link>
-                                    </motion.div>
+                                    <PostCard
+                                        post={post}
+                                        index={index}
+                                        setHoveredIndex={setHoveredIndex}
+                                        hoveredIndex={hoveredIndex}
+                                    />
                                 ))
                             ) : (
                                 <>
-                                    <div className="card">
-                                        <div className="shimmerBG media"></div>
-                                        <div className="p-32">
-                                            <div className="shimmerBG title-line"></div>
-                                            <div className="shimmerBG title-line end"></div>
-
-                                            <div className="shimmerBG content-line m-t-24"></div>
-                                            <div className="shimmerBG content-line"></div>
-                                            <div className="shimmerBG content-line"></div>
-                                            <div className="shimmerBG content-line"></div>
-                                            <div className="shimmerBG content-line end"></div>
-                                        </div>
-                                    </div>
-                                    <div className="card">
-                                        <div className="shimmerBG media"></div>
-                                        <div className="p-32">
-                                            <div className="shimmerBG title-line"></div>
-                                            <div className="shimmerBG title-line end"></div>
-
-                                            <div className="shimmerBG content-line m-t-24"></div>
-                                            <div className="shimmerBG content-line"></div>
-                                            <div className="shimmerBG content-line"></div>
-                                            <div className="shimmerBG content-line"></div>
-                                            <div className="shimmerBG content-line end"></div>
-                                        </div>
-                                    </div>
+                                    <PostSkeleton />
+                                    <PostSkeleton />
                                 </>
                             )}
                         </AnimatePresence>

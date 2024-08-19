@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Nav } from "./components/Nav";
 import { Footer } from "./components/Footer";
 import { PopupText } from "./components/PopupText";
@@ -12,6 +12,12 @@ import Counter from "./components/home/Counter";
 import { LineBreak } from "./components/LineBreak";
 import { SmallerHeader } from "./components/SmallerHeader";
 import MachineCarousel from "./components/home/MachineCarosel";
+import LogoGrid from "./components/home/LogoGrid";
+import { ImageCard } from "./components/ImageCard";
+import { PostCard } from "./components/news/PostCard";
+import { PostSkeleton } from "./components/news/PostSkeleton";
+import { useEffect, useState } from "react";
+import Splash from "./components/home/Splash";
 
 export default function Home() {
     const clientLogos = [
@@ -22,6 +28,7 @@ export default function Home() {
         "/images/logos/lotoQuebec.png",
         "/images/logos/sportowy.png",
         "/images/logos/caLottery.png",
+        "/images/logos/supremeVentures.png",
     ];
 
     const machineData = [
@@ -63,56 +70,35 @@ export default function Home() {
         },
     ];
 
+    const [posts, setPosts] = useState([]);
+    const [hoveredIndex, setHoveredIndex] = useState(null);
+
+    useEffect(() => {
+        async function fetchPosts() {
+            try {
+                const response = await fetch(
+                    "https://smartplay-content.payloadcms.app/api/posts?page=1&sort=-publishedAt&limit=4"
+                );
+                if (!response.ok) {
+                    throw new Error(
+                        "Network response was not ok " + response.statusText
+                    );
+                }
+                const data = await response.json();
+                setPosts(data.docs);
+                console.log(data);
+            } catch (error) {
+                console.error("Error fetching articles:", error);
+            }
+        }
+
+        fetchPosts();
+    }, []);
+
     return (
         <main>
             <Nav />
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-                <div className="relative">
-                    <img
-                        className="absolute w-full h-full object-cover"
-                        src="https://media.istockphoto.com/id/1314972402/vector/multicolored-lottery-balls-vector-background.jpg?s=2048x2048&w=is&k=20&c=f6TPkeUWd7E7zid09NkUZLfwidvj9wumvM-D0-jdCKI="
-                        alt="Splash"
-                    />
-                    <div className="relative bg-gray-900 bg-opacity-50">
-                        <div
-                            className="bg-gray-200"
-                            style={{
-                                backgroundImage:
-                                    "radial-gradient(circle, rgba(0, 0, 0, 0.1) 1px, transparent 1px)",
-                                backgroundSize: "20px 20px",
-                                clipPath:
-                                    "polygon(55% 0, 65% 100%, 0 100%, 0 0)",
-                            }}
-                        >
-                            <div className="contentSection">
-                                <div className="text-blue-950 max-w-full md:max-w-[800px] space-y-3">
-                                    <div className="flex items-center space-x-2">
-                                        <img
-                                            src="https://hxl550.n3cdn1.secureserver.net/wp-content/uploads/2021/06/ball.png?time=1717187795"
-                                            alt="Ball"
-                                            className="h-6"
-                                        />
-                                        <SectionHeader content="Global Leader In" />
-                                    </div>
-                                    <div>
-                                        <PopupText text={"Lottery"} delay={0} />
-                                        <PopupText
-                                            text={"Machine"}
-                                            delay={0.2}
-                                        />
-                                        <PopupText
-                                            text={"Manufacturing"}
-                                            delay={0.4}
-                                        />
-                                    </div>
-                                    <SectionHeader content="And Digital Drawing Systems" />
-                                    <ArrowButton text="View Products" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </motion.div>
+            <Splash />
             <div className="firstSection">
                 <div className="contentSection">
                     <div className="flex justify-center text-center">
@@ -120,28 +106,27 @@ export default function Home() {
                     </div>
                     <SectionContent content="Smartplay International preserves drawing integrity for lottery and gaming organizations in 127 countries. In-house design and manufacture of the most advanced traditional and digital lottery drawing systems available, with more than 3,000 lottery systems deployed worldwide since 1993. We serve traditional lotteries, igaming, and casinos as well as organizations running lottery-style promotions and fundraising events." />
                     <LineBreak />
-                    <ul className="grid grid-cols-3 gap-12">
-                        <li className="space-y-3">
+                    <ul className="grid grid-cols-3 gap-12 text-center">
+                        <li className="space-y-3 w-fit mx-auto">
                             <div className="text-3xl md:text-5xl text-orange-500 font-bold">
                                 <Counter number={5} />
                                 K+
                             </div>
-                            <div className="max-w-[300px]">
-                                <SmallerHeader>
-                                    Drawing Systems
-                                    <br />
-                                    Produced
-                                </SmallerHeader>
-                            </div>
+
+                            <SmallerHeader>
+                                Drawing Systems
+                                <br />
+                                Produced
+                            </SmallerHeader>
                         </li>
-                        <li className="space-y-3">
+                        <li className="space-y-3 w-fit mx-auto">
                             <div className="text-3xl md:text-5xl text-orange-500 font-bold">
                                 <Counter number={600} />+
                             </div>
                             <SmallerHeader content="Clients" />
                         </li>
-                        <li className="space-y-3">
-                            <div className="text-3xl md:text-5xl text-orange-500 font-bold w-[105px]">
+                        <li className="space-y-3 w-fit mx-auto">
+                            <div className="text-3xl md:text-5xl text-orange-500 font-bold">
                                 <Counter number={127} />
                             </div>
                             <SmallerHeader content="Countries" />
@@ -155,16 +140,7 @@ export default function Home() {
                         <SectionHeader content="Here Are Some Clients That Rely On Smartplay" />
                     </div>
                     <LineBreak />
-                    <div className="grid grid-cols-3 lg:gap-12 gap-4">
-                        {clientLogos.map((logo) => (
-                            <img
-                                key={logo}
-                                src={logo}
-                                alt="Client Logo"
-                                className="w-[300px] h-24 object-contain"
-                            />
-                        ))}
-                    </div>
+                    <LogoGrid clientLogos={clientLogos} />
                 </div>
             </div>
             <div className="primarySection">
@@ -177,7 +153,52 @@ export default function Home() {
                 </div>
             </div>
             <div className="secondarySection">
-                <div className="contentSection"></div>
+                <div className="contentSection">
+                    <ImageCard img="https://smartplay.com/wp-content/uploads/2021/01/origin-arizona.jpg">
+                        <SectionHeader content="Origin Digital Drawing Systems (RNG)" />
+                        <SectionContent content="The Origin® Digital Lottery Draw System is an alternative to mechanical lottery ball systems. Many lotteries choose to run entirely with a digital system or compliment their traditional ball draw with a higher frequency game that’s run through the Origin RNG-based system." />
+                        <ArrowButton text="Learn More" />
+                    </ImageCard>
+                </div>
+            </div>
+            <div className="primarySection">
+                <div className="contentSection">
+                    <ImageCard
+                        img="https://smartplay.com/wp-content/uploads/2020/02/rocknwheel1.jpg?v=1616768386"
+                        flipped={true}
+                    >
+                        <SectionHeader content="Custom Game Design" />
+                        <SectionContent content="With all aspects of design and fabrication under one roof, we can work with you to develop new concepts quickly and cost effectively." />
+                        <ArrowButton text="Learn More" />
+                    </ImageCard>
+                </div>
+            </div>
+            <div className="secondarySection bottomSection">
+                <div className="contentSection">
+                    <div className="flex justify-center text-center">
+                        <SectionHeader content="Latest News" />
+                    </div>
+                    <LineBreak />
+                    <div className="justify-center grid lg:grid-cols-2 grid-cols-1 gap-10">
+                        <AnimatePresence>
+                            {posts ? (
+                                posts.map((post, index) => (
+                                    <PostCard
+                                        post={post}
+                                        index={index}
+                                        setHoveredIndex={setHoveredIndex}
+                                        hoveredIndex={hoveredIndex}
+                                    />
+                                ))
+                            ) : (
+                                <>
+                                    <PostSkeleton />
+                                    <PostSkeleton />
+                                </>
+                            )}
+                        </AnimatePresence>
+                    </div>
+                </div>
             </div>
             <Footer />
         </main>

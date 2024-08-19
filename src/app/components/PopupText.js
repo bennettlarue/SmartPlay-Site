@@ -42,7 +42,7 @@ export const PopupText = ({ text, delay }) => {
             <div
                 ref={ref}
                 style={{ fontFamily: "Poppins" }}
-                className="flex overflow-hidden pb-[0.5rem] text-6xl font-bold"
+                className="flex overflow-hidden pb-[0.5rem] lg:text-6xl text-4xl font-bold"
             >
                 {Array.from(text).map((char, index) => (
                     <motion.div
