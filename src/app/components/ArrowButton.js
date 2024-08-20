@@ -36,7 +36,7 @@ export const ArrowButton = ({
         >
             <Link href={href}>
                 <div
-                    className={`space-x-3 text-white font-medium text-lg p-2 rounded flex items-center justify-between cursor-pointer shadow-lg ${bg_color} hover:${bg_hover}`}
+                    className={`space-x-3 text-white font-medium md:text-lg text-md p-2 rounded flex items-center justify-between cursor-pointer shadow-lg ${bg_color} hover:${bg_hover} specialFont`}
                 >
                     <p>{text}</p>
                     <div>

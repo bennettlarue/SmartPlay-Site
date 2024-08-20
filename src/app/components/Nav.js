@@ -3,71 +3,166 @@ import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { Menu } from "./Menu";
 
-const solutions = [
-    "Traditional Lottery",
-    "Bingo Systems",
-    "Raffles",
-    "Casino Gaming",
-    "Promotions",
-];
-const solutionsLinks = [
-    "/solutions/traditional-lottery",
-    "/solutions/bingo-systems",
-    "/solutions/raffles",
-    "/solutions/casino",
-    "/solutions/promotions",
-];
-
-const products = [
-    "Lottery Drawing Machines",
-    "Lottery Drawing Balls",
-    "Equipment Calibration",
-    "Custom Games",
-    "Prize Wheels",
-    "Lottery Studio Solutions",
-    "Lottery Machine Rental",
-];
-const productsLinks = [
-    "/product-services/lottery-drawing-machines",
-    "/product-services/lottery-drawing-balls",
-    "/product-services/equipment-calibration",
-    "/product-services/custom-design-fabrication",
-    "/product-services/prize-wheels",
-    "/product-services/lottery-draw-studio-solutions",
-    "/product-services/lottery-machine-rental",
-];
-
-const digital = [
-    "Origin Digital Draws",
-    "Digital Content Solutions",
-    "Lottery Draw Software",
-    "iGaming",
-];
-
-const digitalLinks = [
-    "/product-services/origin-digital-draw",
-    "/product-services/digital-content-solutions",
-    "/product-services/solution-lottery-draw-management",
-    "/solutions/online-lottery",
-];
+const navItems = {
+    solutions: {
+        title: "Solutions",
+        items: [
+            "Traditional Lottery",
+            "Bingo Systems",
+            "Raffles",
+            "Casino Gaming",
+            "Promotions",
+        ],
+        links: [
+            "/solutions/traditional-lottery",
+            "/solutions/bingo-systems",
+            "/solutions/raffles",
+            "/solutions/casino",
+            "/solutions/promotions",
+        ],
+    },
+    products: {
+        title: "Products",
+        items: [
+            "Lottery Drawing Machines",
+            "Lottery Drawing Balls",
+            "Equipment Calibration",
+            "Custom Games",
+            "Prize Wheels",
+            "Lottery Studio Solutions",
+            "Lottery Machine Rental",
+        ],
+        links: [
+            "/product-services/lottery-drawing-machines",
+            "/product-services/lottery-drawing-balls",
+            "/product-services/equipment-calibration",
+            "/product-services/custom-design-fabrication",
+            "/product-services/prize-wheels",
+            "/product-services/lottery-draw-studio-solutions",
+            "/product-services/lottery-machine-rental",
+        ],
+    },
+    digital: {
+        title: "Digital",
+        items: [
+            "Origin Digital Draws",
+            "Digital Content Solutions",
+            "Lottery Draw Software",
+            "iGaming",
+        ],
+        links: [
+            "/product-services/origin-digital-draw",
+            "/product-services/digital-content-solutions",
+            "/product-services/solution-lottery-draw-management",
+            "/solutions/online-lottery",
+        ],
+    },
+};
 
 export const Nav = () => {
     const [open, setOpen] = useState(0);
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const navRef = useRef(null);
 
-    const handleClickOutside = (event) => {
-        if (navRef.current && !navRef.current.contains(event.target)) {
-            setOpen(0);
-        }
-    };
-
     useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (navRef.current && !navRef.current.contains(event.target)) {
+                setOpen(0);
+            }
+        };
+
         document.addEventListener("mousedown", handleClickOutside);
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, []);
+
+    const renderNavItem = (item, index) => (
+        <div key={item.title} className="relative">
+            <motion.button
+                onClick={() => setOpen(open === index + 1 ? 0 : index + 1)}
+                whileTap={{ scale: 0.95 }}
+                className={`p-2 flex items-center space-x-1 transition-all rounded ${
+                    open === index + 1 ? "bg-gray-200" : "hover:bg-gray-200"
+                }`}
+            >
+                <span>{item.title}</span>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    className="w-4 h-4"
+                >
+                    <path
+                        fillRule="evenodd"
+                        d="M10 17a1 1 0 01-.832-.445l-5-7a1 1 0 011.664-1.11L10 14.318l4.168-5.874a1 1 0 111.664 1.11l-5 7A1 1 0 0110 17z"
+                        clipRule="evenodd"
+                    />
+                </svg>
+            </motion.button>
+            <AnimatePresence>
+                {open === index + 1 && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="absolute top-full mt-2"
+                    >
+                        <Menu
+                            open={open === index + 1}
+                            items={item.items}
+                            links={item.links}
+                        />
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </div>
+    );
+
+    const renderMobileNavItem = (item, index) => (
+        <div key={item.title} className="relative">
+            <motion.button
+                onClick={() => setOpen(open === index + 1 ? 0 : index + 1)}
+                whileTap={{ scale: 0.95 }}
+                className={`font-semibold w-full text-left p-2 flex items-center space-x-1 border-b-2 border-b-gray-200 transition-colors ${
+                    open === index + 1 ? "border-b-blue-900" : ""
+                }`}
+            >
+                <span>{item.title}</span>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    className="w-4 h-4"
+                >
+                    <path
+                        fillRule="evenodd"
+                        d="M10 17a1 1 0 01-.832-.445l-5-7a1 1 0 011.664-1.11L10 14.318l4.168-5.874a1 1 0 111.664 1.11l-5 7A1 1 0 0110 17z"
+                        clipRule="evenodd"
+                    />
+                </svg>
+            </motion.button>
+            {open === index + 1 && (
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2, ease: "easeInOut" }}
+                    className="mt-2 pl-4 space-y-2"
+                >
+                    {item.items.map((subItem, subIndex) => (
+                        <Link
+                            key={subIndex}
+                            href={item.links[subIndex]}
+                            className="block p-2 text-gray-700 border-b"
+                        >
+                            {subItem}
+                        </Link>
+                    ))}
+                </motion.div>
+            )}
+        </div>
+    );
 
     return (
         <nav ref={navRef} className="bg-white sticky top-0 z-50 shadow text-lg">
@@ -86,159 +181,36 @@ export const Nav = () => {
                         />
                     </div>
                 </Link>
-                <div className="hidden lg:flex space-x-4 mr-5">
+                <div className="hidden lg:flex space-x-3 mr-5 specialFont font-medium">
                     <Link className="relative" href="/why-smartplay">
                         <motion.button
                             whileTap={{ scale: 0.95 }}
-                            className="font-semibold p-2 flex items-center space-x-1 transition-all rounded hover:bg-gray-200"
+                            className="p-2 flex items-center space-x-1 transition-all rounded hover:bg-gray-200"
                         >
                             <span>Why SmartPlay</span>
                         </motion.button>
                     </Link>
-                    <div className="relative">
-                        <motion.button
-                            onClick={() =>
-                                open === 1 ? setOpen(0) : setOpen(1)
-                            }
-                            whileTap={{ scale: 0.95 }}
-                            className={`font-semibold p-2 flex items-center space-x-1 transition-all rounded ${
-                                open === 1 ? "bg-gray-200" : "hover:bg-gray-200"
-                            }`}
-                        >
-                            <span>Solutions</span>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                                className="w-4 h-4"
-                            >
-                                <path
-                                    fillRule="evenodd"
-                                    d="M10 17a1 1 0 01-.832-.445l-5-7a1 1 0 011.664-1.11L10 14.318l4.168-5.874a1 1 0 111.664 1.11l-5 7A1 1 0 0110 17z"
-                                    clipRule="evenodd"
-                                />
-                            </svg>
-                        </motion.button>
-                        <AnimatePresence>
-                            {open === 1 && (
-                                <motion.div
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    exit={{ opacity: 0 }}
-                                    className="absolute top-full mt-2"
-                                >
-                                    <Menu
-                                        open={open === 1}
-                                        items={solutions}
-                                        links={solutionsLinks}
-                                    />
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
-                    </div>
-
-                    <div className="relative">
-                        <motion.button
-                            onClick={() =>
-                                open === 2 ? setOpen(0) : setOpen(2)
-                            }
-                            whileTap={{ scale: 0.95 }}
-                            className={`font-semibold p-2 flex items-center space-x-1 transition-all rounded ${
-                                open === 2 ? "bg-gray-200" : "hover:bg-gray-200"
-                            }`}
-                        >
-                            <span>Products</span>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                                className="w-4 h-4"
-                            >
-                                <path
-                                    fillRule="evenodd"
-                                    d="M10 17a1 1 0 01-.832-.445l-5-7a1 1 0 011.664-1.11L10 14.318l4.168-5.874a1 1 0 111.664 1.11l-5 7A1 1 0 0110 17z"
-                                    clipRule="evenodd"
-                                />
-                            </svg>
-                        </motion.button>
-                        <AnimatePresence>
-                            {open === 2 && (
-                                <motion.div
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    exit={{ opacity: 0 }}
-                                    className="absolute top-full mt-2"
-                                >
-                                    <Menu
-                                        open={open === 2}
-                                        items={products}
-                                        links={productsLinks}
-                                    />
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
-                    </div>
-                    <div className="relative">
-                        <motion.button
-                            onClick={() =>
-                                open === 3 ? setOpen(0) : setOpen(3)
-                            }
-                            whileTap={{ scale: 0.95 }}
-                            className={`font-semibold p-2 flex items-center space-x-1 transition-all rounded ${
-                                open === 3 ? "bg-gray-200" : "hover:bg-gray-200"
-                            }`}
-                        >
-                            <span>Digital</span>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                                className="w-4 h-4"
-                            >
-                                <path
-                                    fillRule="evenodd"
-                                    d="M10 17a1 1 0 01-.832-.445l-5-7a1 1 0 011.664-1.11L10 14.318l4.168-5.874a1 1 0 111.664 1.11l-5 7A1 1 0 0110 17z"
-                                    clipRule="evenodd"
-                                />
-                            </svg>
-                        </motion.button>
-                        <AnimatePresence>
-                            {open === 3 && (
-                                <motion.div
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    exit={{ opacity: 0 }}
-                                    className="absolute top-full mt-2"
-                                >
-                                    <Menu
-                                        open={open === 3}
-                                        items={digital}
-                                        links={digitalLinks}
-                                    />
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
-                    </div>
+                    {Object.values(navItems).map(renderNavItem)}
                     <Link className="relative" href="/news">
                         <motion.button
                             whileTap={{ scale: 0.95 }}
-                            className="font-semibold p-2 flex items-center space-x-1 transition-all rounded hover:bg-gray-200"
+                            className="p-2 flex items-center space-x-1 transition-all rounded hover:bg-gray-200"
                         >
                             <span>News</span>
                         </motion.button>
                     </Link>
-                    <Link className="relative" href="/clients">
+                    <Link className="relative" href="/support">
                         <motion.button
                             whileTap={{ scale: 0.95 }}
-                            className="font-semibold p-2 flex items-center space-x-1 transition-all rounded hover:bg-gray-200"
+                            className="p-2 flex items-center space-x-1 transition-all rounded hover:bg-gray-200"
                         >
-                            <span>Clients</span>
+                            <span>Support</span>
                         </motion.button>
                     </Link>
                     <Link className="relative" href="/contact">
                         <motion.button
                             whileTap={{ scale: 0.95 }}
-                            className="font-semibold p-2 flex items-center space-x-1 transition-all rounded bg-orange-600 hover:bg-orange-500 text-white"
+                            className="p-2 flex items-center space-x-1 transition-all rounded bg-orange-600 hover:bg-orange-500 text-white"
                         >
                             <span>Contact</span>
                         </motion.button>
@@ -305,168 +277,25 @@ export const Nav = () => {
                                     </motion.button>
                                 </Link>
                             </div>
-                            <div className="relative">
-                                <motion.button
-                                    onClick={() =>
-                                        open === 1 ? setOpen(0) : setOpen(1)
-                                    }
-                                    whileTap={{ scale: 0.95 }}
-                                    className={`font-semibold w-full text-left p-2 flex items-center space-x-1 border-b-2 border-b-gray-200 transition-colors ${
-                                        open === 1 ? "border-b-blue-900" : ""
-                                    }`}
-                                >
-                                    <span>Solutions</span>
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 20 20"
-                                        fill="currentColor"
-                                        className="w-4 h-4"
-                                    >
-                                        <path
-                                            fillRule="evenodd"
-                                            d="M10 17a1 1 0 01-.832-.445l-5-7a1 1 0 011.664-1.11L10 14.318l4.168-5.874a1 1 0 111.664 1.11l-5 7A1 1 0 0110 17z"
-                                            clipRule="evenodd"
-                                        />
-                                    </svg>
-                                </motion.button>
-                                {open === 1 && (
-                                    <div className="mt-2 pl-4">
-                                        {solutions.map((solution, index) => (
-                                            <Link
-                                                key={index}
-                                                href={solutionsLinks[index]}
-                                                className="block p-2 text-gray-700"
+                            {Object.values(navItems).map(renderMobileNavItem)}
+                            {["News", "Support", "Contact"].map(
+                                (item, index) => (
+                                    <div key={item}>
+                                        <Link href={`/${item.toLowerCase()}`}>
+                                            <motion.button
+                                                whileTap={{ scale: 0.95 }}
+                                                className={`font-semibold w-full text-left p-2 flex items-center space-x-1 ${
+                                                    item === "Contact"
+                                                        ? "transition-all border-b-4 border-b-orange-400"
+                                                        : "border-b-2 border-b-gray-200"
+                                                }`}
                                             >
-                                                {solution}
-                                            </Link>
-                                        ))}
+                                                <span>{item}</span>
+                                            </motion.button>
+                                        </Link>
                                     </div>
-                                )}
-                            </div>
-                            <div className="relative">
-                                <motion.button
-                                    onClick={() =>
-                                        open === 2 ? setOpen(0) : setOpen(2)
-                                    }
-                                    whileTap={{ scale: 0.95 }}
-                                    className={`font-semibold w-full text-left p-2 flex items-center space-x-1 border-b-2 border-b-gray-200 transition-colors ${
-                                        open === 2 ? "border-b-blue-900" : ""
-                                    }`}
-                                >
-                                    <span>Products</span>
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 20 20"
-                                        fill="currentColor"
-                                        className="w-4 h-4"
-                                    >
-                                        <path
-                                            fillRule="evenodd"
-                                            d="M10 17a1 1 0 01-.832-.445l-5-7a1 1 0 011.664-1.11L10 14.318l4.168-5.874a1 1 0 111.664 1.11l-5 7A1 1 0 0110 17z"
-                                            clipRule="evenodd"
-                                        />
-                                    </svg>
-                                </motion.button>
-                                {open === 2 && (
-                                    <motion.div
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        exit={{ opacity: 0 }}
-                                        transition={{
-                                            duration: 0.2,
-                                            ease: "easeInOut",
-                                        }}
-                                        className="mt-2 pl-4 space-y-2"
-                                    >
-                                        {products.map((product, index) => (
-                                            <Link
-                                                key={index}
-                                                href={productsLinks[index]}
-                                                className="block p-2 text-gray-700 border-b"
-                                            >
-                                                {product}
-                                            </Link>
-                                        ))}
-                                    </motion.div>
-                                )}
-                            </div>
-                            <div className="relative">
-                                <motion.button
-                                    onClick={() =>
-                                        open === 3 ? setOpen(0) : setOpen(3)
-                                    }
-                                    whileTap={{ scale: 0.95 }}
-                                    className={`font-semibold w-full text-left p-2 flex items-center space-x-1 border-b-2 border-b-gray-200 transition-colors ${
-                                        open === 3 ? "border-b-blue-900" : ""
-                                    }`}
-                                >
-                                    <span>Digital</span>
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 20 20"
-                                        fill="currentColor"
-                                        className="w-4 h-4"
-                                    >
-                                        <path
-                                            fillRule="evenodd"
-                                            d="M10 17a1 1 0 01-.832-.445l-5-7a1 1 0 011.664-1.11L10 14.318l4.168-5.874a1 1 0 111.664 1.11l-5 7A1 1 0 0110 17z"
-                                            clipRule="evenodd"
-                                        />
-                                    </svg>
-                                </motion.button>
-                                {open === 3 && (
-                                    <motion.div
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        exit={{ opacity: 0 }}
-                                        transition={{
-                                            duration: 0.2,
-                                            ease: "easeInOut",
-                                        }}
-                                        className="mt-2 pl-4 space-y-2"
-                                    >
-                                        {digital.map((digital, index) => (
-                                            <Link
-                                                key={index}
-                                                href={digitalLinks[index]}
-                                                className="block p-2 text-gray-700 border-b"
-                                            >
-                                                {digital}
-                                            </Link>
-                                        ))}
-                                    </motion.div>
-                                )}
-                            </div>
-                            <div>
-                                <Link href="/news">
-                                    <motion.button
-                                        whileTap={{ scale: 0.95 }}
-                                        className="font-semibold w-full text-left p-2 flex items-center space-x-1 border-b-2 border-b-gray-200"
-                                    >
-                                        <span>News</span>
-                                    </motion.button>
-                                </Link>
-                            </div>
-                            <div>
-                                <Link href="/clients">
-                                    <motion.button
-                                        whileTap={{ scale: 0.95 }}
-                                        className="font-semibold w-full text-left p-2 flex items-center space-x-1 border-b-2 border-b-gray-200"
-                                    >
-                                        <span>Clients</span>
-                                    </motion.button>
-                                </Link>
-                            </div>
-                            <div>
-                                <Link href="/contact">
-                                    <motion.button
-                                        whileTap={{ scale: 0.95 }}
-                                        className="font-semibold w-full text-left p-2 flex items-center space-x-1 transition-all border-b-4 border-b-orange-400"
-                                    >
-                                        <span>Contact</span>
-                                    </motion.button>
-                                </Link>
-                            </div>
+                                )
+                            )}
                         </nav>
                     </motion.div>
                 )}

@@ -2,6 +2,7 @@ import React from "react";
 import { color, motion, useInView } from "framer-motion";
 import { SectionHeader } from "../SectionHeader";
 import { SectionContent } from "../SectionContent";
+import { SmallerHeader } from "../SmallerHeader";
 
 export const InfoCard = ({ header, text, index, bg_color = "bg-white" }) => {
     const ref = React.useRef(null);
@@ -22,7 +23,7 @@ export const InfoCard = ({ header, text, index, bg_color = "bg-white" }) => {
             }
         >
             <div className="space-y-4 ">
-                <SectionHeader content={header} />
+                <SmallerHeader content={header} />
                 <SectionContent content={text} />
             </div>
         </motion.div>
