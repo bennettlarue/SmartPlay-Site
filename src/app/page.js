@@ -33,40 +33,34 @@ export default function Home() {
 
     const machineData = [
         {
-            title: "Roulette",
-            desc: "Roulette is the most popular lottery system in the world.",
+            title: "Prize Wheels",
             imageLink:
                 "https://hxl550.n3cdn1.secureserver.net/wp-content/uploads/2021/09/casino-pick-roulette1-1.jpg",
+            link: "/product-services/lottery-drawing-machines?type=Prize+Wheels#machines",
         },
         {
-            title: "Keno",
-            desc: "Keno is the most popular lottery system in the world.",
+            title: "Single Digit",
             imageLink:
-                "https://hxl550.n3cdn1.secureserver.net/wp-content/uploads/2021/09/500-800-max.jpg",
-        },
-        {
-            title: "Bingo",
-            desc: "Bingo is the most popular lottery system in the world.",
-            imageLink:
-                "https://hxl550.n3cdn1.secureserver.net/wp-content/uploads/2021/09/Galaxy-bingo-machine-747x1536.jpg",
+                "https://hxl550.n3cdn1.secureserver.net/wp-content/uploads/2021/09/casino-pick-roulette1-1.jpg",
+            link: "/product-services/lottery-drawing-machines?type=Single+Digit#machines",
         },
         {
             title: "Lotto",
-            desc: "Lotto is the most popular lottery system in the world.",
             imageLink:
                 "https://hxl550.n3cdn1.secureserver.net/wp-content/uploads/2021/09/jupiter-keno-front-lighting-Copy-Copy.jpg",
+            link: "/product-services/lottery-drawing-machines?type=Lotto#machines",
         },
         {
-            title: "Gems",
-            desc: "Gems is the most popular lottery system in the world.",
+            title: "Keno",
             imageLink:
-                "https://hxl550.n3cdn1.secureserver.net/wp-content/uploads/2021/10/gem.jpg",
+                "https://hxl550.n3cdn1.secureserver.net/wp-content/uploads/2021/09/500-800-max.jpg",
+            link: "/product-services/lottery-drawing-machines?type=Keno#machines",
         },
         {
-            title: "Multi Digit",
-            desc: "Multi Digit is the most popular lottery system in the world.",
+            title: "Bingo",
             imageLink:
-                "https://hxl550.n3cdn1.secureserver.net/wp-content/uploads/2021/10/multi-digit-gem-lottery-georgia.jpg",
+                "https://hxl550.n3cdn1.secureserver.net/wp-content/uploads/2021/09/Galaxy-bingo-machine-747x1536.jpg",
+            link: "/product-services/lottery-drawing-machines?type=Bingo#machines",
         },
     ];
 
@@ -157,7 +151,10 @@ export default function Home() {
                     <ImageCard img="https://smartplay.com/wp-content/uploads/2021/01/origin-arizona.jpg">
                         <SectionHeader content="Origin Digital Drawing Systems (RNG)" />
                         <SectionContent content="The Origin® Digital Lottery Draw System is an alternative to mechanical lottery ball systems. Many lotteries choose to run entirely with a digital system or compliment their traditional ball draw with a higher frequency game that’s run through the Origin RNG-based system." />
-                        <ArrowButton text="Learn More" />
+                        <ArrowButton
+                            text="Learn More"
+                            href="/product-services/origin-digital-draw"
+                        />
                     </ImageCard>
                 </div>
             </div>
@@ -169,7 +166,10 @@ export default function Home() {
                     >
                         <SectionHeader content="Custom Game Design" />
                         <SectionContent content="With all aspects of design and fabrication under one roof, we can work with you to develop new concepts quickly and cost effectively." />
-                        <ArrowButton text="Learn More" />
+                        <ArrowButton
+                            text="Learn More"
+                            href="/product-services/custom-design-fabrication"
+                        />
                     </ImageCard>
                 </div>
             </div>

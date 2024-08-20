@@ -12,6 +12,7 @@ const navItems = {
             "Raffles",
             "Casino Gaming",
             "Promotions",
+            "iGaming",
         ],
         links: [
             "/solutions/traditional-lottery",
@@ -19,6 +20,7 @@ const navItems = {
             "/solutions/raffles",
             "/solutions/casino",
             "/solutions/promotions",
+            "/solutions/igaming",
         ],
     },
     products: {
@@ -48,13 +50,11 @@ const navItems = {
             "Origin Digital Draws",
             "Digital Content Solutions",
             "Lottery Draw Software",
-            "iGaming",
         ],
         links: [
             "/product-services/origin-digital-draw",
             "/product-services/digital-content-solutions",
             "/product-services/solution-lottery-draw-management",
-            "/solutions/online-lottery",
         ],
     },
 };
@@ -78,9 +78,13 @@ export const Nav = () => {
     }, []);
 
     const renderNavItem = (item, index) => (
-        <div key={item.title} className="relative">
+        <div
+            key={item.title}
+            className="relative"
+            onMouseEnter={() => setOpen(index + 1)}
+            onMouseLeave={() => setOpen(0)}
+        >
             <motion.button
-                onClick={() => setOpen(open === index + 1 ? 0 : index + 1)}
                 whileTap={{ scale: 0.95 }}
                 className={`p-2 flex items-center space-x-1 transition-all rounded ${
                     open === index + 1 ? "bg-gray-200" : "hover:bg-gray-200"
@@ -116,51 +120,6 @@ export const Nav = () => {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </div>
-    );
-
-    const renderMobileNavItem = (item, index) => (
-        <div key={item.title} className="relative">
-            <motion.button
-                onClick={() => setOpen(open === index + 1 ? 0 : index + 1)}
-                whileTap={{ scale: 0.95 }}
-                className={`font-semibold w-full text-left p-2 flex items-center space-x-1 border-b-2 border-b-gray-200 transition-colors ${
-                    open === index + 1 ? "border-b-blue-900" : ""
-                }`}
-            >
-                <span>{item.title}</span>
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    className="w-4 h-4"
-                >
-                    <path
-                        fillRule="evenodd"
-                        d="M10 17a1 1 0 01-.832-.445l-5-7a1 1 0 011.664-1.11L10 14.318l4.168-5.874a1 1 0 111.664 1.11l-5 7A1 1 0 0110 17z"
-                        clipRule="evenodd"
-                    />
-                </svg>
-            </motion.button>
-            {open === index + 1 && (
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.2, ease: "easeInOut" }}
-                    className="mt-2 pl-4 space-y-2"
-                >
-                    {item.items.map((subItem, subIndex) => (
-                        <Link
-                            key={subIndex}
-                            href={item.links[subIndex]}
-                            className="block p-2 text-gray-700 border-b"
-                        >
-                            {subItem}
-                        </Link>
-                    ))}
-                </motion.div>
-            )}
         </div>
     );
 
@@ -271,31 +230,51 @@ export const Nav = () => {
                                 <Link href="/why-smartplay">
                                     <motion.button
                                         whileTap={{ scale: 0.95 }}
-                                        className="font-semibold w-full text-left p-2 flex items-center space-x-1 transition-all rounded hover:bg-gray-200 border-b-2 border-b-gray-200"
+                                        className="font-semibold w-full text-left p-2 flex items-center space-x-1 transition-all rounded hover:bg-gray-200 border-b-2 border-blue-950"
                                     >
                                         <span>Why SmartPlay</span>
                                     </motion.button>
                                 </Link>
                             </div>
-                            {Object.values(navItems).map(renderMobileNavItem)}
-                            {["News", "Support", "Contact"].map(
-                                (item, index) => (
-                                    <div key={item}>
-                                        <Link href={`/${item.toLowerCase()}`}>
-                                            <motion.button
-                                                whileTap={{ scale: 0.95 }}
-                                                className={`font-semibold w-full text-left p-2 flex items-center space-x-1 ${
-                                                    item === "Contact"
-                                                        ? "transition-all border-b-4 border-b-orange-400"
-                                                        : "border-b-2 border-b-gray-200"
-                                                }`}
-                                            >
-                                                <span>{item}</span>
-                                            </motion.button>
-                                        </Link>
-                                    </div>
-                                )
-                            )}
+                            {Object.values(navItems).map((item, index) => (
+                                <Menu
+                                    key={item.title}
+                                    open={open === index + 1}
+                                    items={item.items}
+                                    links={item.links}
+                                    isSidebar
+                                />
+                            ))}
+                            <div>
+                                <Link href="/news">
+                                    <motion.button
+                                        whileTap={{ scale: 0.95 }}
+                                        className="font-semibold w-full text-left p-2 flex items-center space-x-1 transition-all rounded hover:bg-gray-200 border-b-2 border-blue-950"
+                                    >
+                                        <span>News</span>
+                                    </motion.button>
+                                </Link>
+                            </div>
+                            <div>
+                                <Link href="/support">
+                                    <motion.button
+                                        whileTap={{ scale: 0.95 }}
+                                        className="font-semibold w-full text-left p-2 flex items-center space-x-1 transition-all rounded hover:bg-gray-200 border-b-2 border-blue-950"
+                                    >
+                                        <span>Support</span>
+                                    </motion.button>
+                                </Link>
+                            </div>
+                            <div>
+                                <Link href="/contact">
+                                    <motion.button
+                                        whileTap={{ scale: 0.95 }}
+                                        className="font-semibold w-full text-left p-2 flex items-center space-x-1 transition-all rounded bg-orange-600 hover:bg-orange-500 text-white"
+                                    >
+                                        <span>Contact</span>
+                                    </motion.button>
+                                </Link>
+                            </div>
                         </nav>
                     </motion.div>
                 )}

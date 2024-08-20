@@ -74,7 +74,10 @@ function Splash() {
                                         />
                                     </div>
                                     <SectionHeader content="And Digital Drawing Systems" />
-                                    <ArrowButton text="View Products" />
+                                    <ArrowButton
+                                        text="View Products"
+                                        href="/product-services/lottery-drawing-machines#machines"
+                                    />
                                 </div>
                             </div>
                         </div>

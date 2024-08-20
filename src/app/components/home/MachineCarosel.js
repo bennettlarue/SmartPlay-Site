@@ -35,14 +35,14 @@ const MachineCarousel = ({ data }) => {
     return (
         <div>
             <Slider {...settings}>
-                {data.map(({ imageLink, title, desc }, index) => (
+                {data.map(({ imageLink, title, link }, index) => (
                     <div key={index}>
                         <div className="w-fit mx-auto">
                             <MachineLink
                                 index={index}
                                 imageLink={imageLink}
                                 title={title}
-                                desc={desc}
+                                link={link}
                             />
                         </div>
                     </div>

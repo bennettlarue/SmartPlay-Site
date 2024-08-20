@@ -2,6 +2,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { RichText } from "@/app/components/news/RichText";
 import Link from "next/link";
+import { SectionHeader } from "@/app/components/SectionHeader";
 
 const formatDate = (isoDate) => {
     const date = new Date(isoDate);
@@ -54,9 +55,8 @@ export default async function Post({ params }) {
                             </Link>{" "}
                             /
                         </h2>
-                        <h1 className="text-4xl font-semibold text-blue-950 max-w-[700px]">
-                            {post.title}
-                        </h1>
+
+                        <SectionHeader content={post.title} />
 
                         <h2 className="text-gray-400 font-semibold">
                             {formatDate(post.publishedAt)}

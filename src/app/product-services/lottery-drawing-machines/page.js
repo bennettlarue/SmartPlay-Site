@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { Nav } from "@/app/components/Nav";
 import { FilterMenu } from "@/app/components/products/FilterMenu";
 import { ProductCard } from "@/app/components/products/ProductCard";
@@ -42,6 +43,7 @@ export default function LotteryDrawingMachines() {
     const [gameTypes, setGameTypes] = useState([]);
     const [features, setFeatures] = useState([]);
     const [selected, setSelected] = useState([]);
+    const searchParams = useSearchParams(); // Get the query parameters
 
     useEffect(() => {
         const fetchData = async () => {
@@ -71,6 +73,12 @@ export default function LotteryDrawingMachines() {
                     .map((item) => item.title);
                 setFeatures(newFeatures);
 
+                // Check for query parameters and set initial filters
+                const selectedTypes = searchParams.getAll("type");
+                const selectedFeatures = searchParams.getAll("feature");
+
+                setSelected([...selectedTypes, ...selectedFeatures]);
+
                 setLoading(false);
             } catch (err) {
                 console.log(err);
@@ -79,19 +87,17 @@ export default function LotteryDrawingMachines() {
         };
 
         fetchData();
-    }, []);
+    }, [searchParams]); // Re-run the effect if searchParams change
 
     // Callback to handle item selection
     const handleSelectType = (item) => {
         if (!selected.includes(item)) setSelected((prev) => [...prev, item]);
         else setSelected((prev) => prev.filter((i) => i !== item));
-        console.log(selected);
     };
 
     const handleSelectFeature = (item) => {
         if (!selected.includes(item)) setSelected((prev) => [...prev, item]);
         else setSelected((prev) => prev.filter((i) => i !== item));
-        console.log(selected);
     };
 
     return (
@@ -132,27 +138,28 @@ export default function LotteryDrawingMachines() {
                     </div>
                 </div>
 
-                <div className="primarySection bottomSection">
+                <div className="primarySection bottomSection" id="machines">
                     <div className="contentSection">
                         <SectionHeader
                             content="We offer lottery machines to meet any requirement.
                         Traditional gravity mix, air mix or digital draw systems"
                         />
-                    </div>
-                    <div className="max-w-[1200px] mx-auto pb-12">
-                        <FilterMenu
-                            gameTypes={gameTypes}
-                            features={features}
-                            selected={selected}
-                            setSelected={setSelected}
-                            handleSelectType={handleSelectType}
-                            handleSelectFeature={handleSelectFeature}
-                        />
-                        {getSelectedItems(selected, machines).length > 0 ? (
-                            <div className="grid lg:grid-cols-3 grid-cols-1 gap-14">
-                                <AnimatePresence>
-                                    {getSelectedItems(selected, machines).map(
-                                        (lotteryMachine, index) => (
+                        <div>
+                            <FilterMenu
+                                gameTypes={gameTypes}
+                                features={features}
+                                selected={selected}
+                                setSelected={setSelected}
+                                handleSelectType={handleSelectType}
+                                handleSelectFeature={handleSelectFeature}
+                            />
+                            {getSelectedItems(selected, machines).length > 0 ? (
+                                <div className="grid lg:grid-cols-3 grid-cols-1 gap-8">
+                                    <AnimatePresence>
+                                        {getSelectedItems(
+                                            selected,
+                                            machines
+                                        ).map((lotteryMachine, index) => (
                                             <motion.div
                                                 key={index}
                                                 layout
@@ -190,17 +197,17 @@ export default function LotteryDrawingMachines() {
                                                     />
                                                 </Link>
                                             </motion.div>
-                                        )
-                                    )}
-                                </AnimatePresence>
-                            </div>
-                        ) : (
-                            <div className="text-center py-8">
-                                <p className="text-xl text-gray-600">
-                                    No machines found.
-                                </p>
-                            </div>
-                        )}
+                                        ))}
+                                    </AnimatePresence>
+                                </div>
+                            ) : (
+                                <div className="text-center py-8">
+                                    <p className="text-xl text-gray-600 specialFont">
+                                        No machines found.
+                                    </p>
+                                </div>
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>

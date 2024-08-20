@@ -16,7 +16,7 @@ export const FilterMenu = ({
     return (
         <motion.div className="z-50">
             <div className="lg:flex space-x-2 items-center w-fit lg:space-y-0 space-y-4">
-                <h2 className="font-bold text-xl mr-3">Filter By:</h2>
+                <h2 className="font-medium specialFont md:mr-3">Filter By:</h2>
                 <motion.div
                     className={`relative transition-all border rounded ${
                         open === 1 ? "bg-gray-200" : ""
@@ -24,7 +24,7 @@ export const FilterMenu = ({
                 >
                     <motion.button
                         onClick={() => (open === 1 ? setOpen(0) : setOpen(1))}
-                        className="font-bold p-2 flex items-center space-x-1"
+                        className="font-medium specialFont p-2 flex items-center space-x-1"
                     >
                         <span>Game Type</span>
                         <svg
@@ -63,7 +63,7 @@ export const FilterMenu = ({
                 >
                     <motion.button
                         onClick={() => (open === 2 ? setOpen(0) : setOpen(2))}
-                        className="font-bold p-2 flex items-center space-x-1"
+                        className="font-medium specialFont p-2 flex items-center space-x-1"
                     >
                         <span>Machine Features</span>
                         <svg
@@ -97,9 +97,11 @@ export const FilterMenu = ({
             <div className="flex space-x-4 items-center w-fit">
                 <h2 className="py-7">
                     {selected.length === 0 ? (
-                        <div className="text-4xl font-bold">All Products</div>
+                        <div className="text-2xl font-medium specialFont">
+                            All Products
+                        </div>
                     ) : (
-                        <div className="text-xl font-semibold text-gray-600">
+                        <div className="text-2xl font-medium specialFont text-gray-600">
                             Selected Filters:
                         </div>
                     )}

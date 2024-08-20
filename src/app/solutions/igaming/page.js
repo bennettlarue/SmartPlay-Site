@@ -22,7 +22,7 @@ export default function OnlineLottery() {
             <Nav />
             <PageBackground image="https://hxl.550.myftpupload.com/wp-content/uploads/2021/10/globe.jpg" />
 
-            <Title text="Online Lottery" />
+            <Title text="iGaming" />
             <div className="firstSection">
                 <div className="contentSection">
                     <SectionHeader

@@ -52,7 +52,7 @@ export const PostCard = ({ post, index, hoveredIndex, setHoveredIndex }) => {
                     <p className="text-gray-700">
                         {formatDate(post.publishedAt)}
                     </p>
-                    <h1 className="text-2xl font-semibold text-blue-950">
+                    <h1 className="text-2xl font-medium text-blue-950 specialFont">
                         {post.title}
                     </h1>
 

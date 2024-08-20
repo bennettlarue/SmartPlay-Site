@@ -1,9 +1,11 @@
+"use client";
+
 import { motion } from "framer-motion";
 import React from "react";
 
 export const SectionHeader = ({ content, animate = true, children }) => {
     return (
-        <React.Fragment>
+        <>
             <motion.h3
                 initial={animate ? { opacity: 0, y: 5 } : {}}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -14,6 +16,6 @@ export const SectionHeader = ({ content, animate = true, children }) => {
                 {content}
                 {children}
             </motion.h3>
-        </React.Fragment>
+        </>
     );
 };

@@ -20,12 +20,12 @@ function getYouTubeVideoID(url) {
 
 export const RichText = ({ content }) => {
     const headingClasses = {
-        h1: "text-4xl font-bold mb-4",
-        h2: "text-3xl font-semibold mb-3",
-        h3: "text-2xl font-medium mb-2",
-        h4: "text-xl font-medium mb-2",
-        h5: "text-lg font-medium mb-2",
-        h6: "text-base font-medium mb-2",
+        h1: "text-4xl font-medium mb-4 specialFont text-blue-950",
+        h2: "text-3xl font-medium mb-3 specialFont text-blue-950",
+        h3: "text-2xl font-medium mb-2 specialFont text-blue-950",
+        h4: "text-xl font-medium mb-2 specialFont text-blue-950",
+        h5: "text-lg font-medium mb-2 specialFont text-blue-950",
+        h6: "text-base font-medium mb-2 specialFont text-blue-950",
     };
 
     const renderChildren = (children) => {
@@ -33,7 +33,11 @@ export const RichText = ({ content }) => {
             let element = child.text;
 
             if (child.bold) {
-                element = <strong key={index}>{element}</strong>;
+                element = (
+                    <span className="font-medium text-blue-950" key={index}>
+                        {element}
+                    </span>
+                );
             }
             if (child.italic) {
                 element = <em key={index}>{element}</em>;
