@@ -1,6 +1,8 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import dynamic from "next/dynamic";
 import { Nav } from "@/app/components/Nav";
 import { FilterMenu } from "@/app/components/products/FilterMenu";
 import { ProductCard } from "@/app/components/products/ProductCard";
@@ -37,13 +39,13 @@ const getSelectedItems = (selected, lotteryMachines) => {
     return filteredItems;
 };
 
-export default function LotteryDrawingMachines() {
+function LotteryDrawingMachines() {
     const [machines, setMachines] = useState([]);
     const [loading, setLoading] = useState(true);
     const [gameTypes, setGameTypes] = useState([]);
     const [features, setFeatures] = useState([]);
     const [selected, setSelected] = useState([]);
-    const searchParams = useSearchParams(); // Get the query parameters
+    const searchParams = useSearchParams();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -87,9 +89,8 @@ export default function LotteryDrawingMachines() {
         };
 
         fetchData();
-    }, [searchParams]); // Re-run the effect if searchParams change
+    }, [searchParams]);
 
-    // Callback to handle item selection
     const handleSelectType = (item) => {
         if (!selected.includes(item)) setSelected((prev) => [...prev, item]);
         else setSelected((prev) => prev.filter((i) => i !== item));
@@ -216,3 +217,12 @@ export default function LotteryDrawingMachines() {
         </div>
     );
 }
+
+// Create a client-side only component
+const ClientSideLotteryDrawingMachines = dynamic(
+    () => Promise.resolve(LotteryDrawingMachines),
+    { ssr: false }
+);
+
+// Export the client-side only component
+export default ClientSideLotteryDrawingMachines;

@@ -23,7 +23,7 @@ export const Title = ({ text = "Title" }) => {
                     initial={{ opacity: 0, y: 4 }}
                     animate={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="lg:text-6xl text-4xl flex justify-center font-semibold"
+                    className="lg:text-6xl text-4xl flex justify-center font-semibold mx-8"
                 >
                     {text}
                 </motion.h1>

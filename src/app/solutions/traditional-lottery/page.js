@@ -15,7 +15,7 @@ const slides = [
         img: "https://hxl550.n3cdn1.secureserver.net/wp-content/uploads/2022/06/criterion-lottery-machine-ca-lotery.jpg",
         title: "Design and Fabrication of Traditional Mechanical Lottery Drawing Machines",
         desc: "With over 2000 lottery machines in operation worldwide, Smartplay is a leader in designing and manufacturing traditional lottery equipment.",
-        href: "/why-smartplay",
+        href: "/product-services/custom-design-fabrication",
     },
     {
         img: "https://hxl550.n3cdn1.secureserver.net/wp-content/uploads/2022/07/solution-system.jpg",

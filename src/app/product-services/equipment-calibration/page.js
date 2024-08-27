@@ -31,8 +31,7 @@ export default function App() {
             <div className="firstSection">
                 <div className="contentSection">
                     <ImageCard
-                        px={110}
-                        img="https://smartplay.com/wp-content/uploads/2017/07/lottery-ball-scale-238x300.png"
+                        img="/images/products/lotter-ball-scale.png"
                         className="bg-gray-950"
                     >
                         <SectionHeader content="Lottery Ball Scale" />
@@ -58,10 +57,7 @@ export default function App() {
             </div>
             <div className="primarySection">
                 <div className="contentSection">
-                    <ImageCard
-                        img="https://smartplay.com/wp-content/uploads/2017/07/digital-lottery-ball-micrometer1-136x300.jpg"
-                        px={170}
-                    >
+                    <ImageCard img="/images/products/lottery-micrometer.png">
                         <SectionHeader content="Lottery Ball Micrometer" />
                         <SectionContent content="The digital micrometer will measure to .01mm. Used for accurate calibration of Drawing Balls." />
                     </ImageCard>
